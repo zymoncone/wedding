@@ -8,7 +8,7 @@ function RSVPForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`Name: ${name}, Email: ${email}, Attending: ${attending}`);
+    alert(`Name: ${name}, Email: ${email}, Attending: ${attending}`);
   };
 
   return (

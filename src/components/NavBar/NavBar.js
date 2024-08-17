@@ -19,7 +19,7 @@ const NavBar = () => {
       <div className="nav-bar">
         <div className="nav-button" onClick={() => setOnHomePage(false)}>
           <Link to="/poland">
-            <span className="text">poland</span>
+            <span className="text">&nbsp;&nbsp;&nbsp;poland</span>
           </Link>
         </div>
         <div className="nav-button" onClick={() => setOnHomePage(true)}>
