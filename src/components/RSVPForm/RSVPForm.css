@@ -1,0 +1,56 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Montserrat;
+}
+
+input {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 1rem;
+}
+
+select {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 1rem;
+}
+
+option {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 1rem 0 0.5rem 0;
+}
+
+.label-text {
+  margin: 0;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.attendance-selection {
+  margin: 1rem 0;
+}

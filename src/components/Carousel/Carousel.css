@@ -1,0 +1,19 @@
+.carousel-text {
+  margin: 3rem 0 0 0;
+  font-size: 1.75rem;
+  font-family: "Libre Baskerville", serif;
+  animation: fade 5s infinite;
+}
+
+@keyframes fade {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@media screen and (max-width: 600px) {
+  .carousel-text {
+    font-size: 1.25rem;
+  }
+  
+}

@@ -1,0 +1,47 @@
+.poland {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title-poland {
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Libre Baskerville", 'Times New Roman', Times, serif;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+  padding: 2rem 0 0 0;
+}
+
+.flowers-poland {
+  width: 200px;
+  height: auto;
+}
+
+.left {
+transform: scaleX(-1);
+}
+
+.poland-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 5rem 0 0 0;
+}
+
+@media screen and (max-width: 600px) {
+  .title-poland {
+    font-size: 2.2rem;
+    padding: 0;
+  }
+
+  .flowers-poland {
+    width: 100px;
+    height: auto;
+  }
+}
