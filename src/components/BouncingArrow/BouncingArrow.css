@@ -1,0 +1,32 @@
+.bouncing-arrow {
+  height: auto;
+  width: 70px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fading {
+  0% {
+    bottom: 20px;
+    opacity: 1;
+  }
+  50% {
+    bottom: 40px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
+.bouncing-arrow-container {
+  animation: fading 3s infinite ease-in-out;
+  display: block;
+  position: absolute;
+}
+
+@media screen and (max-width: 600px) {
+  .bouncing-arrow {
+    width: 50px;
+  }
+}

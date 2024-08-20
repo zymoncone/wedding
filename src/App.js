@@ -1,12 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import Intro from "./components/Intro/Intro"
-import NavBar from "./components/NavBar/NavBar"
-import PageNotFound from "./components/PageNotFound/PageNotFound"
-// import Footer from "./components/Footer/Footer"
-import Home from "./components/Home/Home"
-import Poland from "./components/Poland/Poland"
-import Argentina from "./components/Argentina/Argentina"
-import RSVPForm from "./components/RSVPForm/RSVPForm"
+import NavBar from "./components/NavBar/NavBar";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
+import Home from "./components/Home/Home";
+import Poland from "./components/Poland/Poland";
+import Argentina from "./components/Argentina/Argentina";
+import RSVPForm from "./components/RSVPForm/RSVPForm";
 
 const App = () => {
   return (

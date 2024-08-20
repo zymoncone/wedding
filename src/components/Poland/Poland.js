@@ -1,7 +1,7 @@
 import "./Poland.css";
 import flowers from "../../media/Argentina/flowers.png";
 import CountDown from "../CountDown/CountDown";
-import Button from "../Button/Button";
+import RSVPButton from "../RSVPButton/RSVPButton";
 
 const Poland = () => {
   return (
@@ -13,7 +13,7 @@ const Poland = () => {
       </div>
       <CountDown country={'Poland'}/>
       <div style={{margin: "2rem"}}></div>
-      <Button />
+      <RSVPButton />
     </div>
   );
 }

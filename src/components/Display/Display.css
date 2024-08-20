@@ -1,0 +1,11 @@
+.slide {
+  border-radius: 0.5rem;
+  box-shadow: 0rem 0rem 1rem rgb(0,0,0,0.2);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.slide-hidden {
+  display: none;
+}

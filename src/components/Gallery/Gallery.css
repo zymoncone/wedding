@@ -1,0 +1,42 @@
+.gallery-column-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+
+.gallery-row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 0 0.3rem 0;
+}
+
+.individual-photo {
+  height: auto;
+  width: calc((60vw) / 3);
+  padding: 0;
+  border-radius: 0.5rem;
+}
+
+.left-photo {
+  margin: 0 0.3rem 0 0;
+}
+
+.middle-photo {
+  margin: 0;
+}
+
+.right-photo {
+  margin: 0 0 0 0.3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .individual-photo {
+    width: calc((100vw - 0.7rem) / 2);
+  }
+}

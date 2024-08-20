@@ -1,0 +1,91 @@
+.details-parent-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.details-individual-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 1rem;
+  padding: 0;
+  width: 30%;
+}
+
+.details-subtext-container {
+  min-height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: Montserrat;
+  color: rgba(0, 0, 0, 0.9);
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.details-subtext {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Montserrat;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+  padding: 0.3rem 0;
+}
+
+.ceremony-icon {
+  width: 100px;
+  height: auto;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.cheers-icon {
+  width: 100px;
+  height: auto;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+@media screen and (max-width: 600px) {
+  .details-parent-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .details-individual-container {
+    width: 80%;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .details-subtext {
+    font-size: 1.1rem;
+  }
+
+  .ceremony-icon {
+    width: 80px;
+  }
+
+  .cheers-icon {
+    width: 80px;
+  }
+  
+}
