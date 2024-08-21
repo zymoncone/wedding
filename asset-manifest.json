@@ -1,7 +1,9 @@
 {
   "files": {
-    "main.css": "/wedding/static/css/main.6e12d3a3.css",
-    "main.js": "/wedding/static/js/main.2b47064e.js",
+    "main.css": "/wedding/static/css/main.ac8fc54c.css",
+    "main.js": "/wedding/static/js/main.9ab217f5.js",
+    "static/media/canoe-background.jpg": "/wedding/static/media/canoe-background.8411a1e53a01a513bc96.jpg",
+    "static/media/background-main.png": "/wedding/static/media/background-main.3e6368be983cbf02578f.png",
     "static/media/photo_4.png": "/wedding/static/media/photo_4.ba21a50811748716281b.png",
     "static/media/photo_8.png": "/wedding/static/media/photo_8.b406376ecae35a368d04.png",
     "static/media/photo_7.png": "/wedding/static/media/photo_7.1b2b38595cf1777f364b.png",
@@ -12,15 +14,14 @@
     "static/media/photo_3.png": "/wedding/static/media/photo_3.cf5dca33d7ec38da166f.png",
     "static/media/photo_9.png": "/wedding/static/media/photo_9.01bb5613289545cde4bd.png",
     "static/media/photo_10.png": "/wedding/static/media/photo_10.67c21119ea8f52fb6231.png",
-    "static/media/home-background.png": "/wedding/static/media/home-background.3c0c6964192b79020cd9.png",
     "static/media/flowers.png": "/wedding/static/media/flowers.8050b979d2effd436dfb.png",
-    "static/media/logo.png": "/wedding/static/media/logo.b1e776561a568f54f0cf.png",
+    "static/media/MayraSzymonLogo.png": "/wedding/static/media/MayraSzymonLogo.022bce5ad4cdf412b3a9.png",
     "index.html": "/wedding/index.html",
-    "main.6e12d3a3.css.map": "/wedding/static/css/main.6e12d3a3.css.map",
-    "main.2b47064e.js.map": "/wedding/static/js/main.2b47064e.js.map"
+    "main.ac8fc54c.css.map": "/wedding/static/css/main.ac8fc54c.css.map",
+    "main.9ab217f5.js.map": "/wedding/static/js/main.9ab217f5.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e12d3a3.css",
-    "static/js/main.2b47064e.js"
+    "static/css/main.ac8fc54c.css",
+    "static/js/main.9ab217f5.js"
   ]
 }
