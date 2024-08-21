@@ -1,5 +1,5 @@
 import "./Home.css";
-import Logo from "../../media/Home/logo.png";
+import Logo from "../../media/Home/MayraSzymonLogo.png";
 import Carousel from "../Carousel/Carousel";
 
 const Home = () => {

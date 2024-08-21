@@ -3,13 +3,10 @@ import { useState } from "react";
 import SlideShow from "../SlideShow/SlideShow";
 import photos from "../../assets/photos";
 import { useEffect } from "react";
+import { isMobileDevice } from "../../assets/helper_functions";
 
 const ROW_SIZE_MOBILE = 2;
 const ROW_SIZE_PC = 3;
-
-const isMobileDevice = () => {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-};
 
 const Gallery = () => {
 

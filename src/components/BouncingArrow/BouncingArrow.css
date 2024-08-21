@@ -1,32 +1,38 @@
 .bouncing-arrow {
   height: auto;
-  width: 70px;
+  width: 60px;
   color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  animation: fading 3s infinite ease-in-out;
 }
 
 @keyframes fading {
   0% {
-    bottom: 20px;
+    bottom: 0px;
     opacity: 1;
   }
   50% {
-    bottom: 40px;
+    bottom: 15px;
     opacity: 0;
   }
   100% {
-    bottom: 20px;
+    bottom: 0px;
     opacity: 1;
   }
 }
 
 .bouncing-arrow-container {
-  animation: fading 3s infinite ease-in-out;
   display: block;
-  position: absolute;
+  margin: 30px 0 0 0;
 }
 
 @media screen and (max-width: 600px) {
   .bouncing-arrow {
     width: 50px;
+  }
+
+  .bouncing-arrow-container {
+    display: block;
+    margin: 50px 0 0 0;
   }
 }
