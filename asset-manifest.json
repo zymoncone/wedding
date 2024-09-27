@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wedding/static/css/main.ac8fc54c.css",
-    "main.js": "/wedding/static/js/main.9ab217f5.js",
+    "main.css": "/wedding/static/css/main.36bee3a9.css",
+    "main.js": "/wedding/static/js/main.cc219160.js",
     "static/media/canoe-background.jpg": "/wedding/static/media/canoe-background.8411a1e53a01a513bc96.jpg",
     "static/media/background-main.png": "/wedding/static/media/background-main.3e6368be983cbf02578f.png",
     "static/media/photo_4.png": "/wedding/static/media/photo_4.ba21a50811748716281b.png",
@@ -17,11 +17,11 @@
     "static/media/flowers.png": "/wedding/static/media/flowers.8050b979d2effd436dfb.png",
     "static/media/MayraSzymonLogo.png": "/wedding/static/media/MayraSzymonLogo.022bce5ad4cdf412b3a9.png",
     "index.html": "/wedding/index.html",
-    "main.ac8fc54c.css.map": "/wedding/static/css/main.ac8fc54c.css.map",
-    "main.9ab217f5.js.map": "/wedding/static/js/main.9ab217f5.js.map"
+    "main.36bee3a9.css.map": "/wedding/static/css/main.36bee3a9.css.map",
+    "main.cc219160.js.map": "/wedding/static/js/main.cc219160.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac8fc54c.css",
-    "static/js/main.9ab217f5.js"
+    "static/css/main.36bee3a9.css",
+    "static/js/main.cc219160.js"
   ]
 }
