@@ -54,3 +54,9 @@ label {
 .attendance-selection {
   margin: 1rem 0;
 }
+
+.guest-match {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  width: 300px;
+}
