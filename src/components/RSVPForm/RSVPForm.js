@@ -51,7 +51,7 @@ const RSVPForm = ({partyData,
                                  setConfirmedRSVP={setConfirmedRSVP} />
           ))}
           <div style={{margin: "1rem"}}></div>
-          <button className="button-23">Submit RSVP</button>
+          {!submit && <button className="button-23">Submit RSVP</button>}
           {submit && <div className="loading-spinner"></div>}
         </form>
       ) :

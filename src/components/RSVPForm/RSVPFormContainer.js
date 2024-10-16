@@ -63,7 +63,7 @@ const RSVPFormContainer = () => {
 
   return (
     <div className="rsvp-form-container">
-      <h1>RSVP</h1>
+      <h1 className="rsvp-title">RSVP</h1>
       {guestMatch &&
         <RSVPForm partyData={partyData} 
                   setGuestMatch={setGuestMatch} 

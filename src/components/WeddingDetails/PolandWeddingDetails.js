@@ -18,7 +18,7 @@ const PolandWeddingDetails = () => {
         <h1 className="subtitle">Ceremony & Reception</h1>
         <div className="details-subtext-container">
           <p className="details-subtext" style={detailsFontAdjustment}>
-            February 23, 2025 at 17:00
+            August 23, 2025 at 17:00
           </p>
           <p className="details-address-subtext" style={detailsFontAdjustment}>
             Zamek Królewski w Niepołomicach
