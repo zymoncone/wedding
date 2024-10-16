@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 const ArgentinaWeddingDetails = () => {
   return (
     <div className="details-parent-container">
-      <div className="details-individual-container">
+      <div className="details-individual-container-argentina">
         <GiBridge className="ceremony-icon"/>
         <h1 className="subtitle">Ceremonia</h1>
         <div className="details-subtext-container">
@@ -18,7 +18,7 @@ const ArgentinaWeddingDetails = () => {
         <Button text={"Llegar a la ceremonia"} />
       </div>
       <div className="details-individual-container">
-        <PiCheersDuotone className="cheers-icon"/>
+        <PiCheersDuotone className="cheers-icon-argentina"/>
         <h1 className="subtitle">Fiesta</h1>
         <div className="details-subtext-container">
           <p className="details-subtext">

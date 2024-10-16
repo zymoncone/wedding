@@ -1,6 +1,6 @@
 import "./CountDown.css";
 import React, { useState, useEffect } from 'react';
-  const dates = {'Poland': `2025/08/19`,
+  const dates = {'Poland': `2025/08/23`,
                  'Argentina': `2025/02/15`};
 
   const days_by_language = {'Poland': ['dni', 'godz', 'min', 'sek'],

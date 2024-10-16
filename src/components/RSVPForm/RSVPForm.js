@@ -1,69 +1,64 @@
 import './RSVPForm.css';
-import { useState, useEffect } from 'react';
-import { readTable } from '../../assets/helper_functions';
+import IndividualGuestData from './IndividualGuestData';
+import { useEffect } from 'react';
+import { sleep } from '../../assets/helper_functions';
+// import PolandDetailsForRSVP from '../PolandDetailsForRSVP/PolandDetailsForRSVP';
 
-function RSVPForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [attending, setAttending] = useState('');
-  const [guestMatch, setGuestMatch] = useState(false);
-  const [guestName, setGuestName] = useState('none');
+const RSVPForm = ({partyData, 
+                   setGuestMatch, 
+                   submit, 
+                   setSubmit,
+                   confirmedRSVP,
+                   setConfirmedRSVP}) => {
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert(`Name: ${name}, Email: ${email}, Attending: ${attending}`);
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmit(true);
+  }
 
   useEffect(() => {
-    console.log(name);
-    
-    readTable(name)
-    .then(response => {
-    if (response && response.Item) {
-      console.log('Item exists:', response.Item);
-      setGuestMatch(true);
-      setGuestName(response.Item.guest);
-    } else {
-      console.log('Item does not exist');
-      setGuestMatch(false);
-      setGuestName('none');
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-  }
-  , [name]);
+    const handleRSVPSubmission = async () => {
+      if (submit) {
+        console.log('submitting RSVPs');
+        await sleep(1000);
+        setGuestMatch(false);
+        setConfirmedRSVP(0);
+      }
+    };
+
+    handleRSVPSubmission();
+  }, [submit, setGuestMatch, setConfirmedRSVP]);
 
   return (
-    <form className="rsvp-form" onSubmit={handleSubmit}>
-      <label>
-        <span className='label-text'>Name</span>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
-      </label>
-      {guestMatch ? <p className="guest-match">You're on the list! Can't wait to see you!</p> : null}
-      {guestName !== 'none' ? 
-         <p className="guest-match">We see that you have {guestName} as a guest!</p> : 
-         null}
-      {guestName === 'none' && guestMatch ?
-          <p className="guest-match">No +1 but please come!</p> : null}
-      <label>
-        <span className='label-text'>Email</span>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-      </label>
-      <label>
-        <div className="dropdown">
-          <span className='label-text'>Will you be attending?</span>
-          <select className="attendance-selection" value={attending} onChange={(e) => setAttending(e.target.value)} required>
-            <option value="">Select...</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-      </label>
-      <div style={{margin: "1rem"}}></div>
-      <button className="button-23">Submit</button>
-    </form>
+    <div>
+      {/* <PolandDetailsForRSVP /> */}
+      {partyData && partyData.length > 0 ? (
+        <form className="rsvp-form" onSubmit={handleSubmit}>
+          <div className="invited-guests-container">
+            <span className="label-text invited-guest-text">Invited Guests</span>
+            {partyData.map((item, index) => (
+              <label key={index}>
+                <div className="label-name">{item['id']}</div>
+              </label>
+            ))}
+          </div>
+          {partyData.map((item, index) => (
+            <IndividualGuestData key={index} 
+                                 item={item} 
+                                 index={index} 
+                                 lastIndex={(partyData.length - 1)}
+                                 submit={submit}
+                                 setConfirmedRSVP={setConfirmedRSVP} />
+          ))}
+          <div style={{margin: "1rem"}}></div>
+          <button className="button-23">Submit RSVP</button>
+          {submit && <div className="loading-spinner"></div>}
+        </form>
+      ) :
+      (
+        <div className="loading-spinner"></div>
+      )}
+    </div>
   );
 }
 

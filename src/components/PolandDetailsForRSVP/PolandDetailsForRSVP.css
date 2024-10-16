@@ -1,0 +1,23 @@
+.ceremony-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 2rem 0 2rem 0;
+  padding: 0;
+}
+
+.rsvp-details-title {
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+.rvsp-details-subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-family: Montserrat;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 5px 0;
+}

@@ -1,8 +1,14 @@
 import "./Button.css";
 
-const Button = (props) => {
+const Button = ({text, address=""}) => {
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    window.open(address, "_blank");
+  };
+
   return (
-      <button className="button-1">{props.text}</button>
+      <a className="button-1" href={address} onClick={handleClick}>{text}</a>
   );
 }
 

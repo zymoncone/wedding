@@ -4,7 +4,7 @@ import PageNotFound from "./components/PageNotFound/PageNotFound";
 import Home from "./components/Home/Home";
 import Poland from "./components/Poland/Poland";
 import Argentina from "./components/Argentina/Argentina";
-import RSVPForm from "./components/RSVPForm/RSVPForm";
+import RSVPFormContainer from "./components/RSVPForm/RSVPFormContainer";
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
           <Route index element={<Home />} ></Route>
           <Route path="/poland" element={<Poland />} ></Route>
           <Route path="/argentina" element={<Argentina />} ></Route>
-          <Route path="/rsvp" element={<RSVPForm />} ></Route>
+          <Route path="/rsvp" element={<RSVPFormContainer />} ></Route>
         </Route>
       </Routes>
     </BrowserRouter>

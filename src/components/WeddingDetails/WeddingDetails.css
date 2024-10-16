@@ -8,7 +8,7 @@
   padding: 0;
 }
 
-.details-individual-container {
+.details-individual-container-argentina {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +17,16 @@
   margin: 1rem;
   padding: 0;
   width: 30%;
+}
+
+.details-individual-container-poland {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 1rem;
+  padding: 0;
 }
 
 .details-subtext-container {
@@ -42,9 +52,20 @@
   font-size: 1rem;
   font-weight: 400;
   font-family: Montserrat;
+  line-height: 1.6;
   color: rgba(0, 0, 0, 1);
   margin: 0;
   padding: 0.3rem 0;
+}
+
+.details-address-subtext {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Montserrat;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+  padding: 0;
 }
 
 .ceremony-icon {
@@ -54,11 +75,35 @@
   margin: 0 0 2rem 0;
 }
 
-.cheers-icon {
+.cheers-icon-argentina {
   width: 100px;
   height: auto;
   padding: 0;
   margin: 0 0 2rem 0;
+}
+
+.castle-icon {
+  width: 100px;
+  height: auto;
+  padding: 0;
+  margin: 0 1rem 2rem 0;
+}
+
+.cheers-icon-poland {
+  width: 100px;
+  height: auto;
+  padding: 0;
+  margin: 0 0 2rem 1rem;
+}
+
+.ceremony-icon-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (max-width: 600px) {
