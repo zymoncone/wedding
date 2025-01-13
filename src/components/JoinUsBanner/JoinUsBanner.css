@@ -21,7 +21,7 @@
 }
 
 .join-us-title {
-  font-size: 20px;
+  font-size: 25px;
   font-family: "Newsreader", serif;
   font-weight: 200;
   color: white;
@@ -33,4 +33,23 @@
   font-weight: 300;
   color: white;
   margin: 3.5rem 0 2.5rem 0;
+}
+
+@media screen and (max-width: 600px) {
+  .join-us-banner {
+    width: 92.5%;
+    height: 80vh;
+  }
+
+  .join-us-title {
+    font-size: 30px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .join-us-subtext {
+    font-size: 35px;
+    margin: 3.5rem 10px 3rem 10px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  }
 }

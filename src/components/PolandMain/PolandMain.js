@@ -4,15 +4,15 @@ import background_main from "../../media/Root/background-desktop.png";
 import CountDown from "../CountDown/CountDown";
 import BouncingArrow from "../BouncingArrow/BouncingArrow";
 import PolandWeddingDetails from "../WeddingDetails/PolandWeddingDetails";
-import GalleryTitle from "../GalleryTitle/GalleryTitle";
-import Gallery from "../Gallery/Gallery";
 import OurStoryBanner from "../OurStoryBanner/OurStoryBanner";
 import JoinUsBanner from "../JoinUsBanner/JoinUsBanner";
 import Footer from "../Footer/Footer";
 import WhatsAppBanner from "../WhatsAppBanner/WhatsAppBanner";
+import { isMobileDevice } from "../../assets/helper_functions";
 
 const PolandMain = () => {
   const [opacity, setOpacity] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,12 +29,20 @@ const PolandMain = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (isMobileDevice()) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, []);
+
   return (
     <div className="poland-main-container">
       <div className="home-background-container" style={{
         backgroundImage: `url(${background_main})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: isMobile ? "right" : "center",
         opacity: opacity,
         transition: 'opacity 0.1s ease-out'
       }}>

@@ -1,15 +1,25 @@
 .whatsapp-banner {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 7rem 0 7rem 0;
+  margin: 5rem 0;
   font-family: 'Newsreader', serif;
   font-weight: 300;
-  color: white;
-  width: 70%;
+  color: black;
+  width: 85%;
   height: 50vh;
-  border-radius: 10px;
+  border-radius: 15px;
+  background-color: #3cf580;
+  overflow: hidden;
+}
+
+.whatsapp-logo-background {
+  position: absolute;
+  left: -100px;
+  color: #38e477;
+  z-index: 0;
 }
 
 .whatsapp-text-container {
@@ -19,10 +29,12 @@
   justify-content: space-evenly;
   text-align: center;
   height: 30%;
+  z-index: 1;
 }
 
 .whatsapp-text {
   font-size: 25px;
+  z-index: 1;
 }
 
 .whatsapp-logo-container {
@@ -34,8 +46,9 @@
   font-size: 30px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  color: whitesmoke;
+  color: black;
   margin: 0 0 2rem 0;
+  z-index: 1;
 }
 
 .join-whatsapp-button {
@@ -53,12 +66,36 @@
   border-radius: 5rem;
   cursor: pointer;
   margin: 1rem 0 0 0;
+  z-index: 1;
 }
 
 .join-whatsapp-button a {
-  color: #25d366;
+  color: #3cf580;
 }
 
 .join-whatsapp-button:hover {
   background-color: #f2f2f2;
+}
+
+@media screen and (max-width: 600px) {
+  .whatsapp-banner {
+    width: 92.5%;
+    height: 60vh;
+    margin: 3rem 0;
+  }
+
+  .whatsapp-logo-background {
+    left: 100px;
+    bottom: -90px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .whatsapp-text {
+    font-size: 20px;
+  }
+
+  .join-whatsapp-button {
+    font-size: 16px;
+  }
 }

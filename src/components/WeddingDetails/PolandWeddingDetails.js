@@ -60,7 +60,7 @@ const PolandWeddingDetails = () => {
         <Button text={"Map"} address={"https://maps.app.goo.gl/CW57ZFBxmS2huGWp9"} />
         <div className="attire-details-container">
           <p className="attire-details-subtext">
-            Attire: Comfy Casual
+            Attire: Smart Casual
           </p>
         </div>
       </div>

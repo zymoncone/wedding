@@ -42,3 +42,42 @@
   right: 0;
   margin: 0 -25vw 0 0;
 }
+
+@media screen and (max-width:600px) {
+  .our-story-banner {
+    width: calc(92.5% - 30px);
+    margin: 30px 0 80px 0;
+  }
+
+  .our-story-banner-title {
+    font-size: 30px;
+  }
+
+  .our-story-banner-text {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 50px 0;
+    width: 100%;
+  }
+
+  .our-story-banner-text::before,
+  .our-story-banner-text::after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    width: 0vw; /* Adjust the width of the lines as needed */
+    height: 0px; /* Line height */
+    background-color: black; /* Line color */
+  }
+
+  .our-story-banner-text::before {
+    bottom: 0;
+    margin: 0 0 0 -25vw;
+  }
+
+  .our-story-banner-text::after {
+    right: 0;
+    margin: 0 -25vw 0 0;
+  }
+
+}

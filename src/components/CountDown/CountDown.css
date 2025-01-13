@@ -38,6 +38,8 @@
   }
   .count-text {
     font-size: 1.25rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   }
 
 }

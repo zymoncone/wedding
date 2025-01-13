@@ -143,16 +143,20 @@
     justify-content: center;
   }
 
+  .details-individual-container-poland {
+    margin: 20px 0;
+  }
+
   .details-individual-container-argentina {
     width: 80%;
   }
 
   .subtitle {
-    font-size: 1.5rem;
+    font-size: 30px;
   }
 
   .date-details-subtext {
-    font-size: 1.1rem;
+    font-size: 25px;
   }
 
   .ceremony-icon {

@@ -29,3 +29,18 @@
   height: auto;
   margin: 2rem 0;
 }
+
+@media screen and (max-width: 600px) {
+  .error-404 h1 {
+    font-size: 4rem;
+  }
+
+  .error-404 p {
+    font-size: 1.5rem;
+  }
+
+  .error-gif {
+    width: 50%;
+  }
+
+}

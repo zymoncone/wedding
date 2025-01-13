@@ -1,12 +1,16 @@
 import "./NavBarMobile.css";
 import { Pivot as Hamburger } from 'hamburger-react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const NavBarMobile = () => {
   const [isOpen, setOpen] = useState(false);
   const [height, setHeight] = useState("auto");
   const [navBarStyle, setNavBarStyle] = useState({});
+
+  const location = useLocation();
+  const isHome = location.pathname === "/poland";
+  const navStyle = isHome && isOpen ? "black" : (!isHome ? "black" : "white");
 
   const menuOpenSettings = {
     backgroundColor: "#fff5ee",
@@ -20,11 +24,9 @@ const NavBarMobile = () => {
     width: "100%"
   };
 
-  const openNavBarStyle = { top: 0, position: "fixed", width: "90%" };
-
-
-
   useEffect(() => {
+    const openNavBarStyle = { top: 0, position: "fixed", width: "90%" };
+
     if (!isOpen) {
       const timer = setTimeout(() => {
         setHeight("auto");
@@ -42,16 +44,18 @@ const NavBarMobile = () => {
   return (
     <div className="nav-poland-container-mobile" style={isOpen ? menuOpenSettings : menuClosedSettings}>
       <div className="navbar-mobile-container" style={navBarStyle}>
-        <div className="nav-name-date-header" style={isOpen ? { color: "black" } : {}}>
-          M&S 23.AUG.25
+        <div className="nav-name-date-header">
+          <span className="nav-link-mobile" onClick={() => setOpen(false)}>
+            <Link to={``} className="nav-name-date-header-text" style={{color: navStyle}}>M&S 23.AUG.25</Link>
+          </span>
         </div>
-        <div className="nav-hamburger-container" style={isOpen ? { color: "black" } : {}}>
+        <div className="nav-hamburger-container" style={{color: navStyle}}>
           <Hamburger toggled={isOpen}
             toggle={setOpen}
             size={35}
             rounded
             duration={0.3}
-            color={isOpen ? "black" : "white"}
+            color={navStyle}
             distance={"lg"}
           />
         </div>
@@ -67,8 +71,14 @@ const NavBarMobile = () => {
           <span className="nav-link-mobile" onClick={() => setOpen(false)}>
             <Link to={`registry`} className="mobile-nav-link-text">Registry</Link>
           </span>
-          <div className="rsvp-button-container" onClick={() => setOpen(false)}>
-            <Link to={`rsvp`} className="button-main" style={{ width: "100px", padding: "25px 0", margin: 0, fontFamily: "'Newsreader', serif", fontSize: "20px" }}>
+          <div className="rsvp-button-container-mobile" onClick={() => setOpen(false)}>
+            <Link to={`rsvp`} className="button-main" style={{ width: "100px",
+                                                               padding: "25px 0",
+                                                               margin: 0,
+                                                               fontFamily: "'Newsreader', serif",
+                                                               fontSize: "20px",
+                                                               color: "white",
+                                                               backgroundColor: "black",}}>
               <span>RSVP</span>
             </Link>
           </div>

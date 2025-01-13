@@ -11,12 +11,19 @@
   --text-color: black;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: var(--primary-color);
   color: var(--text-color);
   width: 100%;
+  overflow-x: hidden;
 }
 
 h1 {
