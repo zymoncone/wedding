@@ -1,4 +1,31 @@
-.error-404 {
+.page-not-found {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-top: 10rem;
+  justify-content: space-evenly;
+  margin: 5rem 0 0 0;
+}
+
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Newsreader", serif;
+  font-weight: 200;
+}
+
+.error-404 h1 {
+  font-size: 5rem;
+  margin: 1rem 0;
+}
+
+.error-404 p {
+  font-size: 2rem;
+  margin: 0.75rem 0;
+}
+
+.error-gif {
+  width: 30%;
+  height: auto;
+  margin: 2rem 0;
 }

@@ -2,35 +2,67 @@ import "./WeddingDetails.css";
 import { PiCastleTurretDuotone } from "react-icons/pi";
 import { PiCheersDuotone } from "react-icons/pi";
 import Button from "../Button/Button";
+import DetailsBannerPoland from "../DetailsBannerPoland/DetailsBannerPoland";
 
 const PolandWeddingDetails = () => {
 
-  const detailsFontAdjustment = {"fontSize":"1.2rem"};
-  const addressFontAdjustment = {"fontSize":"1.2rem", "fontStyle":"italic"};
-
   return (
     <div className="details-parent-container">
+      <DetailsBannerPoland useDayOneSetup={true} />
       <div className="details-individual-container-poland">
-        <div className="ceremony-icon-container">
-          <PiCastleTurretDuotone className="castle-icon"/>
-          <PiCheersDuotone className="cheers-icon-poland"/>
-        </div>
         <h1 className="subtitle">Ceremony & Reception</h1>
         <div className="details-subtext-container">
-          <p className="details-subtext" style={detailsFontAdjustment}>
-            August 23, 2025 at 17:00
-          </p>
-          <p className="details-address-subtext" style={detailsFontAdjustment}>
-            Zamek Królewski w Niepołomicach
-          </p>
-          <p className="details-address-subtext" style={addressFontAdjustment}>
-            Zamkowa 2, 32-005 <br/> Niepołomice, Poland
-          </p>
-          <p className="details-subtext" style={detailsFontAdjustment}>
+          <div className="date-details-container">
+            <p className="date-details-subtext">
+              16:00
+            </p>
+          </div>
+          <div className="address-details-container">
+            <p className="address-details-subtext">
+              Zamek Królewski w Niepołomicach
+            </p>
+            <p className="address-details-subtext">
+              Zamkowa 2, 32-005
+            </p>
+            <p className="address-details-subtext">
+              Niepołomice, Poland
+            </p>
+          </div>
+        </div>
+        <Button text={"Map"} address={"https://maps.app.goo.gl/CW57ZFBxmS2huGWp9"} />
+        <div className="attire-details-container">
+          <p className="attire-details-subtext">
             Attire: Black Tie Optional
           </p>
         </div>
-        <Button text={"Location Details"} address={"https://maps.app.goo.gl/CW57ZFBxmS2huGWp9"}/>
+      </div>
+      <DetailsBannerPoland useDayOneSetup={false} />
+      <div className="details-individual-container-poland">
+        <h1 className="subtitle">BBQ & Drinks</h1>
+        <div className="details-subtext-container">
+          <div className="date-details-container">
+            <p className="date-details-subtext">
+              11:00
+            </p>
+          </div>
+          <div className="address-details-container">
+            <p className="address-details-subtext">
+              Zamek Królewski w Niepołomicach
+            </p>
+            <p className="address-details-subtext">
+              Zamkowa 2, 32-005
+            </p>
+            <p className="address-details-subtext">
+              Niepołomice, Poland
+            </p>
+          </div>
+        </div>
+        <Button text={"Map"} address={"https://maps.app.goo.gl/CW57ZFBxmS2huGWp9"} />
+        <div className="attire-details-container">
+          <p className="attire-details-subtext">
+            Attire: Comfy Casual
+          </p>
+        </div>
       </div>
     </div>
   );

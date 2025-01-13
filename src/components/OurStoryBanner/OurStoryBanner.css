@@ -1,0 +1,44 @@
+.our-story-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0 7rem 0;
+}
+
+.our-story-banner-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.our-story-banner-title {
+  font-size: 2rem;
+  font-family: "Newsreader", serif;
+  font-weight: 200;
+  color: black;
+  margin: 0 0 1rem 0;
+}
+
+.our-story-banner-text::before,
+.our-story-banner-text::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  width: 20vw; /* Adjust the width of the lines as needed */
+  height: 1px; /* Line height */
+  background-color: black; /* Line color */
+}
+
+.our-story-banner-text::before {
+  left: 0;
+  margin: 0 0 0 -25vw;
+}
+
+.our-story-banner-text::after {
+  right: 0;
+  margin: 0 -25vw 0 0;
+}

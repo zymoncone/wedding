@@ -1,0 +1,38 @@
+.poland-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.poland-home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: calc(100vh / 2.5) 0 calc(100vh / 3) 0;
+  animation: fade 1s ease-in;
+}
+
+.poland-names-title {
+  font-family: "Newsreader", serif;
+  font-weight: 200;
+  color: white;
+  font-size: 3rem;
+  margin: 0 0 3rem 0;
+}
+
+.poland-wedding-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 100vh 0 0 0;
+  width: 100%;
+}

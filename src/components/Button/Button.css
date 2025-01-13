@@ -1,36 +1,50 @@
-.button-1 {
-  background-color: #FFFFFF;
-  border: 1px solid #222222;
-  border-radius: 2rem;
+.button-60 {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: .375em;
+  box-shadow: none;
   box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.7);
+  color: black;
   cursor: pointer;
-  display: inline-block;
-  font-family: Montserrat;
+  display: inline-flex;
+  font-family: "Newsreader", serif;
+  font-weight: 200;
   font-size: 1rem;
-  font-weight: 400;
-  line-height: 20px;
-  margin: 1rem 0;
-  outline: none;
-  padding: 15px 26px;
+  height: 2.5em;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 1.25rem 1.5rem;
   position: relative;
   text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
   user-select: none;
   -webkit-user-select: none;
-  width: auto;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
 }
 
-.button-1:hover {
-  box-shadow: #222222 0 0 0 1px, rgba(0, 0, 0, 0.1) 0 0 0 3px;
-  transition: box-shadow .2s;
+.button-60:active {
+  border-color: #4a4a4a;
+  outline: 0;
+}
+
+.button-60:focus {
+  border-color: #485fc7;
+  outline: 0;
+}
+
+.button-60:hover {
+  border-color: #b5b5b5;
+}
+
+.button-60:focus:not(:active) {
+  box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
 }
 
 @media screen and (max-width: 600px) {
-  .button-1 {
+  .button-60 {
     font-size: 1rem;
     margin: 2rem 0;
   }

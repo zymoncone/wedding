@@ -4,6 +4,7 @@
   align-items: center;
   text-align: center;
   margin: 2rem 0;
+  z-index: 1;
 }
 
 .nav-button {
@@ -46,7 +47,7 @@
   .app-container {
     height: calc(100vh - 50px);
   }
-  
+
   .nav-button {
     margin: 0 0.5rem;
     font-size: 0.8rem;

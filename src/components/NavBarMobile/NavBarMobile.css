@@ -1,0 +1,75 @@
+.nav-poland-container-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  animation: fade 1s ease-in;
+  background-color: transparent;
+  transition: background-color ease-in-out 400ms;
+}
+
+.navbar-mobile-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 20px 0 0 0;
+  padding: 0;
+  transition: width 300ms;
+}
+
+.nav-name-date-header {
+  font-family: "Newsreader", serif;
+  font-weight: 300;
+  color: white;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.nav-hamburger-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  align-items: center;
+}
+
+.grid-rows-collapsible {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms ease-in-out;
+}
+
+.grid-rows-collapsible > div {
+  overflow: hidden;
+}
+
+.nav-link-mobile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-link-text {
+  font-family: "Newsreader", serif;
+  font-weight: 300;
+  color: var(--text-color);
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  transition: color 300ms;
+}

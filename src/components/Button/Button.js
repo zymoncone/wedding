@@ -8,7 +8,7 @@ const Button = ({text, address=""}) => {
   };
 
   return (
-      <a className="button-1" href={address} onClick={handleClick}>{text}</a>
+      <a className="button-60" href={address} onClick={handleClick}>{text}</a>
   );
 }
 

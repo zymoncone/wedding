@@ -11,7 +11,7 @@ const Carousel = () => {
 
   useEffect(() => {
     const element = document.querySelector('.carousel-text');
-    
+
     const interval = setInterval(() => {
       setTextIndex((textIndex + 1) % texts.length);
 
@@ -20,7 +20,7 @@ const Carousel = () => {
         { opacity: 0 },
         { opacity: 1 }
       ], {
-        duration: 2500, // half of your interval
+        duration: 200, // half of your interval
         fill: 'forwards'
       });
 
@@ -30,12 +30,12 @@ const Carousel = () => {
           { opacity: 1 },
           { opacity: 0 }
         ], {
-          duration: 2500, // half of your interval
+          duration: 2000, // half of your interval
           fill: 'forwards'
         });
-      }, 2500);
+      }, 2000);
 
-    }, 5000);
+    }, 2200);
 
     return () => {
       clearInterval(interval);

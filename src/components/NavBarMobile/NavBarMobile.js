@@ -1,0 +1,81 @@
+import "./NavBarMobile.css";
+import { Pivot as Hamburger } from 'hamburger-react';
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+const NavBarMobile = () => {
+  const [isOpen, setOpen] = useState(false);
+  const [height, setHeight] = useState("auto");
+  const [navBarStyle, setNavBarStyle] = useState({});
+
+  const menuOpenSettings = {
+    backgroundColor: "#fff5ee",
+    height: height,
+    width: "100%"
+  };
+
+  const menuClosedSettings = {
+    backgroundColor: "transparent",
+    height: height,
+    width: "100%"
+  };
+
+  const openNavBarStyle = { top: 0, position: "fixed", width: "90%" };
+
+
+
+  useEffect(() => {
+    if (!isOpen) {
+      const timer = setTimeout(() => {
+        setHeight("auto");
+        setNavBarStyle({});
+      }, 400);
+
+
+      return () => clearTimeout(timer);
+    } else {
+      setHeight("100vh");
+      setNavBarStyle(openNavBarStyle);
+    }
+  }, [isOpen]);
+
+  return (
+    <div className="nav-poland-container-mobile" style={isOpen ? menuOpenSettings : menuClosedSettings}>
+      <div className="navbar-mobile-container" style={navBarStyle}>
+        <div className="nav-name-date-header" style={isOpen ? { color: "black" } : {}}>
+          M&S 23.AUG.25
+        </div>
+        <div className="nav-hamburger-container" style={isOpen ? { color: "black" } : {}}>
+          <Hamburger toggled={isOpen}
+            toggle={setOpen}
+            size={35}
+            rounded
+            duration={0.3}
+            color={isOpen ? "black" : "white"}
+            distance={"lg"}
+          />
+        </div>
+      </div>
+      <div className="grid-rows-collapsible" style={isOpen ? { gridTemplateRows: "1fr" } : {}}>
+        <div className="nav-link-mobile-container">
+          <span className="nav-link-mobile" onClick={() => setOpen(false)}>
+            <Link to={`story`} className="mobile-nav-link-text">Our Story</Link>
+          </span>
+          <span className="nav-link-mobile" onClick={() => setOpen(false)}>
+            <Link to={`travelandstay`} className="mobile-nav-link-text">Travel & Stay</Link>
+          </span>
+          <span className="nav-link-mobile" onClick={() => setOpen(false)}>
+            <Link to={`registry`} className="mobile-nav-link-text">Registry</Link>
+          </span>
+          <div className="rsvp-button-container" onClick={() => setOpen(false)}>
+            <Link to={`rsvp`} className="button-main" style={{ width: "100px", padding: "25px 0", margin: 0, fontFamily: "'Newsreader', serif", fontSize: "20px" }}>
+              <span>RSVP</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default NavBarMobile;

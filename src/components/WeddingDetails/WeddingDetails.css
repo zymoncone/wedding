@@ -1,11 +1,12 @@
 .details-parent-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .details-individual-container-argentina {
@@ -25,11 +26,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 1rem;
+  margin: 3rem;
   padding: 0;
 }
 
-.details-subtext-container {
+.date-details-subtext-container {
   min-height: 5rem;
   display: flex;
   flex-direction: column;
@@ -39,32 +40,61 @@
 }
 
 .subtitle {
-  font-size: 1.5rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-family: Montserrat;
+  font-size: 40px;
+  font-weight: 200;
+  font-family: "Newsreader", serif;
   color: rgba(0, 0, 0, 0.9);
-  margin: 0 0 1rem 0;
+  margin: 0.5rem 0 1.5rem 0;
   padding: 0;
 }
 
-.details-subtext {
-  font-size: 1rem;
-  font-weight: 400;
-  font-family: Montserrat;
+.date-details-subtext {
+  font-size: 30px;
+  font-weight: 200;
+  font-family: "Newsreader", serif;
   line-height: 1.6;
   color: rgba(0, 0, 0, 1);
   margin: 0;
   padding: 0.3rem 0;
 }
 
-.details-address-subtext {
-  font-size: 1rem;
-  font-weight: 400;
-  font-family: Montserrat;
+.address-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 1rem;
+  padding: 0;
+}
+
+.address-details-subtext {
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-family: "Newsreader", serif;
+  line-height: 1.9;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+  padding: 0;
+}
+
+.attire-details-subtext {
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-family: "Newsreader", serif;
   line-height: 1.6;
   color: rgba(0, 0, 0, 1);
   margin: 0;
+  padding: 0;
+}
+
+.attire-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 2rem 0 1rem 0;
   padding: 0;
 }
 
@@ -121,7 +151,7 @@
     font-size: 1.5rem;
   }
 
-  .details-subtext {
+  .date-details-subtext {
     font-size: 1.1rem;
   }
 
@@ -132,5 +162,5 @@
   .cheers-icon-argentina {
     width: 80px;
   }
-  
+
 }

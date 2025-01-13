@@ -1,7 +1,8 @@
 .count-down {
   font-size: 3rem;
-  font-family: Montserrat;
-  color: rgba(0, 0, 0, 0.7);
+  font-family: "Newsreader", serif;
+  color: white;
+  font-weight: 200;
 }
 
 .full-count-container {
@@ -38,6 +39,5 @@
   .count-text {
     font-size: 1.25rem;
   }
-  
-}
 
+}
