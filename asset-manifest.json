@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/wedding/static/css/main.6dd92950.css",
-    "main.js": "/wedding/static/js/main.6f07b8bb.js",
+    "main.css": "/wedding/static/css/main.edcaae49.css",
+    "main.js": "/wedding/static/js/main.c41b322f.js",
     "static/media/canoe-background.jpg": "/wedding/static/media/canoe-background.8411a1e53a01a513bc96.jpg",
-    "static/media/background-main.png": "/wedding/static/media/background-main.3e6368be983cbf02578f.png",
     "static/media/photo_4.png": "/wedding/static/media/photo_4.ba21a50811748716281b.png",
     "static/media/photo_8.png": "/wedding/static/media/photo_8.b406376ecae35a368d04.png",
     "static/media/photo_7.png": "/wedding/static/media/photo_7.1b2b38595cf1777f364b.png",
@@ -14,14 +13,17 @@
     "static/media/photo_3.png": "/wedding/static/media/photo_3.cf5dca33d7ec38da166f.png",
     "static/media/photo_9.png": "/wedding/static/media/photo_9.01bb5613289545cde4bd.png",
     "static/media/photo_10.png": "/wedding/static/media/photo_10.67c21119ea8f52fb6231.png",
+    "static/media/background-desktop.png": "/wedding/static/media/background-desktop.eb3f4297415776c9e834.png",
     "static/media/flowers.png": "/wedding/static/media/flowers.8050b979d2effd436dfb.png",
-    "static/media/MayraSzymonLogo.png": "/wedding/static/media/MayraSzymonLogo.022bce5ad4cdf412b3a9.png",
+    "static/media/join-us-banner.png": "/wedding/static/media/join-us-banner.70cb55b4c12353b7d9eb.png",
+    "static/media/test.png": "/wedding/static/media/test.16275328dc7eb39e9c07.png",
+    "static/media/day-two-banner.png": "/wedding/static/media/day-two-banner.7c15ba60275ee40b530b.png",
     "index.html": "/wedding/index.html",
-    "main.6dd92950.css.map": "/wedding/static/css/main.6dd92950.css.map",
-    "main.6f07b8bb.js.map": "/wedding/static/js/main.6f07b8bb.js.map"
+    "main.edcaae49.css.map": "/wedding/static/css/main.edcaae49.css.map",
+    "main.c41b322f.js.map": "/wedding/static/js/main.c41b322f.js.map"
   },
   "entrypoints": [
-    "static/css/main.6dd92950.css",
-    "static/js/main.6f07b8bb.js"
+    "static/css/main.edcaae49.css",
+    "static/js/main.c41b322f.js"
   ]
 }
