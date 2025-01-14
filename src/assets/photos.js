@@ -1,19 +1,14 @@
 
-import photo_1 from "../media/Argentina/photo_1.png"
-import photo_2 from "../media/Argentina/photo_2.png"
-import photo_3 from "../media/Argentina/photo_3.png"
-import photo_4 from "../media/Argentina/photo_4.png"
-import photo_5 from "../media/Argentina/photo_5.png"
-import photo_6 from "../media/Argentina/photo_6.png"
-import photo_7 from "../media/Argentina/photo_7.png"
-import photo_8 from "../media/Argentina/photo_8.png"
-import photo_9 from "../media/Argentina/photo_9.png"
-import photo_10 from "../media/Argentina/photo_10.png"
-
-const photos = [photo_1, photo_2, photo_3, 
-                photo_4, photo_5, photo_6, 
-                photo_7, photo_8, photo_9,
-                photo_10];
+const photos = ["https://i.imgur.com/vxUCkM0.jpeg",
+                "https://i.imgur.com/qppgoLo.jpeg",
+                "https://i.imgur.com/JBrrWxo.jpeg",
+                "https://i.imgur.com/CZGkG6K.jpeg",
+                "https://i.imgur.com/rMohY0f.jpeg",
+                "https://i.imgur.com/puQssqG.jpeg",
+                "https://i.imgur.com/nijLi9U.jpeg",
+                "https://i.imgur.com/Cchi9w1.jpeg",
+                "https://i.imgur.com/JuZc7P6.jpeg",
+                "https://i.imgur.com/3Q1hKty.jpeg",];
 
 // add alts
 

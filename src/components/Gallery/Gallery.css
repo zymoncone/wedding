@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 0;
+  margin: 2rem 0 1rem 0;
 }
 
 .gallery-row-container {
@@ -21,6 +21,7 @@
   width: calc((60vw) / 3);
   padding: 0;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .left-photo {

@@ -1,12 +1,11 @@
 import "./JoinUsBanner.css";
 import { Link } from "react-router-dom";
-import join_us_banner from "../../media/Root/join-us-banner.png";
 
 const JoinUsBanner = () => {
   return (
     <div className="join-us-banner-container">
       <div className="join-us-banner" style={{
-      backgroundImage: `url(${join_us_banner})`,
+      backgroundImage: `url(https://i.imgur.com/Pr9ZRgS.png)`,
       backgroundSize: "cover",
       backgroundPosition: "center",
     }}>

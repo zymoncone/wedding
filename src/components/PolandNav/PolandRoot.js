@@ -3,6 +3,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { isMobileDevice } from "../../assets/helper_functions";
 import NavBarMobile from "../NavBarMobile/NavBarMobile";
+import Footer from "../Footer/Footer";
 
 const PolandRoot = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -49,6 +50,7 @@ const PolandRoot = () => {
         </div>
       </div>}
       <Outlet />
+      <Footer />
     </div>
   );
 }

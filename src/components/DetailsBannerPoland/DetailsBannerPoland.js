@@ -1,13 +1,11 @@
 import "./DetailsBannerPoland.css";
-import test from "../../media/Root/test.png";
-import day_two_banner from "../../media/Root/day-two-banner.png";
 import { useState, useEffect } from "react";
 import { isMobileDevice } from "../../assets/helper_functions";
 
 const DetailsBannerPoland = (props) => {
   const [isMobile, setIsMobile] = useState(false);
 
-  const image = props.useDayOneSetup ? test : day_two_banner;
+  const image = props.useDayOneSetup ? "https://i.imgur.com/Y8AK06t.png" : "https://i.imgur.com/1hbCRsN.png";
   const text = props.useDayOneSetup ? "Wedding Day" : "Second Day";
   const date = props.useDayOneSetup ? "August 23" : "August 24";
 

@@ -1,12 +1,10 @@
 import "./PolandMain.css";
 import { useEffect, useState } from "react";
-import background_main from "../../media/Root/background-desktop.png";
 import CountDown from "../CountDown/CountDown";
 import BouncingArrow from "../BouncingArrow/BouncingArrow";
 import PolandWeddingDetails from "../WeddingDetails/PolandWeddingDetails";
 import OurStoryBanner from "../OurStoryBanner/OurStoryBanner";
 import JoinUsBanner from "../JoinUsBanner/JoinUsBanner";
-import Footer from "../Footer/Footer";
 import WhatsAppBanner from "../WhatsAppBanner/WhatsAppBanner";
 import { isMobileDevice } from "../../assets/helper_functions";
 
@@ -40,7 +38,7 @@ const PolandMain = () => {
   return (
     <div className="poland-main-container">
       <div className="home-background-container" style={{
-        backgroundImage: `url(${background_main})`,
+        backgroundImage: `url(https://i.imgur.com/8V7ir36.png)`,
         backgroundSize: "cover",
         backgroundPosition: isMobile ? "right" : "center",
         opacity: opacity,
@@ -57,7 +55,6 @@ const PolandMain = () => {
         <OurStoryBanner />
         <JoinUsBanner />
         <WhatsAppBanner />
-        <Footer />
       </div>
     </div>
   );

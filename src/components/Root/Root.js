@@ -1,12 +1,11 @@
 import "./Root.css";
 import Carousel from "../Carousel/Carousel";
-import background_main from "../../media/Root/background-desktop.png";
 import { Link } from "react-router-dom";
 
 const Root = () => {
   return (
     <div className="home-background-container" style={{
-      backgroundImage: `url(${background_main})`,
+      backgroundImage: `url(https://i.imgur.com/8V7ir36.png)`,
       backgroundSize: "cover",
       minHeight: "100vh",
     }}>

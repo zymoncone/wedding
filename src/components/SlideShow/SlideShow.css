@@ -6,7 +6,9 @@
   width: 100%;
   height: 100%;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 2;
+  transition: opacity 250ms ease-in-out;
 }
 
 .slide-show {
@@ -19,8 +21,8 @@
 
 .x-circle {
   position: absolute;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   top: 1rem;
   right: 1rem;
   color: whitesmoke;
@@ -34,8 +36,8 @@
 
 .arrow {
   position: absolute;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   color: whitesmoke;
   filter: drop-shadow(0rem 0rem 1rem rgb(0,0,0,0.2));
   z-index: 3;
@@ -60,7 +62,7 @@
 }
 
 .selection {
-  background-color: rgb(255, 120, 120);
+  background-color: whitesmoke;
   height: 0.7rem;
   width: 0.7rem;
   border-radius: 100%;
@@ -74,7 +76,7 @@
 }
 
 .selection-inactive {
-  background-color: grey;
+  background-color: rgb(102, 102, 102);
 }
 
 @media screen and (max-width: 600px) {
@@ -83,12 +85,20 @@
     height: auto;
   }
 
+  .arrow {
+    color: rgba(245, 245, 245, 0.5);
+  }
+
+  .x-circle {
+    color: rgba(245, 245, 245, 0.8);
+  }
+
   .arrow-left {
-    left: 0.3rem;
+    left: 0.1rem;
   }
-  
+
   .arrow-right {
-    right: 0.3rem;
+    right: 0.1rem;
   }
-  
+
 }

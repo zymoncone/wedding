@@ -32,7 +32,7 @@ const SlideShow = (props) => {
   }, [props.activeSlide])
 
   return (
-  <div className="slide-show-container">
+  <div className="slide-show-container" style={{opacity: props.opacity}}>
   <GoXCircleFill className="x-circle" onClick={props.handleClose} />
   <div key={props.idx} className="slide-show">
     {mutliSlides && <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide}/>}
