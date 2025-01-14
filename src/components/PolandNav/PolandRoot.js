@@ -20,8 +20,17 @@ const PolandRoot = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
-    <div className="poland-root-container">
+    <div className="poland-root-container" id="poland-root">
       {isMobile ? <NavBarMobile /> :
       <div className="nav-poland-container-desktop">
         <div className="nav-directory-container">

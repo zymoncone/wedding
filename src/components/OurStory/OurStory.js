@@ -1,7 +1,20 @@
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Gallery from "../Gallery/Gallery";
 import "./OurStory.css";
 
 const OurStory = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="our-story">
       <h1>How We Met</h1>

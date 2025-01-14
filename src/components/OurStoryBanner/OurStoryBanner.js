@@ -6,7 +6,7 @@ const OurStoryBanner = () => {
     <div className="our-story-banner">
       <div className="our-story-banner-text">
         <div className="our-story-banner-title">See how it all started</div>
-        <Link to={`story`} className="button-main" style={{backgroundColor: "black", color: "white", fontWeight: 300}}>
+        <Link to={`story#poland-root`} className="button-main" style={{backgroundColor: "black", color: "white", fontWeight: 300}}>
           <span>Our Story</span>
         </Link>
       </div>
