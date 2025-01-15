@@ -1,0 +1,52 @@
+.travel-and-stay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.travel-background-container {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  margin: 0;
+  z-index: 0;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.travel-text {
+  margin: 250px 0 0 0;
+  text-align: center;
+  font-family: "Newsreader", serif;
+  color: white;
+  font-weight: 500;
+  font-size: 70px;
+}
+
+.subtext {
+  margin: 20px 0 0 0;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 600px) {
+  .travel-background-container {
+    height: 55%;
+    top: 27%;
+  }
+
+  .travel-text {
+    margin: 40% 0 0 0;
+    font-size: 50px;
+  }
+
+  .subtext {
+    margin: 10px 0 0 0;
+    font-size: 25px;
+    font-weight: 300;
+  }
+}

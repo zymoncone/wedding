@@ -63,7 +63,8 @@
 }
 
 .nav-link-mobile {
-  margin: 10px 0;
+  margin: 12px 0;
+  text-underline-offset: 4px;
 }
 
 .mobile-nav-link-text {

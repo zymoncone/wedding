@@ -13,6 +13,7 @@ import Root from './components/Root/Root';
 import PolandRoot from './components/PolandNav/PolandRoot';
 import PolandMain from './components/PolandMain/PolandMain';
 import OurStory from './components/OurStory/OurStory';
+import TravelAndStay from './components/TravelAndStay/TravelAndStay';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/poland/story",
         element: <OurStory />,
+      },
+      {
+        path: "/poland/travelandstay",
+        element: <TravelAndStay />,
       }
     ],
   },

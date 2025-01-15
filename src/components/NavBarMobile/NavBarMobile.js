@@ -10,7 +10,11 @@ const NavBarMobile = () => {
 
   const location = useLocation();
   const isHome = location.pathname === "/poland";
-  const navStyle = isHome && isOpen ? "black" : (!isHome ? "black" : "white");
+  const isStory = location.pathname === "/poland/story";
+  const isTravel = location.pathname === "/poland/travelandstay";
+  const isRegistry = location.pathname === "/poland/registry";
+  const isOnBackground = isHome || isTravel;
+  const navStyle = isOnBackground && isOpen ? "black" : (!isOnBackground ? "black" : "white");
 
   const menuOpenSettings = {
     backgroundColor: "#fff5ee",
@@ -46,7 +50,7 @@ const NavBarMobile = () => {
       <div className="navbar-mobile-container" style={navBarStyle}>
         <div className="nav-name-date-header">
           <span className="nav-link-mobile" onClick={() => setOpen(false)}>
-            <Link to={``} className="nav-name-date-header-text" style={{color: navStyle}}>M&S 23.AUG.25</Link>
+            <Link to={``} className="nav-name-date-header-text" style={{color: navStyle}}><span style={{fontWeight: 400}}>M&S</span> 23.AUG.25</Link>
           </span>
         </div>
         <div className="nav-hamburger-container" style={{color: navStyle}}>
@@ -62,13 +66,16 @@ const NavBarMobile = () => {
       </div>
       <div className="grid-rows-collapsible" style={isOpen ? { gridTemplateRows: "1fr" } : {}}>
         <div className="nav-link-mobile-container">
-          <span className="nav-link-mobile" onClick={() => setOpen(false)}>
+          <span className="nav-link-mobile" style={isHome ? { textDecoration: "underline" } : {}} onClick={() => setOpen(false)}>
+            <Link to={``} className="mobile-nav-link-text">Wedding</Link>
+          </span>
+          <span className="nav-link-mobile" style={isStory ? { textDecoration: "underline" } : {}} onClick={() => setOpen(false)}>
             <Link to={`story`} className="mobile-nav-link-text">Our Story</Link>
           </span>
-          <span className="nav-link-mobile" onClick={() => setOpen(false)}>
+          <span className="nav-link-mobile" style={isTravel ? { textDecoration: "underline" } : {}} onClick={() => setOpen(false)}>
             <Link to={`travelandstay`} className="mobile-nav-link-text">Travel & Stay</Link>
           </span>
-          <span className="nav-link-mobile" onClick={() => setOpen(false)}>
+          <span className="nav-link-mobile" style={isRegistry ? { textDecoration: "underline" } : {}} onClick={() => setOpen(false)}>
             <Link to={`registry`} className="mobile-nav-link-text">Registry</Link>
           </span>
           <div className="rsvp-button-container-mobile" onClick={() => setOpen(false)}>

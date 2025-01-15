@@ -10,7 +10,9 @@ const PolandRoot = () => {
 
   const location = useLocation();
   const isHome = location.pathname === "/poland";
-  const navStyle = {color: isHome ? "white" : "black"};
+  const isTravel = location.pathname === "/poland/travelandstay";
+  const isOnBackground = isHome || isTravel;
+  const navStyle = {color: isOnBackground ? "white" : "black"};
 
   useEffect(() => {
     if (isMobileDevice()) {
