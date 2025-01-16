@@ -1,12 +1,20 @@
 import "./PolandRoot.css";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext, useContext } from "react";
 import { isMobileDevice } from "../../assets/helper_functions";
 import NavBarMobile from "../NavBarMobile/NavBarMobile";
 import Footer from "../Footer/Footer";
 
+const AppContext = createContext();
+
+export function useAppContext() {
+  return useContext(AppContext); // Custom hook for consuming the context
+}
+
 const PolandRoot = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isOpen, setOpen] = useState(false);
+  const [isDoneAnimating, setDoneAnimating] = useState(false);
 
   const location = useLocation();
   const isHome = location.pathname === "/poland";
@@ -33,7 +41,7 @@ const PolandRoot = () => {
 
   return (
     <div className="poland-root-container" id="poland-root">
-      {isMobile ? <NavBarMobile /> :
+      {isMobile ? <NavBarMobile isOpen={isOpen} setOpen={setOpen} setDoneAnimating={setDoneAnimating}/> :
       <div className="nav-poland-container-desktop">
         <div className="nav-directory-container">
           <div className="our-story">
@@ -60,7 +68,9 @@ const PolandRoot = () => {
           </Link>
         </div>
       </div>}
-      <Outlet />
+      <AppContext.Provider value={{isDoneAnimating}}>
+        <Outlet />
+      </AppContext.Provider>
       <Footer />
     </div>
   );

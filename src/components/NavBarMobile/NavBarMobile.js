@@ -3,8 +3,7 @@ import { Pivot as Hamburger } from 'hamburger-react';
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const NavBarMobile = () => {
-  const [isOpen, setOpen] = useState(false);
+const NavBarMobile = ({ isOpen, setOpen, setDoneAnimating }) => {
   const [height, setHeight] = useState("auto");
   const [navBarStyle, setNavBarStyle] = useState({});
 
@@ -35,6 +34,7 @@ const NavBarMobile = () => {
       const timer = setTimeout(() => {
         setHeight("auto");
         setNavBarStyle({});
+        setDoneAnimating(true);
       }, 400);
 
 
@@ -42,8 +42,9 @@ const NavBarMobile = () => {
     } else {
       setHeight("100vh");
       setNavBarStyle(openNavBarStyle);
+      setDoneAnimating(false);
     }
-  }, [isOpen]);
+  }, [isOpen, setDoneAnimating, setNavBarStyle, setHeight]);
 
   return (
     <div className="nav-poland-container-mobile" style={isOpen ? menuOpenSettings : menuClosedSettings}>

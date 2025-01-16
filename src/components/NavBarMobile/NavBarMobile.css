@@ -64,7 +64,9 @@
 
 .nav-link-mobile {
   margin: 12px 0;
+  text-decoration: none;
   text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
 }
 
 .mobile-nav-link-text {
