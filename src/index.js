@@ -6,8 +6,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import PageNotFound from './components/PageNotFound/PageNotFound';
-import Poland from './components/Poland/Poland';
-import Argentina from './components/Argentina/Argentina';
 import RSVPFormContainer from './components/RSVPForm/RSVPFormContainer';
 import Root from './components/Root/Root';
 import PolandRoot from './components/PolandRoot/PolandRoot';

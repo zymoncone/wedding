@@ -1,6 +1,4 @@
 import "./WeddingDetails.css";
-import { PiCastleTurretDuotone } from "react-icons/pi";
-import { PiCheersDuotone } from "react-icons/pi";
 import Button from "../Button/Button";
 import DetailsBannerPoland from "../DetailsBannerPoland/DetailsBannerPoland";
 

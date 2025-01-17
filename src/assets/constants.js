@@ -1,1 +1,1 @@
-export const VALID_PAGES = ["poland", "argentina"];
+export const VALID_PAGES = ["poland", ""]; // add argentina when ready
