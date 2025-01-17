@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import CountDown from "../CountDown/CountDown";
 import BouncingArrow from "../BouncingArrow/BouncingArrow";
 import PolandWeddingDetails from "../WeddingDetails/PolandWeddingDetails";
-import OurStoryBanner from "../OurStoryBanner/OurStoryBanner";
+import LinkBanner from "../LinkBanner/LinkBanner";
 import JoinUsBanner from "../JoinUsBanner/JoinUsBanner";
 import WhatsAppBanner from "../WhatsAppBanner/WhatsAppBanner";
 import { isMobileDevice } from "../../assets/helper_functions";
@@ -52,7 +52,7 @@ const PolandMain = () => {
       </div>
       <div className="poland-wedding-details">
         <PolandWeddingDetails />
-        <OurStoryBanner />
+        <LinkBanner />
         <JoinUsBanner />
         <WhatsAppBanner />
       </div>

@@ -12,6 +12,7 @@ const NavBarMobile = ({ isOpen, setOpen, setDoneAnimating }) => {
   const isStory = location.pathname === "/poland/story";
   const isTravel = location.pathname === "/poland/travelandstay";
   const isRegistry = location.pathname === "/poland/registry";
+  const isBlog = location.pathname === "/poland/blog";
   const isOnBackground = isHome || isTravel;
   const navStyle = isOnBackground && isOpen ? "black" : (!isOnBackground ? "black" : "white");
 
@@ -75,6 +76,9 @@ const NavBarMobile = ({ isOpen, setOpen, setDoneAnimating }) => {
           </span>
           <span className="nav-link-mobile" style={isTravel ? { textDecoration: "underline" } : {}} onClick={() => setOpen(false)}>
             <Link to={`travelandstay`} className="mobile-nav-link-text">Travel & Stay</Link>
+          </span>
+          <span className="nav-link-mobile" style={isBlog ? { textDecoration: "underline" } : {}} onClick={() => setOpen(false)}>
+            <Link to={`blog`} className="mobile-nav-link-text">Mayra's Blog</Link>
           </span>
           <span className="nav-link-mobile" style={isRegistry ? { textDecoration: "underline" } : {}} onClick={() => setOpen(false)}>
             <Link to={`registry`} className="mobile-nav-link-text">Registry</Link>

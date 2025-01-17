@@ -45,10 +45,10 @@ const Map = () => {
     <div className="map-container">
       <ComposableMap projection="geoMercator"
         projectionConfig={{
-          center: [20.0, 52.0], // Center on Poland (longitude, latitude)
+          center: [19.0, 52.0], // Center on Poland (longitude, latitude)
           scale: 1500,          // Adjust the zoom level
         }}
-        width={600}
+        width={350}
         height={300}>
         <Geographies geography={geoUrl}
           stroke="white"

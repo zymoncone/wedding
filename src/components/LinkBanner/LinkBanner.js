@@ -1,7 +1,7 @@
-import "./OurStoryBanner.css";
+import "./LinkBanner.css";
 import { Link } from 'react-router-dom';
 
-const OurStoryBanner = () => {
+const LinkBanner = () => {
   return (
     <div className="our-story-banner">
       <div className="our-story-banner-text">
@@ -14,4 +14,4 @@ const OurStoryBanner = () => {
   );
 }
 
-export default OurStoryBanner;
+export default LinkBanner;

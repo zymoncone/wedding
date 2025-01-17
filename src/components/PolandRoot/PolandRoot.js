@@ -44,13 +44,16 @@ const PolandRoot = () => {
       {isMobile ? <NavBarMobile isOpen={isOpen} setOpen={setOpen} setDoneAnimating={setDoneAnimating}/> :
       <div className="nav-poland-container-desktop">
         <div className="nav-directory-container">
-          <div className="our-story">
+          <div className="nav-link-desktop">
             <Link to={`story`} style={navStyle}>Our Story</Link>
           </div>
-          <div className="wedding-details">
+          <div className="nav-link-desktop">
             <Link to={`travelandstay`} style={navStyle}>Travel & Stay</Link>
           </div>
-          <div className="registry">
+          <div className="nav-link-desktop">
+            <Link to={`blog`} style={navStyle}>Mayra's Blog</Link>
+          </div>
+          <div className="nav-link-desktop">
             <Link to={`registry`} style={navStyle}>Registry</Link>
           </div>
         </div>

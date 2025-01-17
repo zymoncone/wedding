@@ -10,10 +10,12 @@ import Poland from './components/Poland/Poland';
 import Argentina from './components/Argentina/Argentina';
 import RSVPFormContainer from './components/RSVPForm/RSVPFormContainer';
 import Root from './components/Root/Root';
-import PolandRoot from './components/PolandNav/PolandRoot';
+import PolandRoot from './components/PolandRoot/PolandRoot';
 import PolandMain from './components/PolandMain/PolandMain';
 import OurStory from './components/OurStory/OurStory';
 import TravelAndStay from './components/TravelAndStay/TravelAndStay';
+import Blog from './components/Blog/Blog';
+import Registry from './components/Registry/Registry';
 
 const router = createBrowserRouter([
   {
@@ -40,7 +42,15 @@ const router = createBrowserRouter([
       {
         path: "/poland/travelandstay",
         element: <TravelAndStay />,
-      }
+      },
+      {
+        path: "/poland/blog",
+        element: <Blog />,
+      },
+      {
+        path: "/poland/registry",
+        element: <Registry />,
+      },
     ],
   },
 ]);

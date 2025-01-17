@@ -1,15 +1,15 @@
 .map-container {
   height: 100%;
-  width: 100%;
-  border-radius: 15px;
+  width: 60%;
+  border-radius: 0px;
   overflow: hidden;
-  margin: 0px 0;
+  margin: 0;
   padding: 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .map-container {
-    width: 100%;
+    width: calc(100% - 30px);
   }
 
 }

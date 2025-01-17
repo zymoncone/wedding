@@ -41,10 +41,17 @@
   color: whitesmoke;
   filter: drop-shadow(0rem 0rem 1rem rgb(0,0,0,0.2));
   z-index: 3;
+  user-select: none; /* Prevent text selection */
+  outline: none; /* Remove outline */
 }
 
 .arrow:hover {
   cursor: pointer;
+}
+
+.arrow:disabled {
+  cursor: not-allowed;
+  opacity: 0;
 }
 
 .arrow-left {

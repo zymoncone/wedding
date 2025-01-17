@@ -6,7 +6,7 @@ const DetailsBannerPoland = (props) => {
   const [isMobile, setIsMobile] = useState(false);
 
   const image = props.useDayOneSetup ? "https://i.imgur.com/Y8AK06t.png" : "https://i.imgur.com/1hbCRsN.png";
-  const text = props.useDayOneSetup ? "Wedding Day" : "Second Day";
+  const text = props.useDayOneSetup ? "Wedding Day" : "Poprawiny";
   const date = props.useDayOneSetup ? "August 23" : "August 24";
 
   useEffect(() => {

@@ -65,24 +65,24 @@ const RSVPFormContainer = () => {
     <div className="rsvp-form-container">
       <h1 className="rsvp-title">RSVP</h1>
       {guestMatch &&
-        <RSVPForm partyData={partyData} 
-                  setGuestMatch={setGuestMatch} 
+        <RSVPForm partyData={partyData}
+                  setGuestMatch={setGuestMatch}
                   submit={submit}
                   setSubmit={setSubmit}
                   confirmedRSVP={confirmedRSVP}
                   setConfirmedRSVP={setConfirmedRSVP}
                   /> }
         {!guestMatch && !submit &&
-        <NameVerificationPage handleContinue={handleContinue} 
-                              name={name} 
-                              setName={setName} 
+        <NameVerificationPage handleContinue={handleContinue}
+                              name={name}
+                              setName={setName}
                               errorMessage={errorMessage}
                               loading={loading} />
       }
       {!guestMatch && submit &&
         <div>
           <div className="thank-you-text">Thank you for your RSVP! <br/> Your entry has been recorded.</div>
-          <button className="button-23" onClick={goBack}>RSVP Another</button>
+          <button className="button-23" onClick={goBack} style={{margin: "2rem 0 5rem 0"}}>RSVP Another</button>
         </div>
       }
     </div>
