@@ -26,27 +26,27 @@ const router = createBrowserRouter([
     element: <PolandRoot />,
     children: [
       {
-        path: "/poland",
+        path: "",
         element: <PolandMain />,
       },
       {
-        path: "/poland/rsvp",
+        path: "rsvp",
         element: <RSVPFormContainer />,
       },
       {
-        path: "/poland/story",
+        path: "story",
         element: <OurStory />,
       },
       {
-        path: "/poland/travelandstay",
+        path: "travelandstay",
         element: <TravelAndStay />,
       },
       {
-        path: "/poland/blog",
+        path: "blog",
         element: <Blog />,
       },
       {
-        path: "/poland/registry",
+        path: "registry",
         element: <Registry />,
       },
     ],
