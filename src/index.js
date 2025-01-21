@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     element: <PolandRoot />,
     children: [
       {
-        path: "",
+        index: true,
         element: <PolandMain />,
       },
       {
@@ -50,6 +50,12 @@ const router = createBrowserRouter([
         element: <Registry />,
       },
     ],
+  },
+  {
+    future: {
+      v7_relativeSplatPath: true,
+      v7_startTransition: true,
+    },
   },
 ]);
 
