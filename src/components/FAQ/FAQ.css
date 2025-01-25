@@ -26,7 +26,7 @@
 @media screen and (max-width: 1025px) {
   .faq-container {
     width: 92.5%;
-    margin: 2rem 0 18vh 0;
+    margin: 2rem 0 17vh 0;
   }
 
   .faq-title {
@@ -37,5 +37,10 @@
   .faq-answer {
     margin: 25px 0;
   }
+}
 
+@media screen and (max-width: 650px) {
+  .faq-container {
+    margin: 2rem 0 3rem 0;
+  }
 }

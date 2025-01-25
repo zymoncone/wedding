@@ -4,15 +4,15 @@ import Collapsible from "../Collapsible/Collapsible";
 const faq = [
   {
     question: "¿Puedo traer invitados adicionales o niños que no estén en la invitación?",
-    answer: "Lamentablemente no, ya que hemos pagado por un número fijo de platos. Solo deben asistir las personas mencionadas al final de la presentación en video."
+    answer: "Lamentablemente, no es posible, ya que hemos contratado un número fijo de platos. Solo las personas mencionadas al final de la invitación digital pueden asistir."
   },
   {
-    question: "¿A qué hora debo llegar?",
-    answer: "Los novios harán su entrada a las 9:00 p.m. Nos encantaría que estuvieras allí para darles la bienvenida. Por favor, trata de no llegar demasiado temprano."
+    question: "¿A qué hora tendría que llegar?",
+    answer: "Los novios harán su entrada a las 21:00 horas. Nos encantaría que estuvieras allí para darles la bienvenida. Por favor, procurá no llegar demasiado temprano."
   },
   {
-    question: "¿Qué debo llevar puesto?",
-    answer: "¡Nos encantaría que aprovecharas esta oportunidad para vestirte bonito! Un vestido elegante para las mujeres y un traje o camisa de botones para los hombres sería lo más adecuado."
+    question: "¿Cómo me visto?",
+    answer: "Nos gustaría que aprovecharas esta oportunidad para vestirte bonito. Un vestido o conjunto lindo para las mujeres y un traje o camisa de botones para los hombres por ejemplo."
   },
   {
     question: "¿Qué más debo llevar?",
@@ -23,12 +23,12 @@ const faq = [
     answer: "Por favor, avísale a Mayra o Analia lo antes posible sobre tus restricciones alimentarias para poder tomar las precauciones necesarias."
   },
   {
-    question: "¿Qué debo regalar?",
-    answer: "Nos sentimos muy agradecidos de poder celebrar con nuestros amigos y familiares, ¡y tu presencia es el mejor regalo que podemos recibir! Sin embargo, si deseas dar un obsequio, por favor ten en cuenta que viajamos internacionalmente y no podemos llevar objetos grandes."
+    question: "¿Qué les puedo regalar?",
+    answer: "Su presencia es el mejor regalo que podemos recibir! Estamos muy agradecidos de poder celebrar con nuestros amigos y familiares. No obstante, si deseas hacernos un regalo, te pedimos que tengas en cuenta que estamos viajando internacionalmente y no podremos llevar objetos grandes."
   },
   {
-    question: "¿Por qué no fui invitado a la Misa/ceremonia?",
-    answer: "Tendremos una misa íntima de 'bendición de los anillos' en La Capilla Stella Montis a las 6:30 p.m. ese día. Debido a que está algo alejada del lugar de la fiesta, decidimos limitar las invitaciones a familiares cercanos y amigos muy cercanos. Si deseas asistir, ¡te damos la bienvenida!"
+    question: "¿Por qué no fui invitado a la misa/ceremonia?",
+    answer: "Tendremos una misa íntima de 'bendición de los anillos' en La Capilla Stella Montis a las 18:30 horas de ese día. Debido a la distancia con el salón  de la fiesta, decidimos invitar únicamente a los familiares más cercanos y amigos íntimos. Si deseás acompañarnos, serás más que bienvenido!"
   }
 ];
 

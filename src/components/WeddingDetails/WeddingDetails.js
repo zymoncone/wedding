@@ -98,37 +98,37 @@ const WeddingDetails = ({ lang }) => {
 
   return (
     <div className="details-parent-container">
-      { isPoland &&
-      <>
-      <DetailsBanner useDayOneSetup={true} lang={lang} />
-      <div className="details-individual-container-poland">
-        <h1 className="subtitle">{first_banner_title[lang]}</h1>
-        <div className="details-subtext-container">
-          <div className="date-details-container">
-            <p className="date-details-subtext">
-              {first_banner_time[lang]}
-            </p>
+      {isPoland &&
+        <>
+          <DetailsBanner useDayOneSetup={true} lang={lang} />
+          <div className="details-individual-container-poland">
+            <h1 className="subtitle">{first_banner_title[lang]}</h1>
+            <div className="details-subtext-container">
+              <div className="date-details-container">
+                <p className="date-details-subtext">
+                  {first_banner_time[lang]}
+                </p>
+              </div>
+              <div className="address-details-container">
+                <p className="address-details-subtext">
+                  {first_banner_address_top[lang]}
+                </p>
+                <p className="address-details-subtext">
+                  {first_banner_address_mid[lang]}
+                </p>
+                <p className="address-details-subtext">
+                  {first_banner_address_bot[lang]}
+                </p>
+              </div>
+            </div>
+            <Button text={map_text[lang]} address={first_banner_map[lang]} />
+            <div className="attire-details-container">
+              <p className="attire-details-subtext">
+                {first_banner_attire[lang]}
+              </p>
+            </div>
           </div>
-          <div className="address-details-container">
-            <p className="address-details-subtext">
-              {first_banner_address_top[lang]}
-            </p>
-            <p className="address-details-subtext">
-              {first_banner_address_mid[lang]}
-            </p>
-            <p className="address-details-subtext">
-              {first_banner_address_bot[lang]}
-            </p>
-          </div>
-        </div>
-        <Button text={map_text[lang]} address={first_banner_map[lang]} />
-        <div className="attire-details-container">
-          <p className="attire-details-subtext">
-            {first_banner_attire[lang]}
-          </p>
-        </div>
-      </div>
-      </>}
+        </>}
       <DetailsBanner useDayOneSetup={false} lang={lang} />
       <div className="details-individual-container-poland">
         <h1 className="subtitle">{second_banner_title[lang]}</h1>
@@ -151,11 +151,11 @@ const WeddingDetails = ({ lang }) => {
           </div>
         </div>
         <Button text={map_text[lang]} address={second_banner_map[lang]} />
-        <div className="attire-details-container">
+        {isPoland && <div className="attire-details-container">
           <p className="attire-details-subtext">
             {second_banner_attire[lang]}
           </p>
-        </div>
+        </div>}
       </div>
     </div>
   );
