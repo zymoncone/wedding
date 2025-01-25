@@ -25,10 +25,10 @@ const IndividualGuestData = ({ item, index, lastIndex, submit, setConfirmedRSVP 
 
   useEffect(() => {
     if (submit) {
-      console.log('submitting RSVP for:', item['id']);
-      console.log('setting RSVP to:', rsvp);
-      console.log('setting song request to:', songRequest);
-      updateDynamoDB(item['id'], rsvp, songRequest);
+      updateDynamoDB(
+        item['id'],
+        rsvp,
+        songRequest.replace(/[^a-zA-Z0-9\s]/g, '').trim());
     }
   }, [submit, item, rsvp, songRequest]);
 

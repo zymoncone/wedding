@@ -12,7 +12,7 @@ const NameVerificationPage = ({handleContinue, name, setName, errorMessage, load
         Name not found. Please make sure it matches the invitaiton exactly.
       </p>}
       <div style={{margin: "1rem"}}></div>
-      {loading ? 
+      {loading ?
         <div className="loading-spinner"></div> :
         <button className="button-23">Continue</button>
       }

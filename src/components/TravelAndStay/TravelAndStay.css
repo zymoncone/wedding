@@ -155,7 +155,7 @@
   padding: 0;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .directions-title {
     margin: 0 0 1rem 0;
   }

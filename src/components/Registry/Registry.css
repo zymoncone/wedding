@@ -31,11 +31,17 @@
   margin: 10rem 0 3rem 0;
 }
 
+@media screen and (max-width: 1000px) {
+  .registry-text {
+    margin: 7rem 0 4rem 0;
+    max-width: 92.5%;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .registry-text {
     font-size: 25px;
     margin: 7rem 0 2rem 0;
     max-width: 92.5%;
   }
-
 }

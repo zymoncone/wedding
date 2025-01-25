@@ -1,14 +1,21 @@
 import "./CountDown.css";
 import React, { useState, useEffect } from 'react';
-  const dates = {'Poland': `2025/08/23`,
-                 'Argentina': `2025/02/15`};
 
-  const days_by_language = {'Poland': ['dni', 'godz', 'min', 'sek'],
-                            'Argentina': ['días', 'hs', 'min', 'seg']};
+const dates = {
+  'PL': `2025/08/23`,
+  'EN': `2025/08/23`,
+  'SP': `2025/03/01`
+};
 
-const CountDown = ({ country }) => {
+const days_by_language = {
+  'PL': ['dni', 'godz', 'min', 'sek'],
+  'EN': ['days', 'hrs', 'min', 'sec'],
+  'SP': ['días', 'hs', 'min', 'seg']
+};
+
+const CountDown = ({ lang }) => {
   const calculateTimeLeft = () => {
-    const difference = +new Date(dates[country]) - +new Date();
+    const difference = +new Date(dates[lang]) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -37,19 +44,19 @@ const CountDown = ({ country }) => {
       <div className="full-count-container">
         <div className="count-container">
           <div className="count-text">{timeLeft.days}</div>
-          <div className="subtext">{days_by_language[country][0]}</div>
+          <div className="subtext">{days_by_language[lang][0]}</div>
         </div>
         <div className="count-container">
           <div className="count-text">{timeLeft.hours}</div>
-          <div className="subtext">{days_by_language[country][1]}</div>
+          <div className="subtext">{days_by_language[lang][1]}</div>
         </div>
         <div className="count-container">
           <div className="count-text">{timeLeft.minutes}</div>
-          <div className="subtext">{days_by_language[country][2]}</div>
+          <div className="subtext">{days_by_language[lang][2]}</div>
         </div>
         <div className="count-container">
           <div className="count-text">{timeLeft.seconds}</div>
-          <div className="subtext">{days_by_language[country][3]}</div>
+          <div className="subtext">{days_by_language[lang][3]}</div>
         </div>
       </div>
     </div>

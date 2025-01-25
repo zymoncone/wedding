@@ -1,12 +1,25 @@
 import "./Root.css";
 import Carousel from "../Carousel/Carousel";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { isMobileDevice } from "../../assets/helper_functions";
 
 const Root = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (isMobileDevice()) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, []);
+
   return (
     <div className="home-background-container" style={{
       backgroundImage: `url(https://i.imgur.com/8V7ir36.png)`,
       backgroundSize: "cover",
+      backgroundPosition: isMobile ? "right" : "center",
       minHeight: "100vh",
     }}>
       <div className="home-text-container">

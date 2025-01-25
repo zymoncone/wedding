@@ -36,8 +36,8 @@
   margin: 0 0 0 0.3rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .individual-photo {
-    width: calc((92.5vw - 0.7rem) / 2);
+    width: calc((80vw) / 3);
   }
 }

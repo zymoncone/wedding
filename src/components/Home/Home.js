@@ -1,4 +1,4 @@
-import "./PolandMain.css";
+import "./Home.css";
 import { useEffect, useState } from "react";
 import CountDown from "../CountDown/CountDown";
 import BouncingArrow from "../BouncingArrow/BouncingArrow";
@@ -7,10 +7,15 @@ import LinkBanner from "../LinkBanner/LinkBanner";
 import JoinUsBanner from "../JoinUsBanner/JoinUsBanner";
 import WhatsAppBanner from "../WhatsAppBanner/WhatsAppBanner";
 import { isMobileDevice } from "../../assets/helper_functions";
+import { useAppContext } from "../SubRoot/SubRoot";
 
-const PolandMain = () => {
+const Home = () => {
   const [opacity, setOpacity] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
+
+  const { lang } = useAppContext();
+
+  const isPoland = (lang === "EN") || (lang === "PL");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +42,7 @@ const PolandMain = () => {
 
   return (
     <div className="poland-main-container">
-      <div className="home-background-container" style={{
+      <div className="main-background-container" style={{
         backgroundImage: `url(https://i.imgur.com/8V7ir36.png)`,
         backgroundSize: "cover",
         backgroundPosition: isMobile ? "right" : "center",
@@ -46,18 +51,18 @@ const PolandMain = () => {
       }}>
         <div className="poland-home-content">
           <div className="poland-names-title">Mayra & Szymon</div>
-          <CountDown country={'Poland'} />
+          <CountDown lang={lang} />
           <BouncingArrow />
         </div>
       </div>
       <div className="poland-wedding-details">
-        <PolandWeddingDetails />
-        <LinkBanner />
-        <JoinUsBanner />
-        <WhatsAppBanner />
+        <PolandWeddingDetails lang={lang} />
+        <LinkBanner lang={lang} />
+        {isPoland && <JoinUsBanner />}
+        {isPoland && <WhatsAppBanner />}
       </div>
     </div>
   );
 }
 
-export default PolandMain;
+export default Home;

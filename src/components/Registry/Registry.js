@@ -1,7 +1,7 @@
 import "./Registry.css";
 import { useEffect, useState } from "react";
 import { isMobileDevice } from "../../assets/helper_functions";
-import { useAppContext } from "../PolandRoot/PolandRoot";
+import { useAppContext } from "../SubRoot/SubRoot";
 
 const Registry = () => {
   const [isMobile, setIsMobile] = useState(false);

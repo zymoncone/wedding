@@ -8,8 +8,8 @@ import {
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import RSVPFormContainer from './components/RSVPForm/RSVPFormContainer';
 import Root from './components/Root/Root';
-import PolandRoot from './components/PolandRoot/PolandRoot';
-import PolandMain from './components/PolandMain/PolandMain';
+import SubRoot from './components/SubRoot/SubRoot';
+import Home from './components/Home/Home';
 import OurStory from './components/OurStory/OurStory';
 import TravelAndStay from './components/TravelAndStay/TravelAndStay';
 import Blog from './components/Blog/Blog';
@@ -23,11 +23,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/poland",
-    element: <PolandRoot />,
+    element: <SubRoot lang={"EN"} />,
     children: [
       {
         index: true,
-        element: <PolandMain />,
+        element: <Home />,
       },
       {
         path: "rsvp",
@@ -48,6 +48,20 @@ const router = createBrowserRouter([
       {
         path: "registry",
         element: <Registry />,
+      },
+    ],
+  },
+  {
+    path: "/argentina",
+    element: <SubRoot lang={"SP"} />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "story",
+        element: <OurStory />,
       },
     ],
   },

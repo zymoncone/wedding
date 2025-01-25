@@ -2,11 +2,10 @@ import './RSVPForm.css';
 import IndividualGuestData from './IndividualGuestData';
 import { useEffect } from 'react';
 import { sleep } from '../../assets/helper_functions';
-// import PolandDetailsForRSVP from '../PolandDetailsForRSVP/PolandDetailsForRSVP';
 
-const RSVPForm = ({partyData, 
-                   setGuestMatch, 
-                   submit, 
+const RSVPForm = ({partyData,
+                   setGuestMatch,
+                   submit,
                    setSubmit,
                    confirmedRSVP,
                    setConfirmedRSVP}) => {
@@ -31,7 +30,6 @@ const RSVPForm = ({partyData,
 
   return (
     <div>
-      {/* <PolandDetailsForRSVP /> */}
       {partyData && partyData.length > 0 ? (
         <form className="rsvp-form" onSubmit={handleSubmit}>
           <div className="invited-guests-container">
@@ -43,9 +41,9 @@ const RSVPForm = ({partyData,
             ))}
           </div>
           {partyData.map((item, index) => (
-            <IndividualGuestData key={index} 
-                                 item={item} 
-                                 index={index} 
+            <IndividualGuestData key={index}
+                                 item={item}
+                                 index={index}
                                  lastIndex={(partyData.length - 1)}
                                  submit={submit}
                                  setConfirmedRSVP={setConfirmedRSVP} />

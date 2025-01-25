@@ -1,8 +1,8 @@
 import "./TravelAndStay.css";
 import { useEffect, useState } from "react";
-import { isMobileDevice } from "../../assets/helper_functions";
+import { isMobileDevice, isIpad } from "../../assets/helper_functions";
 import Map from "../Map/Map";
-import { useAppContext } from "../PolandRoot/PolandRoot";
+import { useAppContext } from "../SubRoot/SubRoot";
 import Button from "../Button/Button";
 
 const TravelAndStay = () => {
@@ -23,7 +23,7 @@ const TravelAndStay = () => {
       <div className="travel-background-container" style={{
         backgroundImage: `url(https://i.imgur.com/E0XH98J.png)`,
         backgroundSize: "cover",
-        backgroundPosition: isMobile ? "-700px" : "center",
+        backgroundPosition: isMobile && !isIpad ? "-700px" : "center",
         position: (isDoneAnimating || !isMobile) ? "relative" : "fixed",
         opacity: (isDoneAnimating || !isMobile) ? 1 : 0,
       }}>
