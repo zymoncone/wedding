@@ -21,9 +21,11 @@ const NavBarMobile = ({ isOpen, setOpen, setDoneAnimating, lang }) => {
   const isTravel = location.pathname === "/poland/travelandstay";
   const isRegistry = location.pathname === "/poland/registry";
   const isBlog = location.pathname === "/poland/blog";
+  const isFAQ = location.pathname === "/argentina/faq";
   const isOnBackground = isHome || isTravel;
   const navStyle = isOnBackground && isOpen ? "black" : (!isOnBackground ? "black" : "white");
   const isPoland = (lang === "EN") || (lang === "PL");
+  const isArgentina = lang === "SP";
 
   const menuOpenSettings = {
     backgroundColor: "#fff5ee",
@@ -95,6 +97,11 @@ const NavBarMobile = ({ isOpen, setOpen, setDoneAnimating, lang }) => {
                 <Link to={`registry`} className="mobile-nav-link-text">{Link_5[lang]}</Link>
               </span>
             </>}
+
+          {isArgentina &&
+            <span className="nav-link-mobile" style={isFAQ ? { textDecoration: "underline" } : {}} onClick={() => setOpen(false)}>
+              <Link to={`faq`} className="mobile-nav-link-text">Preguntas Frecuentes</Link>
+            </span>}
           {isPoland &&
             <div className="rsvp-button-container-mobile" onClick={() => setOpen(false)}>
               <Link to={`rsvp`} className="button-main" style={{

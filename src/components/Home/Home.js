@@ -2,7 +2,7 @@ import "./Home.css";
 import { useEffect, useState } from "react";
 import CountDown from "../CountDown/CountDown";
 import BouncingArrow from "../BouncingArrow/BouncingArrow";
-import PolandWeddingDetails from "../WeddingDetails/PolandWeddingDetails";
+import WeddingDetails from "../WeddingDetails/WeddingDetails";
 import LinkBanner from "../LinkBanner/LinkBanner";
 import JoinUsBanner from "../JoinUsBanner/JoinUsBanner";
 import WhatsAppBanner from "../WhatsAppBanner/WhatsAppBanner";
@@ -56,7 +56,7 @@ const Home = () => {
         </div>
       </div>
       <div className="poland-wedding-details">
-        <PolandWeddingDetails lang={lang} />
+        <WeddingDetails lang={lang} />
         <LinkBanner lang={lang} />
         {isPoland && <JoinUsBanner />}
         {isPoland && <WhatsAppBanner />}

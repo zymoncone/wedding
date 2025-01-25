@@ -89,12 +89,17 @@ const second_banner_address_bot = {
 const second_banner_attire = {
   "EN": "Attire: Smart Casual",
   "PL": "Strój: Smart Casual",
-  "SP": "Atuendo: Corbata Negra Opcional"
+  "SP": "Código de Vestimenta Formal"
 };
 
-const PolandWeddingDetails = ({ lang }) => {
+const WeddingDetails = ({ lang }) => {
+
+  const isPoland = (lang === "PL") || (lang === "EN");
+
   return (
     <div className="details-parent-container">
+      { isPoland &&
+      <>
       <DetailsBanner useDayOneSetup={true} lang={lang} />
       <div className="details-individual-container-poland">
         <h1 className="subtitle">{first_banner_title[lang]}</h1>
@@ -123,6 +128,7 @@ const PolandWeddingDetails = ({ lang }) => {
           </p>
         </div>
       </div>
+      </>}
       <DetailsBanner useDayOneSetup={false} lang={lang} />
       <div className="details-individual-container-poland">
         <h1 className="subtitle">{second_banner_title[lang]}</h1>
@@ -155,4 +161,4 @@ const PolandWeddingDetails = ({ lang }) => {
   );
 }
 
-export default PolandWeddingDetails;
+export default WeddingDetails;

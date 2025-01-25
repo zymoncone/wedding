@@ -29,6 +29,7 @@ const SubRoot = ({ lang }) => {
   const isOnBackground = isHome || isTravel;
   const navStyle = { color: isOnBackground ? "white" : "black" };
   const isPoland = (lang === "EN") || (lang === "PL");
+  const isArgentina = lang === "SP";
 
   useEffect(() => {
     if (isMobileDevice()) {
@@ -67,6 +68,10 @@ const SubRoot = ({ lang }) => {
                   <Link to={`registry`} style={navStyle}>Registry</Link>
                 </div>
               </>}
+              { isArgentina &&
+              <div className="nav-link-desktop">
+                <Link to={`faq`} style={navStyle}>Preguntas Frecuentes</Link>
+              </div>}
           </div>
           {isHome ?
             <div className="date-header" style={navStyle}>

@@ -23,7 +23,7 @@ const first_banner_subtext = {
 const second_banner_subtext = {
   "EN": "August 24",
   "PL": "24 Sierpnia",
-  "SP": "Tambien a Celebrar Juntos"
+  "SP": "¡Te esperamos!"
 };
 
 const DetailsBanner = (props) => {

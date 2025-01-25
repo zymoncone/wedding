@@ -14,6 +14,7 @@ import OurStory from './components/OurStory/OurStory';
 import TravelAndStay from './components/TravelAndStay/TravelAndStay';
 import Blog from './components/Blog/Blog';
 import Registry from './components/Registry/Registry';
+import FAQ from './components/FAQ/FAQ';
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "story",
         element: <OurStory />,
+      },
+      {
+        path: "faq",
+        element: <FAQ />,
       },
     ],
   },
