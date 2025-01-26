@@ -16,6 +16,7 @@ const Home = () => {
   const { lang } = useAppContext();
 
   const isPoland = (lang === "EN") || (lang === "PL");
+  const isArgentina = lang === "SP";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,8 +57,10 @@ const Home = () => {
         </div>
       </div>
       <div className="poland-wedding-details">
+        {isArgentina && <LinkBanner lang={lang} />}
         <WeddingDetails lang={lang} />
-        <LinkBanner lang={lang} />
+        {isArgentina && <LinkBanner lang={lang} faq_banner={true} />}
+        {isPoland && <LinkBanner lang={lang} />}
         {isPoland && <JoinUsBanner />}
         {isPoland && <WhatsAppBanner />}
       </div>
