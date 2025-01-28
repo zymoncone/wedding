@@ -1,15 +1,24 @@
 .carousel-text {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 25px;
   font-family: "Newsreader", serif;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.9);
+  transition: opacity 0.5s ease;
+}
+
+.carousel-text.fade-in {
+  opacity: 1;
+}
+
+.carousel-text.fade-out {
+  opacity: 0;
 }
 
 @media screen and (max-width: 600px) {
   .carousel-text {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 25px;
   }
 
 }

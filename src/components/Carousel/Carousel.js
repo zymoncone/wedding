@@ -8,42 +8,22 @@ const texts = ['We\'re getting married!',
 const Carousel = () => {
 
   const [textIndex, setTextIndex] = useState(0);
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
-    const element = document.querySelector('.carousel-text');
-
     const interval = setInterval(() => {
-      setTextIndex((textIndex + 1) % texts.length);
-
-      // Fade out
-      element.animate([
-        { opacity: 0 },
-        { opacity: 1 }
-      ], {
-        duration: 200, // half of your interval
-        fill: 'forwards'
-      });
-
-      // Wait for half of the interval, then fade in
+      setFade(false);
       setTimeout(() => {
-        element.animate([
-          { opacity: 1 },
-          { opacity: 0 }
-        ], {
-          duration: 2000, // half of your interval
-          fill: 'forwards'
-        });
-      }, 2000);
+        setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+        setFade(true);
+      }, 500); // Duration of the fade-out transition
+    }, 2500); // Interval for text change
 
-    }, 2200);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [textIndex]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className='carousel-text'>
+    <div className={`carousel-text ${fade ? 'fade-in' : 'fade-out'}`}>
       {texts[textIndex]}
     </div>
   );

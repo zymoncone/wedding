@@ -32,7 +32,7 @@ const Registry = () => {
           still like to contribute to our registry or honeymoon funds,
           please use the link below.
         </div>
-        <div className="button-main" style={{ width: "200px", padding: "25px 0", margin: 0, fontFamily: "'Newsreader', serif", fontSize: "20px" }}>
+        <div className="button-main">
           Coming Soon!
         </div>
       </div>

@@ -59,9 +59,9 @@ const Home = () => {
       <div className="poland-wedding-details">
         {isArgentina && <LinkBanner lang={lang} />}
         <WeddingDetails lang={lang} />
-        {isArgentina && <LinkBanner lang={lang} faq_banner={true} />}
-        {isPoland && <LinkBanner lang={lang} />}
+        <LinkBanner lang={lang} faq_banner={true} />
         {isPoland && <JoinUsBanner />}
+        {isPoland && <LinkBanner lang={lang} />}
         {isPoland && <WhatsAppBanner />}
       </div>
     </div>

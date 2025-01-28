@@ -6,6 +6,7 @@ import { isMobileDevice } from "../../assets/helper_functions";
 
 const Root = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const buttonStyling = {color: "black", width: "150px", padding: "25px 0"};
 
   useEffect(() => {
     if (isMobileDevice()) {
@@ -26,10 +27,10 @@ const Root = () => {
         <Carousel />
         <div className="names-title">Mayra & Szymon</div>
         <div className="button-container">
-          <Link to={`poland`} className="button-main margin-right" style={{color: "black"}}>
+          <Link to={`poland`} className="button-main margin-right" style={buttonStyling}>
             <span>Poland</span>
           </Link>
-          <Link to={`argentina`} className="button-main" style={{color: "black"}}>
+          <Link to={`argentina`} className="button-main" style={buttonStyling}>
             <span>Argentina</span>
           </Link>
         </div>

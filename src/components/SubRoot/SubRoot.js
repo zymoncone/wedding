@@ -17,6 +17,12 @@ const story_header = {
   'SP': "Nuestra Historia"
 };
 
+const faq_header = {
+  'EN': "FAQ",
+  'PL': "FAQ",
+  'SP': "Preguntas Frecuentes"
+};
+
 const SubRoot = ({ lang }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setOpen] = useState(false);
@@ -29,7 +35,11 @@ const SubRoot = ({ lang }) => {
   const isOnBackground = isHome || isTravel;
   const navStyle = { color: isOnBackground ? "white" : "black" };
   const isPoland = (lang === "EN") || (lang === "PL");
-  const isArgentina = lang === "SP";
+
+  const rsvp_styling = {
+    backgroundColor: isOnBackground ? "white" : "black",
+    color: isOnBackground ? "black" : "white"
+  }
 
   useEffect(() => {
     if (isMobileDevice()) {
@@ -53,6 +63,14 @@ const SubRoot = ({ lang }) => {
       {isMobile ? <NavBarMobile isOpen={isOpen} setOpen={setOpen} setDoneAnimating={setDoneAnimating} lang={lang} /> :
         <div className="nav-poland-container-desktop">
           <div className="nav-directory-container">
+            {isHome ?
+              <div className="date-header-rightside" style={navStyle}>
+                {isPoland ? "23.AUG.2025" : "01.MAR.2025"}
+              </div> :
+              <div className="date-header-rightside">
+                <Link to={``} style={navStyle}>♡</Link>
+              </div>
+            }
             <div className="nav-link-desktop">
               <Link to={`story`} style={navStyle}>{story_header[lang]}</Link>
             </div>
@@ -68,22 +86,22 @@ const SubRoot = ({ lang }) => {
                   <Link to={`registry`} style={navStyle}>Registry</Link>
                 </div>
               </>}
-              { isArgentina &&
-              <div className="nav-link-desktop">
-                <Link to={`faq`} style={navStyle}>Preguntas Frecuentes</Link>
-              </div>}
+            <div className="nav-link-desktop">
+              <Link to={`faq`} style={navStyle}>{faq_header[lang]}</Link>
+            </div>
+
           </div>
-          {isHome ?
+          {/* {isHome ?
             <div className="date-header" style={navStyle}>
               {isPoland ? "23.AUG.2025" : "01.MAR.2025"}
             </div> :
             <div className="date-header">
               <Link to={``} style={navStyle}>♡</Link>
             </div>
-          }
+          } */}
           {isPoland &&
             <div className="rsvp-button-container">
-              <Link to={`rsvp`} className="button-main" style={{ width: "100px", padding: "25px 0", margin: 0, fontFamily: "'Newsreader', serif", fontSize: "20px" }}>
+              <Link to={`rsvp`} className="button-main" style={rsvp_styling}>
                 <span>RSVP</span>
               </Link>
             </div>}

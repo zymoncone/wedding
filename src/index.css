@@ -81,8 +81,8 @@ footer {
   touch-action: manipulation;
   vertical-align: baseline;
   white-space: nowrap;
-  width: 150px;
-  padding: 15px 0;
+  padding: 25px 35px;
+  margin: 0;
 }
 
 .button-main:before {

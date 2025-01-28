@@ -15,7 +15,7 @@ const JoinUsBanner = () => {
         <div className="join-us-subtext">
           We hope you can make it!
         </div>
-        <Link to={`rsvp`} className="button-main" style={{padding: "30px 0", margin: 0, fontSize: "20px"}}>
+        <Link to={`rsvp`} className="button-main" style={{padding: "30px 50px"}}>
           <span>RSVP</span>
         </Link>
       </div>

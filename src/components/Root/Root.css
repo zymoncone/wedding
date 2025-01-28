@@ -22,7 +22,7 @@
   font-family: "Newsreader", serif;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.9);
-  padding: 2.5rem 0;
+  padding: 3rem 0 4rem 0;
 }
 
 .button-container {
@@ -34,7 +34,7 @@
 }
 
 .margin-right {
-  margin: 0 1rem 0 0;
+  margin: 0 30px 0 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -45,5 +45,9 @@
 
   .logo {
     height: 150px;
+  }
+
+  .names-title {
+    padding: 2.5rem 0 5rem 0;
   }
 }

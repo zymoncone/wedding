@@ -1,5 +1,5 @@
 import "./Collapsible.css";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { SlArrowDown } from "react-icons/sl";
 import { useState } from "react";
 
 const Collapsible = (props) => {
@@ -16,8 +16,8 @@ const Collapsible = (props) => {
     <div key={props.idx}>
       <button className="toggle" onClick={handleOpen}>
         <div className="project-title">{props.heading}</div>
-        <div className='dropdown-arrow'>
-          {open ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        <div className={`dropdown-arrow ${open ? 'open' : ''}`}>
+          <SlArrowDown />
         </div>
       </button>
       <div className="collapsible" style={open ? showContent : {}}>

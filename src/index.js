@@ -50,6 +50,10 @@ const router = createBrowserRouter([
         path: "registry",
         element: <Registry />,
       },
+      {
+        path: "faq",
+        element: <FAQ />,
+      },
     ],
   },
   {

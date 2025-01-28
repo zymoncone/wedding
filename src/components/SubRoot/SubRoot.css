@@ -24,7 +24,7 @@
   flex-direction: row;
   align-items: center;
   text-align: center;
-  width: auto;
+  width: max-content !important;
   font-size: 20px;
   font-family: "Newsreader", serif;
   font-weight: 200;
@@ -34,6 +34,7 @@
   margin: 0 1rem;
   text-decoration: none;
   color: black;
+  width: max-content !important;
 }
 
 .date-header {
@@ -46,11 +47,18 @@
   transform: translateX(-50%);
 }
 
+.date-header-rightside {
+  font-size: 35px;
+  font-family: "Newsreader", serif;
+  font-weight: 200;
+  margin: 0 50px 0 0;
+}
+
 .rsvp-button-container {
-  width: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
+  width: min-content;
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-content: right; */
 }
 
 @media screen and (max-width: 1180px) {

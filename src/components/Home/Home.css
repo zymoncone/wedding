@@ -57,14 +57,14 @@
   width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
   .poland-names-title {
     font-weight: 200;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   }
 
   .poland-wedding-details {
-    margin: 84vh 0 0 0;
+    margin: 100vh 0 0 0;
   }
 
   .poland-home-content {
@@ -72,7 +72,13 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
+  .poland-wedding-details {
+    margin: 95vh 0 0 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
   .poland-wedding-details {
     margin: 92.5vh 0 0 0;
   }
