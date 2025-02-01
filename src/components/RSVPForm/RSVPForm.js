@@ -7,8 +7,9 @@ const RSVPForm = ({partyData,
                    setGuestMatch,
                    submit,
                    setSubmit,
-                   confirmedRSVP,
-                   setConfirmedRSVP}) => {
+                  //  confirmedRSVP,
+                  //  setConfirmedRSVP
+                  }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,22 +22,22 @@ const RSVPForm = ({partyData,
         console.log('submitting RSVPs');
         await sleep(1000);
         setGuestMatch(false);
-        setConfirmedRSVP(0);
+        // setConfirmedRSVP(0);
       }
     };
 
     handleRSVPSubmission();
-  }, [submit, setGuestMatch, setConfirmedRSVP]);
+  }, [submit, setGuestMatch]);
 
   return (
-    <div>
+    <div className="rsvp-form-subcontainer">
       {partyData && partyData.length > 0 ? (
         <form className="rsvp-form" onSubmit={handleSubmit}>
           <div className="invited-guests-container">
             <span className="label-text invited-guest-text">Invited Guests</span>
             {partyData.map((item, index) => (
-              <label key={index}>
-                <div className="label-name">{item['id']}</div>
+              <label key={index} className="label-name">
+                {item['id']}
               </label>
             ))}
           </div>
@@ -46,7 +47,8 @@ const RSVPForm = ({partyData,
                                  index={index}
                                  lastIndex={(partyData.length - 1)}
                                  submit={submit}
-                                 setConfirmedRSVP={setConfirmedRSVP} />
+                                //  setConfirmedRSVP={setConfirmedRSVP}
+                                  />
           ))}
           <div style={{margin: "1rem"}}></div>
           {!submit && <button className="button-23">Submit RSVP</button>}

@@ -85,7 +85,7 @@ export const queryDynamoDB = (searchValue) => {
   });
 }
 
-export const updateDynamoDB = (id, rsvp, songRequest) => {
+export const updateDynamoDB = (id, rsvp, songRequest, poprawinyRSVP, diet) => {
     const url = aws;
     const data = {
       operation: 'update',
@@ -93,16 +93,20 @@ export const updateDynamoDB = (id, rsvp, songRequest) => {
         Key: {
           id: id
         },
-        UpdateExpression: "SET #rsvp = :rsvp_value, #song_request = :song_request_value, #timestamp_value = :timestamp_value",
+        UpdateExpression: "SET #rsvp = :rsvp_value, #song_request = :song_request_value, #timestamp_value = :timestamp_value, #poprawiny_rsvp = :poprawiny_rsvp_value, #diet = :diet_value",
         ExpressionAttributeNames: {
           "#rsvp": "rsvp",
           "#song_request": "song-request",
-          "#timestamp_value": "timestamp"
+          "#timestamp_value": "timestamp",
+          "#poprawiny_rsvp": "poprawiny-rsvp",
+          "#diet": "diet"
         },
         ExpressionAttributeValues: {
           ":rsvp_value": rsvp,
           ":song_request_value": songRequest,
-          ":timestamp_value": getCurrentTime()
+          ":timestamp_value": getCurrentTime(),
+          ":poprawiny_rsvp_value": poprawinyRSVP,
+          ":diet_value": diet
         }
       }
     };

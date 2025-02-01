@@ -26,6 +26,8 @@
   font-weight: 200;
   text-transform: uppercase;
   color: white;
+  display: flex;
+  text-align: top;
 }
 
 .day-one-subtext {
@@ -34,6 +36,15 @@
   font-weight: 300;
   color: white;
   margin: 2rem 0 0 0;
+}
+
+.question-mark-details-banner {
+  font-size: 18px;
+  margin: 0 0 0 5px;
+  padding: 0;
+  cursor: pointer;
+  color: white;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media screen and (max-width: 600px) {
@@ -52,4 +63,8 @@
     font-size: 30px;
   }
 
+  .question-mark-details-banner {
+    font-size: 16px;
+    margin: 0 0 0 2px;
+  }
 }

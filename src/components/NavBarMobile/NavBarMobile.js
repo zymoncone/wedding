@@ -48,14 +48,15 @@ const NavBarMobile = ({ isOpen, setOpen, setDoneAnimating, lang }) => {
         setHeight("auto");
         setNavBarStyle({});
         setDoneAnimating(true);
+        document.documentElement.style.overflow = 'auto';
       }, 400);
-
 
       return () => clearTimeout(timer);
     } else {
       setHeight("100vh");
       setNavBarStyle(openNavBarStyle);
       setDoneAnimating(false);
+      document.documentElement.style.overflow = 'hidden';
     }
   }, [isOpen, setDoneAnimating, setNavBarStyle, setHeight]);
 

@@ -53,7 +53,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 95vh 0 0 0;
+  margin: calc(100vh - 68px) 0 0 0;
+  margin: calc(var(--vh) * 100 - 60px) 0 0 0;
   width: 100%;
 }
 
@@ -63,9 +64,9 @@
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   }
 
-  .poland-wedding-details {
-    margin: 100vh 0 0 0;
-  }
+  /* .poland-wedding-details {
+    margin: calc(100vh - 68px) 0 0 0;
+  } */
 
   .poland-home-content {
     margin: calc(100vh / 3) 0 0 0;
@@ -73,13 +74,13 @@
 }
 
 @media screen and (max-width: 430px) {
-  .poland-wedding-details {
+  /* .poland-wedding-details {
     margin: 95vh 0 0 0;
-  }
+  } */
 }
 
 @media screen and (max-width: 375px) {
-  .poland-wedding-details {
+  /* .poland-wedding-details {
     margin: 92.5vh 0 0 0;
-  }
+  } */
 }

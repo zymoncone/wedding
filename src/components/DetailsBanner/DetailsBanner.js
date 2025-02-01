@@ -1,6 +1,8 @@
 import "./DetailsBanner.css";
 import { useState, useEffect } from "react";
 import { isMobileDevice } from "../../assets/helper_functions";
+import Modal from '../Modal/Modal';
+import { IoIosInformationCircleOutline } from "react-icons/io";
 
 const first_banner_text = {
   "EN": "Wedding Day",
@@ -28,6 +30,15 @@ const second_banner_subtext = {
 
 const DetailsBanner = (props) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   const isPoland = (props.lang === "EN") || (props.lang === "PL");
 
@@ -45,13 +56,24 @@ const DetailsBanner = (props) => {
 
   return (
     <div className="day-one-banner-container">
+      <Modal show={showModal} onClose={handleCloseModal}>
+        <h2>What is Poprawiny?</h2>
+        <p>
+          Poprawiny is a lovely Polish tradition held on the second day of
+          the wedding celebration. It’s an optional luncheon where the newlyweds
+          spend more time with their guests. The tradition goes back many centuries
+          and was originally meant to ensure that guests were safely sent off after
+          the festivities.
+          Attendance is completely optional!
+        </p>
+      </Modal>
       <div className="day-one-banner" style={{
         backgroundImage: `url(${image})`,
         backgroundSize: "cover",
         backgroundPosition: isMobile ? (props.useDayOneSetup ? "left" : "right") : (props.useDayOneSetup ? "0px" : "center"),
       }}>
         <div className="day-one-title">
-          {text}
+          {text}{(!props.useDayOneSetup && isPoland) && <IoIosInformationCircleOutline onClick={handleOpenModal} className="question-mark-details-banner"/>}
         </div>
         {!props.useDayOneSetup && isPoland &&
           <div className="day-two-subtext">(Optional)</div>}

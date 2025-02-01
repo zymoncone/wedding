@@ -4,6 +4,7 @@ import { useEffect, useState, createContext, useContext } from "react";
 import { isMobileDevice } from "../../assets/helper_functions";
 import NavBarMobile from "../NavBarMobile/NavBarMobile";
 import Footer from "../Footer/Footer";
+import { MAX_NAV_WIDTH_MOBILE } from "../../assets/constants";
 
 const AppContext = createContext();
 
@@ -42,11 +43,20 @@ const SubRoot = ({ lang }) => {
   }
 
   useEffect(() => {
-    if (isMobileDevice()) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
+    const handleResize = () => {
+      if (isMobileDevice() || (window.innerWidth < MAX_NAV_WIDTH_MOBILE)) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   useEffect(() => {

@@ -18,7 +18,7 @@ const button_text = {
 const faq_title = {
   'EN': "Still have questions?",
   'PL': "Masz pytania?",
-  'SP': "¡Todas tus dudas sobre la boda, resueltas aquí!"
+  'SP': "Por si acaso..."
 };
 
 const faq_button_text = {

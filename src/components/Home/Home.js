@@ -19,6 +19,11 @@ const Home = () => {
   const isArgentina = lang === "SP";
 
   useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;

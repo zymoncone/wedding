@@ -14,11 +14,15 @@ input {
   font-family: "Newsreader", serif;
   color: rgba(0, 0, 0, 0.7);
   margin: 1.5rem 0 0.5rem 0;
-  padding: 0.5rem 1rem;
-  width: calc(90% - 2rem);
-  border: 1px solid #ccc;
+  padding: 10px 10px;
+  line-height: 1;
+  width: 100%;
+  border: 1px solid #cdcdcd;
   border-radius: 0.5rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  background-color: white;
 }
 
 option {
@@ -32,13 +36,16 @@ label {
   color: rgba(0, 0, 0, 0.7);
   margin: 1rem 0 0.5rem 0;
   width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Newsreader", serif;
+  font-weight: 200;
 }
 
 legend {
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 300;
   text-transform: uppercase;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.7);
   margin: 0;
@@ -48,8 +55,9 @@ legend {
 
 fieldset {
   padding: 0;
-  margin: 0;
+  margin: 20px 0;
   border: none;
+  width: 100%;
 }
 
 .invited-guests-container {
@@ -61,8 +69,8 @@ fieldset {
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   padding: 5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #f9f9f9;
+  box-shadow: 1px 4px 2px rgba(0, 0, 0, 0.2);
+  background-color: white;
   margin: 2rem 0 0 0;
 }
 
@@ -72,12 +80,13 @@ fieldset {
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
+  width: 100%;
 }
 
 .invited-guest-text {
   width: max-content;
   margin: 0;
-  padding: 0 0 0.5rem 0;
+  padding: 0 0 25px 0;
 }
 
 .spacing {
@@ -86,26 +95,34 @@ fieldset {
 
 .label-text {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 20px;
   font-weight: 300;
   text-transform: uppercase;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.label-diet-subtext {
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 2;
+  text-transform: capitalize;
+  color: rgb(88, 88, 88);
 }
 
 .label-name {
   margin: 0;
-  padding: 0;
+  padding: 10px 0;
   font-size: 25px;
-  font-weight: 300;
+  font-weight: 400;
   text-transform: capitalize;
-  font-family: "Newreader", "Times New Roman", Times, serif;
+  font-family: "Newsreader", "Times New Roman", Times, serif;
 }
 
 .radio-select-text {
   margin: 0;
   padding: 0;
-  font-size: 1rem;
+  font-size: 17px;
   font-weight: 400;
   text-transform: capitalize;
   font-family: "Libre Baskerville", "Times New Roman", Times, serif;
@@ -125,6 +142,10 @@ fieldset {
   width: max-content;
   border: 2px solid #ccc;
   background-color: #fff;
+}
+
+.label-input-container {
+  margin: 30px 0;
 }
 
 input[type="radio"] {
@@ -154,8 +175,17 @@ input[type="radio"]:checked {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 50vw;
+  max-width: 500px;
+  width: 92.5%;
   margin: 15vh 0;
+}
+
+.rsvp-form-subcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .rsvp-title {
@@ -166,13 +196,28 @@ input[type="radio"]:checked {
 
 .rsvp-form {
   margin: 1rem 0 0 0;
+  width: 100%;
+}
+
+.poprawiny-rsvp-text {
+  width: 100%;
+}
+
+.question-mark {
+  font-size: 15px;
+  margin: 0 0 0 7px;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  color: rgb(71, 71, 71);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .dot {
   height: 10px;
   width: 10px;
-  background-color: rgba(0, 0, 0, 0.6);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  background-color: rgb(74, 74, 74);
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.4);
   border-radius: 50%;
   margin: 2rem 0 0 0;
 }
@@ -192,7 +237,7 @@ input[type="radio"]:checked {
 
 .loading-spinner {
   border: 3px solid rgba(0, 0, 0, 0.7);
-  border-top: 3px solid whitesmoke;
+  border-top: 3px solid white;
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -208,7 +253,7 @@ input[type="radio"]:checked {
 .thank-you-text {
   font-size: 1rem;
   font-weight: 300;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   line-height: 2;
   color: rgba(0, 0, 0, 0.7);
   margin: 5rem 0 10rem 0;
@@ -221,8 +266,21 @@ input[type="radio"]:checked {
   }
 
   legend {
-    font-size: 1.1rem;
+    font-size: 16px;
     line-height: 1.7;
+  }
+
+  .question-mark {
+    font-size: 12px;
+    margin: 0 0 0 3px;
+  }
+
+  .radio-select-text {
+    font-size: 15px;
+  }
+
+  .label-text {
+    font-size: 16px;
   }
 
   .rsvp-title {
@@ -231,33 +289,31 @@ input[type="radio"]:checked {
   }
 
   .rsvp-form-container {
-    max-width: 95vw;
-  }
-
-  .label-text {
-    font-size: 1.1rem;
-  }
-
-  .label-name {
-    font-size: 1rem;
+    max-width: none;
   }
 
   .thank-you-text {
     margin: 5rem 0;
   }
+
+  .invited-guests-container {
+    padding: 6rem 0;
+    width: 100%;
+  }
 }
 
 /* button 23 */
 .button-23 {
-  background-color: #FFFFFF;
-  border: 1px solid #222222;
+  background-color: white;
+  border: 1px solid #bcbcbc;
   border-radius: 8px;
   box-sizing: border-box;
   color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
   display: inline-block;
-  font-family: "Newsreader", serif;
-  font-size: 20px;
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
   font-weight: 300;
   margin: 0;
   outline: none;
@@ -273,14 +329,13 @@ input[type="radio"]:checked {
 }
 
 .button-23:hover {
-  box-shadow: #222222 0 0 0 1px, rgba(0, 0, 0, 0.1) 0 0 0 3px;
+  box-shadow: #bcbcbc 0 0 0 1px, rgba(191, 191, 191, 0.1) 0 0 0 1px;
   transition: box-shadow .2s;
 }
 
 @media screen and (max-width: 600px) {
   .button-23 {
-    font-size: 16px;
-    padding: 15px 20px;
+    font-size: 15px;
   }
 
 }

@@ -51,10 +51,6 @@
   max-width: 1025px;
 }
 
-.bold {
-  font-weight: 400;
-}
-
 .blog-text-body a {
   text-decoration: underline;
   text-underline-offset: 2px;

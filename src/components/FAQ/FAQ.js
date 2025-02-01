@@ -51,8 +51,8 @@ const poland_faq_english = [
     answer: "We truly appreciate your excitement to celebrate with us! However, as we have made arrangements for a specific number of guests, we kindly ask that only those named on the invitation attend. We appreciate your understanding."
   },
   {
-    question: "What is Propowiny?",
-    answer: "Propowiny is a lovely Polish tradition held on the second day of the wedding celebration. It’s an optional luncheon where the newlyweds spend more time with their guests. The tradition goes back many centuries and was originally meant to ensure that guests were safely sent off after the festivities."
+    question: "What is Poprawiny?",
+    answer: "Poprawiny is a lovely Polish tradition held on the second day of the wedding celebration. It’s an optional luncheon where the newlyweds spend more time with their guests. The tradition goes back many centuries and was originally meant to ensure that guests were safely sent off after the festivities."
   },
   {
     question: "What should we gift?",

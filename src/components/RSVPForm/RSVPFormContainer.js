@@ -12,7 +12,7 @@ const RSVPFormContainer = () => {
   const [errorMessage, setErrorMessage] = useState(false);
   const [loading, setLoading] = useState(false);
   const [submit, setSubmit] = useState(false);
-  const [confirmedRSVP, setConfirmedRSVP] = useState(0);
+  // const [confirmedRSVP, setConfirmedRSVP] = useState(0);
 
   const handleNameChange = () => {
     const sanitizedValue = sanitizeInput(name);
@@ -20,9 +20,9 @@ const RSVPFormContainer = () => {
     return sanitizedValue;
   };
 
-  useEffect(() => {
-    console.log('confirmedRSVP:', confirmedRSVP);
-  }, [confirmedRSVP]);
+  // useEffect(() => {
+  //   console.log('confirmedRSVP:', confirmedRSVP);
+  // }, [confirmedRSVP]);
 
   const handleContinue = (e) => {
     e.preventDefault();
@@ -78,8 +78,8 @@ const RSVPFormContainer = () => {
           setGuestMatch={setGuestMatch}
           submit={submit}
           setSubmit={setSubmit}
-          confirmedRSVP={confirmedRSVP}
-          setConfirmedRSVP={setConfirmedRSVP}
+          // confirmedRSVP={confirmedRSVP}
+          // setConfirmedRSVP={setConfirmedRSVP}
         />}
       {!guestMatch && !submit &&
         <NameVerificationPage handleContinue={handleContinue}
