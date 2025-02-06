@@ -5,10 +5,6 @@ export const isMobileDevice = () => {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Macintosh/i.test(navigator.userAgent) && ('ontouchend' in document);
 };
 
-export const isIpad = () => {
-  return /iPad/i.test(navigator.userAgent);
-};
-
 export const sleep = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };

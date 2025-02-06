@@ -21,7 +21,7 @@ const Root = () => {
       backgroundImage: `url(https://i.imgur.com/8V7ir36.png)`,
       backgroundSize: "cover",
       backgroundPosition: isMobile ? "right" : "center",
-      minHeight: "100vh",
+      transition: 'opacity 0.1s ease-in-out'
     }}>
       <div className="home-text-container">
         <Carousel />

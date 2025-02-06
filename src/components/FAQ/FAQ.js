@@ -25,7 +25,7 @@ const argentina_faq = [
   },
   {
     question: "¿Qué les puedo regalar?",
-    answer: "Su presencia es el mejor regalo que podemos recibir! Estamos muy agradecidos de poder celebrar con nuestros amigos y familiares. No obstante, si deseas hacernos un regalo, te pedimos que tengas en cuenta que estamos viajando internacionalmente y no podremos llevar objetos grandes."
+    answer: "Su presencia es el mejor regalo que podemos recibir! Estamos muy agradecidos de poder celebrar con nuestros amigos y familiares. No obstante, si deseas hacernos un regalo, te pedimos que tengas en cuenta que estamos viajando internacionalmente y no podremos llevar objetos grandes. Lo más fácil sería algo que podamos disfrutar mientras estamos en Argentina, como un certificado para algún restaurante, o tu vino favorito para que podamos probarlo. ¡Igual, no te preocupes por los regalos!"
   },
   {
     question: "¿Por qué no fui invitado a la misa/ceremonia?",

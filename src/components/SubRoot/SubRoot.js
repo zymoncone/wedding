@@ -101,14 +101,6 @@ const SubRoot = ({ lang }) => {
             </div>
 
           </div>
-          {/* {isHome ?
-            <div className="date-header" style={navStyle}>
-              {isPoland ? "23.AUG.2025" : "01.MAR.2025"}
-            </div> :
-            <div className="date-header">
-              <Link to={``} style={navStyle}>♡</Link>
-            </div>
-          } */}
           {isPoland &&
             <div className="rsvp-button-container">
               <Link to={`rsvp`} className="button-main" style={rsvp_styling}>

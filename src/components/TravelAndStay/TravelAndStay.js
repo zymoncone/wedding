@@ -1,12 +1,13 @@
 import "./TravelAndStay.css";
 import { useEffect, useState } from "react";
-import { isMobileDevice, isIpad } from "../../assets/helper_functions";
+import { isMobileDevice } from "../../assets/helper_functions";
 import Map from "../Map/Map";
 import { useAppContext } from "../SubRoot/SubRoot";
 import Button from "../Button/Button";
 
 const TravelAndStay = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isIpad, setIsIpad] = useState(false);
 
   const { isDoneAnimating } = useAppContext();
 
@@ -16,6 +17,8 @@ const TravelAndStay = () => {
     } else {
       setIsMobile(false);
     }
+
+    setIsIpad(window.innerWidth >= 768)
   }, []);
 
   return (
@@ -23,7 +26,7 @@ const TravelAndStay = () => {
       <div className="travel-background-container" style={{
         backgroundImage: `url(https://i.imgur.com/E0XH98J.png)`,
         backgroundSize: "cover",
-        backgroundPosition: isMobile && !isIpad ? "-700px" : "center",
+        backgroundPosition: isMobile && !isIpad ? "-600px" : "center",
         position: (isDoneAnimating || !isMobile) ? "relative" : "fixed",
         opacity: (isDoneAnimating || !isMobile) ? 1 : 0,
       }}>

@@ -41,9 +41,9 @@ const title = {
 };
 
 const gallery_title = {
-  "EN": "Our Engagement",
-  "PL": "Nasze Zaręczyny",
-  "SP": "Nuestro Compromiso"
+  "EN": "Our Engagement Trip",
+  "PL": "Nasza Podróż Zaręczynowa",
+  "SP": "Nuestro Viaje de Compromiso"
 };
 
 const OurStory = () => {
