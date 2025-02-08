@@ -9,8 +9,23 @@ export const sleep = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
+export const getItemId = (item) => {
+  return (item['id-denorm'] ? item['id-denorm'] : item['id']);
+};
+
+export const normalizeName = (name) => {
+  const polishMap = {
+      'ą': 'a', 'ć': 'c', 'ę': 'e', 'ł': 'l', 'ń': 'n',
+      'ó': 'o', 'ś': 's', 'ź': 'z', 'ż': 'z',
+      'Ą': 'A', 'Ć': 'C', 'Ę': 'E', 'Ł': 'L', 'Ń': 'N',
+      'Ó': 'O', 'Ś': 'S', 'Ź': 'Z', 'Ż': 'Z'
+  };
+
+  return name.split('').map(char => polishMap[char] || char).join('');
+};
+
 export const sanitizeInput = (input) => {
-  const sanitizedInput = input.replace(/[^a-zA-Z\s]/g, '');
+  const sanitizedInput = input.replace(/[^a-zA-Z\sąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/g, '');
   const words = sanitizedInput.trim().split(' ');
   for (let i = 0; i < words.length; i++) {
     words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();

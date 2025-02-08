@@ -51,9 +51,7 @@ const Gallery = () => {
   const handleOpen = (e) => {
     setActiveSlide(Number(e.target.getAttribute("slide-number")));
     setOpenGallery(true);
-    console.log(opacity);
     sleep(100).then(() => { setOpacity(1) });
-    console.log(opacity);
   }
 
   useEffect(() => {

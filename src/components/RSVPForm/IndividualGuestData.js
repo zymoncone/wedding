@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { updateDynamoDB } from '../../assets/helper_functions';
+import { getItemId, updateDynamoDB } from '../../assets/helper_functions';
 import Modal from '../Modal/Modal';
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
-const IndividualGuestData = ({ item, index, lastIndex, submit, setConfirmedRSVP }) => {
+const IndividualGuestData = ({ item, index, lastIndex, submit }) => {
+
+  const [id, setId] = useState('');
 
   const [rsvp, setRSVP] = useState('');
   const [remoteRSVP, pullRemoteRSVP] = useState('');
@@ -24,24 +26,18 @@ const IndividualGuestData = ({ item, index, lastIndex, submit, setConfirmedRSVP 
   };
 
   useEffect(() => {
+    setId(getItemId(item));
+
     pullRemoteRSVP(item['rsvp'] || '');
     setRSVP(item['rsvp'] || '');
-    setSongRequest(item['song-request'] || '');
 
     pullRemotePoprawinyRSVP(item['poprawiny-rsvp'] || '');
     setPoprawinyRSVP(item['poprawiny-rsvp'] || '');
+
     setDietaryRestrictions(item['diet'] || '');
+
+    setSongRequest(item['song-request'] || '');
   }, [item]);
-
-  // useEffect(() => {
-  //   const partySize = lastIndex + 1;
-
-  //   if (remoteRSVP === '') {
-  //     setConfirmedRSVP((prev) => (prev !== 0 ? prev - 1 : 0));
-  //   } else {
-  //     setConfirmedRSVP((prev) => (prev !== partySize ? prev + 1 : partySize));
-  //   }
-  // }, [remoteRSVP, setConfirmedRSVP, lastIndex]);
 
   useEffect(() => {
     if (submit) {
@@ -53,9 +49,6 @@ const IndividualGuestData = ({ item, index, lastIndex, submit, setConfirmedRSVP 
         (rsvp === 'no') ? "no" : poprawinyRSVP,
         dietaryRestrictions);
     }
-
-    console.log('RSVP:', rsvp);
-    console.log('Poprawiny RSVP:', poprawinyRSVP);
   }, [submit, item, rsvp, songRequest, poprawinyRSVP, dietaryRestrictions]);
 
   return (
@@ -76,9 +69,9 @@ const IndividualGuestData = ({ item, index, lastIndex, submit, setConfirmedRSVP 
       <div className="spacing"></div>
 
       <fieldset>
-        {remoteRSVP === 'yes' && <legend><span className="bold">{item['id']}</span> is marked as attending. <br/>Feel free to update below.</legend>}
-        {remoteRSVP === 'no' && <legend><span className="bold">{item['id']}</span> is marked as not attending. <br/>Feel free to update below.</legend>}
-        {remoteRSVP === '' && <legend>Is <span className="bold">{item['id']}</span> Able to Attend?</legend>}
+        {remoteRSVP === 'yes' && <legend><span className="bold">{id}</span> is marked as attending. <br/>Feel free to update below.</legend>}
+        {remoteRSVP === 'no' && <legend><span className="bold">{id}</span> is marked as not attending. <br/>Feel free to update below.</legend>}
+        {remoteRSVP === '' && <legend>Is <span className="bold">{id}</span> Able to Attend?</legend>}
 
         <label className="radio-input-row">
           <input className="radio-input" type="radio" value="yes" checked={rsvp === 'yes'} onChange={(e) => setRSVP(e.target.value)} />
@@ -94,9 +87,9 @@ const IndividualGuestData = ({ item, index, lastIndex, submit, setConfirmedRSVP 
       {rsvp === 'yes' && <fieldset>
         <legend>
           <span className="poprawiny-rsvp-text">
-            {remotePoprawinyRSVP === 'yes' && <>We'll see <span className="bold">{item['id']}</span> at Poprawiny as well!<br/>Feel free to update below.</>}
-            {remotePoprawinyRSVP === 'no' && <><span className="bold">{item['id']}</span> is only attending the first day. <br/>Feel free to update below.</>}
-            {remotePoprawinyRSVP === '' && <>Is <span className="bold">{item['id']}</span> Also Able to Attend Poprawiny on Aug 24?</>}
+            {remotePoprawinyRSVP === 'yes' && <>We'll see <span className="bold">{id}</span> at Poprawiny as well!<br/>Feel free to update below.</>}
+            {remotePoprawinyRSVP === 'no' && <><span className="bold">{id}</span> is only attending the first day. <br/>Feel free to update below.</>}
+            {remotePoprawinyRSVP === '' && <>Is <span className="bold">{id}</span> Also Able to Attend Poprawiny on Aug 24?</>}
           </span>
           <IoIosInformationCircleOutline onClick={handleOpenModal} className="question-mark" />
         </legend>

@@ -1,14 +1,12 @@
 import './RSVPForm.css';
 import IndividualGuestData from './IndividualGuestData';
 import { useEffect } from 'react';
-import { sleep } from '../../assets/helper_functions';
+import { sleep, getItemId } from '../../assets/helper_functions';
 
 const RSVPForm = ({partyData,
                    setGuestMatch,
                    submit,
-                   setSubmit,
-                  //  confirmedRSVP,
-                  //  setConfirmedRSVP
+                   setSubmit
                   }) => {
 
   const handleSubmit = (e) => {
@@ -19,10 +17,11 @@ const RSVPForm = ({partyData,
   useEffect(() => {
     const handleRSVPSubmission = async () => {
       if (submit) {
-        console.log('submitting RSVPs');
+        if (process.env.REACT_APP_NODE_ENV === 'development') {
+          console.log('submitting RSVPs');
+        }
         await sleep(1000);
         setGuestMatch(false);
-        // setConfirmedRSVP(0);
       }
     };
 
@@ -37,7 +36,7 @@ const RSVPForm = ({partyData,
             <span className="label-text invited-guest-text">Invited Guests</span>
             {partyData.map((item, index) => (
               <label key={index} className="label-name">
-                {item['id']}
+                {getItemId(item)}
               </label>
             ))}
           </div>
@@ -47,7 +46,6 @@ const RSVPForm = ({partyData,
                                  index={index}
                                  lastIndex={(partyData.length - 1)}
                                  submit={submit}
-                                //  setConfirmedRSVP={setConfirmedRSVP}
                                   />
           ))}
           <div style={{margin: "1rem"}}></div>

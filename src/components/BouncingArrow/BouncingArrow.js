@@ -4,7 +4,6 @@ import { SlArrowDown } from "react-icons/sl";
 const BouncingArrow = () => {
 
   const handleClick = () => {
-    console.log('clicked');
     window.scrollTo({
       top: window.innerHeight,
       behavior: 'smooth'

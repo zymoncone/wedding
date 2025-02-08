@@ -1,6 +1,6 @@
 import './RSVPForm.css';
 import { useState, useEffect } from 'react';
-import { readDynamoDB, queryDynamoDB, sanitizeInput } from '../../assets/helper_functions';
+import { readDynamoDB, queryDynamoDB, sanitizeInput, normalizeName } from '../../assets/helper_functions';
 import NameVerificationPage from './NameVerificationPage';
 import RSVPForm from './RSVPForm';
 
@@ -12,32 +12,32 @@ const RSVPFormContainer = () => {
   const [errorMessage, setErrorMessage] = useState(false);
   const [loading, setLoading] = useState(false);
   const [submit, setSubmit] = useState(false);
-  // const [confirmedRSVP, setConfirmedRSVP] = useState(0);
 
-  const handleNameChange = () => {
+  const handleName = () => {
     const sanitizedValue = sanitizeInput(name);
     setName(sanitizedValue);
     return sanitizedValue;
   };
 
-  // useEffect(() => {
-  //   console.log('confirmedRSVP:', confirmedRSVP);
-  // }, [confirmedRSVP]);
-
   const handleContinue = (e) => {
     e.preventDefault();
 
-    const updatedName = handleNameChange();
+    const santizedAndNormalizedName = normalizeName(handleName());
+    if (process.env.REACT_APP_NODE_ENV === 'development') {
+      console.log('santizedAndNormalizedName:', santizedAndNormalizedName);
+    }
 
     setLoading(true);
     setErrorMessage(false);
 
-    readDynamoDB(updatedName)
+    readDynamoDB(santizedAndNormalizedName)
       .then(response => {
         if (response) {
           setGuestMatch(true);
           setPartyID(response['party-id']);
-          console.log('READ response', response);
+          if (process.env.REACT_APP_NODE_ENV === 'development') {
+            console.log('READ response', response);
+          }
         } else {
           console.log('Item does not exist');
           setGuestMatch(false);
@@ -61,7 +61,9 @@ const RSVPFormContainer = () => {
       queryDynamoDB(partyID)
         .then(response => {
           if (response) {
-            console.log('query', response);
+            if (process.env.REACT_APP_NODE_ENV === 'development') {
+              console.log('query', response);
+            }
             setPartyData(response);
           } else {
             console.log('Item does not exist');
@@ -78,8 +80,6 @@ const RSVPFormContainer = () => {
           setGuestMatch={setGuestMatch}
           submit={submit}
           setSubmit={setSubmit}
-          // confirmedRSVP={confirmedRSVP}
-          // setConfirmedRSVP={setConfirmedRSVP}
         />}
       {!guestMatch && !submit &&
         <NameVerificationPage handleContinue={handleContinue}

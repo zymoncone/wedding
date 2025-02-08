@@ -41,7 +41,6 @@ const SlideShow = (props) => {
   },[props.entry])
 
   useEffect(() => {
-    console.log("setting prop", props.activeSlide)
     setSlide(props.activeSlide)
   }, [props.activeSlide])
 
