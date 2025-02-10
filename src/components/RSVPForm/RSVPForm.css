@@ -115,6 +115,7 @@ fieldset {
   padding: 10px 0;
   font-size: 25px;
   font-weight: 400;
+  color: rgba(0, 0, 0, 0.7);
   text-transform: capitalize;
   font-family: "Newsreader", "Times New Roman", Times, serif;
 }

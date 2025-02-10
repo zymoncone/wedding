@@ -6,7 +6,11 @@ const NameVerificationPage = ({handleContinue, name, setName, errorMessage, load
     <form className="rsvp-form" onSubmit={handleContinue}>
       <label className="name-verification-input-container">
         <span className='name-verification-text-title'>Please enter your first and last name</span>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+        <input type="text"
+               value={name}
+               onChange={(e) => setName(e.target.value)}
+               name={`rsvp-name-entry`}
+               required />
       </label>
       {errorMessage && <p className="error-message">
         Name not found. Please make sure it matches the invitaiton exactly.

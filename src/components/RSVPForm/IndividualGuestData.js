@@ -69,17 +69,26 @@ const IndividualGuestData = ({ item, index, lastIndex, submit }) => {
       <div className="spacing"></div>
 
       <fieldset>
-        {remoteRSVP === 'yes' && <legend><span className="bold">{id}</span> is marked as attending. <br/>Feel free to update below.</legend>}
-        {remoteRSVP === 'no' && <legend><span className="bold">{id}</span> is marked as not attending. <br/>Feel free to update below.</legend>}
+        {remoteRSVP === 'yes' && <legend><span className="bold">{id}</span> is marked as attending. <br />Feel free to update below.</legend>}
+        {remoteRSVP === 'no' && <legend><span className="bold">{id}</span> is marked as not attending. <br />Feel free to update below.</legend>}
         {remoteRSVP === '' && <legend>Is <span className="bold">{id}</span> Able to Attend?</legend>}
 
         <label className="radio-input-row">
-          <input className="radio-input" type="radio" value="yes" checked={rsvp === 'yes'} onChange={(e) => setRSVP(e.target.value)} />
+          <input className="radio-input"
+                 type="radio" value="yes"
+                 checked={rsvp === 'yes'}
+                 onChange={(e) => setRSVP(e.target.value)}
+                 name={`rsvp-yes-${index}`} />
           <span className="radio-select-text">Yes, Will Attend</span>
         </label>
 
         <label className="radio-input-row">
-          <input className="radio-input" type="radio" value="no" checked={rsvp === 'no'} onChange={(e) => setRSVP(e.target.value)} />
+          <input className="radio-input"
+                 type="radio"
+                 value="no"
+                 checked={rsvp === 'no'}
+                 onChange={(e) => setRSVP(e.target.value)}
+                 name={`rsvp-no-${index}`} />
           <span className="radio-select-text">No, Declines With Regret</span>
         </label>
       </fieldset>
@@ -87,36 +96,51 @@ const IndividualGuestData = ({ item, index, lastIndex, submit }) => {
       {rsvp === 'yes' && <fieldset>
         <legend>
           <span className="poprawiny-rsvp-text">
-            {remotePoprawinyRSVP === 'yes' && <>We'll see <span className="bold">{id}</span> at Poprawiny as well!<br/>Feel free to update below.</>}
-            {remotePoprawinyRSVP === 'no' && <><span className="bold">{id}</span> is only attending the first day. <br/>Feel free to update below.</>}
+            {remotePoprawinyRSVP === 'yes' && <>We'll see <span className="bold">{id}</span> at Poprawiny as well!<br />Feel free to update below.</>}
+            {remotePoprawinyRSVP === 'no' && <><span className="bold">{id}</span> is only attending the first day. <br />Feel free to update below.</>}
             {remotePoprawinyRSVP === '' && <>Is <span className="bold">{id}</span> Also Able to Attend Poprawiny on Aug 24?</>}
           </span>
           <IoIosInformationCircleOutline onClick={handleOpenModal} className="question-mark" />
         </legend>
 
-        <label className="radio-input-row"></label>
         <label className="radio-input-row">
-          <input className="radio-input" type="radio" value="yes" checked={poprawinyRSVP === 'yes'} onChange={(e) => setPoprawinyRSVP(e.target.value)} />
+          <input className="radio-input"
+                 type="radio"
+                 value="yes"
+                 checked={poprawinyRSVP === 'yes'}
+                 onChange={(e) => setPoprawinyRSVP(e.target.value)}
+                 name={`poprawinu-rsvp-yes-${index}`} />
           <span className="radio-select-text">Yes, Will Attend</span>
         </label>
 
         <label className="radio-input-row">
-          <input className="radio-input" type="radio" value="no" checked={poprawinyRSVP === 'no'} onChange={(e) => setPoprawinyRSVP(e.target.value)} />
+          <input className="radio-input"
+                 type="radio"
+                 value="no"
+                 checked={poprawinyRSVP === 'no'}
+                 onChange={(e) => setPoprawinyRSVP(e.target.value)}
+                 name={`poprawinu-rsvp-no-${index}`}  />
           <span className="radio-select-text">No, Declines With Regret</span>
         </label>
       </fieldset>}
 
       {rsvp === 'yes' && <label className="label-input-container">
         <span className="label-text">
-        Any Dietary Restrictions?<br/>
-        <span className="label-diet-subtext">(None, Vegetarian, Other)</span>
+          Any Dietary Restrictions?<br />
+          <span className="label-diet-subtext">(None, Vegetarian, Other)</span>
         </span>
-        <input type="text" value={dietaryRestrictions} onChange={(e) => setDietaryRestrictions(e.target.value)} />
+        <input type="text"
+               value={dietaryRestrictions}
+               onChange={(e) => setDietaryRestrictions(e.target.value)}
+               name={`dietary-restrictions-${index}`} />
       </label>}
 
       {rsvp === 'yes' && <label className="label-input-container">
         <span className="label-text">Song Request</span>
-        <input type="text" value={songRequest} onChange={(e) => setSongRequest(e.target.value)} />
+        <input type="text"
+               value={songRequest}
+               onChange={(e) => setSongRequest(e.target.value)}
+               name={`song-request-${index}`} />
       </label>}
 
       {(lastIndex !== index) && <span className="dot"></span>}

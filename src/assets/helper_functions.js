@@ -1,5 +1,5 @@
 // const aws = "https://7yjlescifc.execute-api.us-east-2.amazonaws.com/test/DynamoDBManager";
-const aws = "https://wrqj9e6vd1.execute-api.us-east-2.amazonaws.com/test/DynamoDBManager";
+const aws = "https://wrqj9e6vd1.execute-api.us-east-2.amazonaws.com/prod/DynamoDBManager";
 
 export const isMobileDevice = () => {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Macintosh/i.test(navigator.userAgent) && ('ontouchend' in document);
@@ -53,7 +53,8 @@ export const readDynamoDB = (id) => {
     method: 'POST',
     body: JSON.stringify(data),
     headers:{
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'x-api-key': process.env.REACT_APP_AWS_API_KEY
     }
   })
   .then(res => {
@@ -81,7 +82,8 @@ export const queryDynamoDB = (searchValue) => {
     method: 'POST',
     body: JSON.stringify(data),
     headers:{
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'x-api-key': process.env.REACT_APP_AWS_API_KEY
     }
   })
   .then(res => {
@@ -126,7 +128,8 @@ export const updateDynamoDB = (id, rsvp, songRequest, poprawinyRSVP, diet) => {
       method: 'POST',
       body: JSON.stringify(data),
       headers:{
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.REACT_APP_AWS_API_KEY
       }
     })
     .then(res => {

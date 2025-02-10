@@ -35,9 +35,9 @@ const RSVPForm = ({partyData,
           <div className="invited-guests-container">
             <span className="label-text invited-guest-text">Invited Guests</span>
             {partyData.map((item, index) => (
-              <label key={index} className="label-name">
+              <div key={index} className="label-name">
                 {getItemId(item)}
-              </label>
+              </div>
             ))}
           </div>
           {partyData.map((item, index) => (

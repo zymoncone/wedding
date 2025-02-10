@@ -9,7 +9,7 @@ const argentina_faq = [
   },
   {
     question: "¿A qué hora tendría que llegar?",
-    answer: "Los novios harán su entrada a las 21:00 horas. Nos encantaría que estuvieras allí para darles la bienvenida. Por favor, procurá no llegar demasiado temprano."
+    answer: "Los novios harán su entrada a las 21:15 horas. Nos encantaría que estuvieras ahí para darles la bienvenida. Entonces por favor, calcule llegar a las 21:00 y procurá no llegar demasiado temprano tampoco."
   },
   {
     question: "¿Cómo me visto?",
