@@ -1,6 +1,3 @@
-// const aws = "https://7yjlescifc.execute-api.us-east-2.amazonaws.com/test/DynamoDBManager";
-const aws = "https://wrqj9e6vd1.execute-api.us-east-2.amazonaws.com/prod/DynamoDBManager";
-
 export const isMobileDevice = () => {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Macintosh/i.test(navigator.userAgent) && ('ontouchend' in document);
 };
@@ -15,10 +12,10 @@ export const getItemId = (item) => {
 
 export const normalizeName = (name) => {
   const polishMap = {
-      'ą': 'a', 'ć': 'c', 'ę': 'e', 'ł': 'l', 'ń': 'n',
-      'ó': 'o', 'ś': 's', 'ź': 'z', 'ż': 'z',
-      'Ą': 'A', 'Ć': 'C', 'Ę': 'E', 'Ł': 'L', 'Ń': 'N',
-      'Ó': 'O', 'Ś': 'S', 'Ź': 'Z', 'Ż': 'Z'
+    'ą': 'a', 'ć': 'c', 'ę': 'e', 'ł': 'l', 'ń': 'n',
+    'ó': 'o', 'ś': 's', 'ź': 'z', 'ż': 'z',
+    'Ą': 'A', 'Ć': 'C', 'Ę': 'E', 'Ł': 'L', 'Ń': 'N',
+    'Ó': 'O', 'Ś': 'S', 'Ź': 'Z', 'Ż': 'Z'
   };
 
   return name.split('').map(char => polishMap[char] || char).join('');
@@ -34,112 +31,65 @@ export const sanitizeInput = (input) => {
   return capitalizedInput;
 };
 
-export const getCurrentTime = () => {
-  return new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
-};
+export const readDynamoDB = async (id) => {
+  const formattedId = id.replace(/\s/g, '-');
 
-export const readDynamoDB = (id) => {
-  const url = aws;
-  const data = {
-    operation: 'read',
-    payload: {
-      Key: {
-        id: id,
-      }
+  try {
+    const response = await fetch(`../v1/users/${formattedId}`);
+    if (!response.ok) {
+      console.error('Error:', `${id} not found in databse`);
+      return null;
     }
-  };
+    const data = await response.json();
+    return data;
 
-  return fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers:{
-      'Content-Type': 'application/json',
-      'x-api-key': process.env.REACT_APP_AWS_API_KEY
-    }
-  })
-  .then(res => {
-    if (!res.ok) {
-      throw new Error('Network response was not ok during readDynamoDB');
-    }
-    return res.json();
-  })
-  .catch(error => {
+  } catch (error) {
     console.error('Error:', error);
     throw error;
-  });
-}
-
-export const queryDynamoDB = (searchValue) => {
-  const url = aws;
-  const data = {
-    operation: 'query',
-    payload: {
-      searchValue: searchValue,
-    }
-  };
-
-  return fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers:{
-      'Content-Type': 'application/json',
-      'x-api-key': process.env.REACT_APP_AWS_API_KEY
-    }
-  })
-  .then(res => {
-    if (!res.ok) {
-      throw new Error('Network response was not ok during queryDynamoDB');
-    }
-    return res.json();
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    throw error;
-  });
-}
-
-export const updateDynamoDB = (id, rsvp, songRequest, poprawinyRSVP, diet) => {
-    const url = aws;
-    const data = {
-      operation: 'update',
-      payload: {
-        Key: {
-          id: id
-        },
-        UpdateExpression: "SET #rsvp = :rsvp_value, #song_request = :song_request_value, #timestamp_value = :timestamp_value, #poprawiny_rsvp = :poprawiny_rsvp_value, #diet = :diet_value",
-        ExpressionAttributeNames: {
-          "#rsvp": "rsvp",
-          "#song_request": "song-request",
-          "#timestamp_value": "timestamp",
-          "#poprawiny_rsvp": "poprawiny-rsvp",
-          "#diet": "diet"
-        },
-        ExpressionAttributeValues: {
-          ":rsvp_value": rsvp,
-          ":song_request_value": songRequest,
-          ":timestamp_value": getCurrentTime(),
-          ":poprawiny_rsvp_value": poprawinyRSVP,
-          ":diet_value": diet
-        }
-      }
-    };
-
-    return fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers:{
-        'Content-Type': 'application/json',
-        'x-api-key': process.env.REACT_APP_AWS_API_KEY
-      }
-    })
-    .then(res => {
-      if (!res.ok) {
-        throw new Error('Network response was not ok during updateDynamoDB');
-      }
-      return res.json();
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      throw error;
-    });
   }
+}
+
+export const queryDynamoDB = async (partyID) => {
+  try {
+    const response = await fetch(`../v1/parties/${partyID}`);
+    if (!response.ok) {
+      console.error('Error:', `${partyID} not found in databse`);
+      return null;
+    }
+    const data = await response.json();
+    return data;
+
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}
+
+export const updateDynamoDB = async (id, rsvp, songRequest, poprawinyRSVP, diet) => {
+  const formattedId = id.replace(/\s/g, '-');
+
+  try {
+    const response = await fetch(`../v1/users/${formattedId}/update`, {
+      method: 'POST',
+      body: JSON.stringify({
+        rsvp: rsvp,
+        songRequest: songRequest,
+        poprawinyRSVP: poprawinyRSVP,
+        diet: diet
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    if (!response.ok) {
+      console.error('Error:', 'Network response was not ok when updating database');
+      return null;
+    }
+    const data = await response.json();
+    return data;
+
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}

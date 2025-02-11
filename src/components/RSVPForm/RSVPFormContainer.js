@@ -39,7 +39,6 @@ const RSVPFormContainer = () => {
             console.log('READ response', response);
           }
         } else {
-          console.log('Item does not exist');
           setGuestMatch(false);
           setErrorMessage(true);
         }
@@ -62,7 +61,7 @@ const RSVPFormContainer = () => {
         .then(response => {
           if (response) {
             if (process.env.REACT_APP_NODE_ENV === 'development') {
-              console.log('query', response);
+              console.log('QUERY response', response);
             }
             setPartyData(response);
           } else {
