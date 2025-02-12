@@ -1,6 +1,6 @@
 
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs"
-import { GoXCircleFill } from "react-icons/go";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import { RxCross1 } from "react-icons/rx";
 import { useEffect, useState } from 'react'
 import "./SlideShow.css"
 import DisplayImage from "../Display/DisplayImage"
@@ -46,15 +46,15 @@ const SlideShow = (props) => {
 
   return (
   <div className="slide-show-container" style={{opacity: props.opacity}}>
-  <GoXCircleFill className="x-circle" onClick={props.handleClose} />
+  <RxCross1 className="x-circle" onClick={props.handleClose} />
   <div key={props.idx} className="slide-show">
-    {mutliSlides && <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide} disabled={isDisabled}/>}
+    {mutliSlides && <SlArrowLeft className="arrow arrow-left" onClick={prevSlide} disabled={isDisabled}/>}
       {props.entry.map((src, idx) => {
         return(
           <DisplayImage key={idx} source={src} index={idx} slide={slide} />
         )
       })}
-    {mutliSlides && <BsArrowRightCircleFill className="arrow arrow-right" onClick={nextSlide} disabled={isDisabled}/>}
+    {mutliSlides && <SlArrowRight className="arrow arrow-right" onClick={nextSlide} disabled={isDisabled}/>}
     {mutliSlides && <span className="slide-selections">
       {props.entry.map((_, idx) => {
         return (

@@ -2,6 +2,7 @@ import "./NavBarMobile.css";
 import { Pivot as Hamburger } from 'hamburger-react';
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { SlArrowUp } from "react-icons/sl";
 
 const Link_1 = { "EN": "Wedding", "PL": "Wesela", "SP": "El Casamiento" };
 const Link_2 = { "EN": "Our Story", "PL": "Nasza Historia", "SP": "Nuestra Historia" };
@@ -13,6 +14,7 @@ const Link_6 = { "EN": "FAQ", "PL": "FAQ", "SP": "Preguntas Frecuentes" };
 const NavBarMobile = ({ isOpen, setOpen, setDoneAnimating, lang }) => {
   const [height, setHeight] = useState("auto");
   const [navBarStyle, setNavBarStyle] = useState({});
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   const location = useLocation();
   const isHome = (location.pathname === "/poland") ||
@@ -60,8 +62,26 @@ const NavBarMobile = ({ isOpen, setOpen, setDoneAnimating, lang }) => {
     }
   }, [isOpen, setDoneAnimating, setNavBarStyle, setHeight]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollToTop(true);
+      } else {
+        setShowScrollToTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="nav-poland-container-mobile" style={isOpen ? menuOpenSettings : menuClosedSettings}>
+    <div className={`nav-poland-container-mobile ${isOpen ? 'open' : 'closed'}`} style={isOpen ? menuOpenSettings : menuClosedSettings}>
+
       <div className="navbar-mobile-container" style={navBarStyle}>
         <div className="nav-name-date-header">
           <span className="nav-link-mobile" onClick={() => setOpen(false)}>
@@ -115,6 +135,11 @@ const NavBarMobile = ({ isOpen, setOpen, setDoneAnimating, lang }) => {
             </div>}
         </div>
       </div>
+      {showScrollToTop && (
+        <div className={`scroll-to-top-arrow ${showScrollToTop ? 'show' : ''}`} onClick={scrollToTop}>
+          <SlArrowUp size={25} />
+        </div>
+      )}
     </div>
   );
 }
