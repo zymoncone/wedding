@@ -8,7 +8,7 @@ export default async (req, context) => {
   const clientIp = context.clientIp || clientIpFromHeader;
 
   if (req.method !== 'POST') {
-    return new Response(`Your IP is ${clientIp}`, {
+    return new Response(`Method is not allowed (IP: ${clientIp})`, {
       status: 405,
       headers: {
         'Access-Control-Allow-Origin': '*',
@@ -29,20 +29,22 @@ export default async (req, context) => {
       Key: {
         id: formattedId
       },
-      UpdateExpression: "SET #rsvp = :rsvp_value, #song_request = :song_request_value, #timestamp_value = :timestamp_value, #poprawiny_rsvp = :poprawiny_rsvp_value, #diet = :diet_value",
+      UpdateExpression: "SET #rsvp = :rsvp_value, #song_request = :song_request_value, #timestamp_value = :timestamp_value, #poprawiny_rsvp = :poprawiny_rsvp_value, #diet = :diet_value, #ip = :ip_value",
       ExpressionAttributeNames: {
         "#rsvp": "rsvp",
         "#song_request": "song-request",
         "#timestamp_value": "timestamp",
         "#poprawiny_rsvp": "poprawiny-rsvp",
-        "#diet": "diet"
+        "#diet": "diet",
+        "#ip": "ip"
       },
       ExpressionAttributeValues: {
         ":rsvp_value": rsvp,
         ":song_request_value": songRequest,
         ":timestamp_value": getCurrentTime(),
         ":poprawiny_rsvp_value": poprawinyRSVP,
-        ":diet_value": diet
+        ":diet_value": diet,
+        ":ip_value": clientIp
       }
     }
   };
