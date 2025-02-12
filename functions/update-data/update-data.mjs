@@ -3,8 +3,12 @@ export default async (req, context) => {
     return new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
   };
 
+  const forwardedFor = req.headers.get('x-forwarded-for');
+  const clientIpFromHeader = forwardedFor ? forwardedFor.split(',')[0].trim() : null;
+  const clientIp = context.clientIp || clientIpFromHeader;
+
   if (req.method !== 'POST') {
-    return new Response('Method Not Allowed', {
+    return new Response(`Your IP is ${clientIp}`, {
       status: 405,
       headers: {
         'Access-Control-Allow-Origin': '*',
