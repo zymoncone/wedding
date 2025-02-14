@@ -8,6 +8,10 @@ const argentina_faq = [
     answer: "Lamentablemente, no es posible, ya que hemos contratado un número fijo de platos. Solo las personas mencionadas al final de la invitación digital pueden asistir."
   },
   {
+    question: "¿Cuánto cuesta la tarjeta?",
+    answer: "Hemos decidido cubrir el costo del cubierto para nuestros invitados."
+  },
+  {
     question: "¿A qué hora tendría que llegar?",
     answer: "Los novios harán su entrada a las 21:15 horas. Nos encantaría que estuvieras ahí para darles la bienvenida. Entonces por favor, calcule llegar a las 21:00 y procurá no llegar demasiado temprano tampoco."
   },

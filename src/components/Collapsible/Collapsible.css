@@ -30,17 +30,19 @@
 }
 
 .dropdown-arrow {
-  text-align: right;
+  display: flex;
   font-size: 1rem;
   font-weight: 100;
   color: var(--text-color);
-  display: inline-block;
   transition: transform 0.2s ease;
   margin-left: 1rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropdown-arrow.open {
-  transform: rotate(180deg) translateY(4px);
+  transform: rotate(180deg);
 }
 
 .collapsible {
