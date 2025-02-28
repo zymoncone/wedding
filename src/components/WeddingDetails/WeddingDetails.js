@@ -15,8 +15,8 @@ const first_banner_title = {
 };
 
 const first_banner_time = {
-  "EN": "16:00",
-  "PL": "16:00",
+  "EN": "16:30",
+  "PL": "16:30",
   "SP": "18:30"
 };
 
