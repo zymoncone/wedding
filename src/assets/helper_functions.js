@@ -22,17 +22,30 @@ export const normalizeName = (name) => {
 };
 
 export const sanitizeInput = (input) => {
-  const sanitizedInput = input.replace(/[^a-zA-Z\sąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/g, '');
+  const sanitizedInput = input.replace(/[^a-zA-Z\sąćęłńóśźżĄĆĘŁŃÓŚŹŻ.-]/g, '');
   const words = sanitizedInput.trim().split(' ');
   for (let i = 0; i < words.length; i++) {
-    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+    words[i] = words[i].split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()).join('-');
   }
   const capitalizedInput = words.join(' ');
   return capitalizedInput;
 };
 
+const formatIdForUrl = (id) => {
+  return (id.split('').map((char, index) => {
+    if (char === '-' && (index === 0 || id[index - 1] !== ' ')) {
+      return '--';
+    }
+    return char === ' ' ? '-' : char;
+  }).join(''));
+};
+
+export const formatIdForDB = (id) => {
+  return (id.replace(/--/g, '{{DOUBLE_DASH}}').replace(/-/g, ' ').replace(/{{DOUBLE_DASH}}/g, '-'));
+};
+
 export const readDynamoDB = async (id) => {
-  const formattedId = id.replace(/\s/g, '-');
+  const formattedId = formatIdForUrl(id);
 
   try {
     const response = await fetch(`../v1/users/${formattedId}`);
@@ -66,7 +79,7 @@ export const queryDynamoDB = async (partyID) => {
 }
 
 export const updateDynamoDB = async (id, rsvp, songRequest, poprawinyRSVP, diet) => {
-  const formattedId = id.replace(/\s/g, '-');
+  const formattedId = formatIdForUrl(id);
 
   try {
     const response = await fetch(`../v1/users/${formattedId}/update`, {

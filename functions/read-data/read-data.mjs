@@ -1,6 +1,8 @@
+import { formatIdForDB } from '../../src/assets/helper_functions.js';
+
 export default async (req, context) => {
   const { id } = context.params;
-  const formattedId = id.replace(/-/g, ' ');
+  const formattedId = formatIdForDB(id);
   const url = process.env.REACT_APP_AWS_API_PROD;
 
   const body = {

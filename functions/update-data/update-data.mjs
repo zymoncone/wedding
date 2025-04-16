@@ -1,3 +1,5 @@
+import { formatIdForDB } from '../../src/assets/helper_functions.js';
+
 export default async (req, context) => {
   const getCurrentTime = () => {
     return new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
@@ -20,7 +22,7 @@ export default async (req, context) => {
 
   const { id } = context.params;
   const { rsvp, songRequest, poprawinyRSVP, diet } = await req.json();
-  const formattedId = id.replace(/-/g, ' ');
+  const formattedId = formatIdForDB(id);
   const url = process.env.REACT_APP_AWS_API_PROD;
 
   const body = {
