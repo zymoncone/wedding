@@ -4,7 +4,7 @@ import { VALID_PAGES } from "../../assets/constants";
 
 const PageNotFound = () => {
   const location = useLocation();
-  const pages = location.pathname.split("/");
+  const pages = location.pathname.toLowerCase().split("/");
   const matchedPage = VALID_PAGES.find(page => pages.includes(page)) || "";
 
   return (

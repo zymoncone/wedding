@@ -32,9 +32,13 @@ const Registry = () => {
           still like to contribute to our registry or honeymoon funds,
           please use the link below.
         </div>
-        <div className="button-main">
-          Coming Soon!
-        </div>
+        <a className="button-main"
+          href="https://www.theknot.com/us/mayra-oyola-and-szymon-sarnowicz-aug-2025/registry"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Our Registry</span>
+        </a>
       </div>
     </div>
   );

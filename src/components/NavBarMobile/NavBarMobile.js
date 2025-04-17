@@ -17,15 +17,15 @@ const NavBarMobile = ({ isOpen, setOpen, setDoneAnimating, lang }) => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   const location = useLocation();
-  const isHome = (location.pathname === "/poland") ||
-    (location.pathname === "/argentina");
-  const isStory = (location.pathname === "/poland/story") ||
-    (location.pathname === "/argentina/story");
-  const isTravel = location.pathname === "/poland/travelandstay";
-  const isRegistry = location.pathname === "/poland/registry";
-  const isBlog = location.pathname === "/poland/blog";
-  const isFAQ = (location.pathname === "/argentina/faq") ||
-    (location.pathname === "/poland/faq");
+  const isHome = (location.pathname.toLowerCase() === "/poland") ||
+    (location.pathname.toLowerCase() === "/argentina");
+  const isStory = (location.pathname.toLowerCase() === "/poland/story") ||
+    (location.pathname.toLowerCase() === "/argentina/story");
+  const isTravel = location.pathname.toLowerCase() === "/poland/travelandstay";
+  const isRegistry = location.pathname.toLowerCase() === "/poland/registry";
+  const isBlog = location.pathname.toLowerCase() === "/poland/blog";
+  const isFAQ = (location.pathname.toLowerCase() === "/argentina/faq") ||
+    (location.pathname.toLowerCase() === "/poland/faq");
   const isOnBackground = isHome || isTravel;
   const navStyle = isOnBackground && isOpen ? "black" : (!isOnBackground ? "black" : "white");
   const isPoland = (lang === "EN") || (lang === "PL");

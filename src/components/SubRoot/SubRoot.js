@@ -30,9 +30,9 @@ const SubRoot = ({ lang }) => {
   const [isDoneAnimating, setDoneAnimating] = useState(false);
 
   const location = useLocation();
-  const isHome = (location.pathname === "/poland") ||
-    (location.pathname === "/argentina");
-  const isTravel = location.pathname === "/poland/travelandstay";
+  const isHome = (location.pathname.toLowerCase() === "/poland") ||
+    (location.pathname.toLowerCase() === "/argentina");
+  const isTravel = location.pathname.toLowerCase() === "/poland/travelandstay";
   const isOnBackground = isHome || isTravel;
   const navStyle = { color: isOnBackground ? "white" : "black" };
   const isPoland = (lang === "EN") || (lang === "PL");
