@@ -1,0 +1,47 @@
+.nav-poland-container-desktop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  justify-content: space-between;
+  height: 6rem;
+  width: 90%;
+  z-index: 1;
+  animation: fade 1s ease-in;
+}
+
+.nav-directory-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  width: max-content !important;
+  font-size: 20px;
+  font-family: "Newsreader", serif;
+  font-weight: 200;
+}
+
+.date-header-rightside {
+  font-size: 35px;
+  font-family: "Newsreader", serif;
+  font-weight: 200;
+  margin: 0 50px 0 0;
+}
+
+.nav-link-desktop {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: black;
+  width: max-content !important;
+}
+
+.rsvp-button-container {
+  width: min-content;
+}
+
+@media screen and (max-width: 1180px) {
+  .nav-directory-container {
+    width: 40vw;
+  }
+}

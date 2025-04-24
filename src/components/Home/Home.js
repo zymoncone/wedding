@@ -13,10 +13,10 @@ const Home = () => {
   const [opacity, setOpacity] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
 
-  const { lang } = useAppContext();
+  const { togglableLang } = useAppContext();
 
-  const isPoland = (lang === "EN") || (lang === "PL");
-  const isArgentina = lang === "SP";
+  const isPoland = (togglableLang === "EN") || (togglableLang === "PL");
+  const isArgentina = togglableLang === "SP";
 
   useEffect(() => {
     let vh = window.innerHeight * 0.01;
@@ -57,17 +57,17 @@ const Home = () => {
       }}>
         <div className="poland-home-content">
           <div className="poland-names-title">Mayra & Szymon</div>
-          <CountDown lang={lang} />
+          <CountDown lang={togglableLang} />
           <BouncingArrow />
         </div>
       </div>
       <div className="poland-wedding-details">
-        {isArgentina && <LinkBanner lang={lang} />}
-        <WeddingDetails lang={lang} />
-        <LinkBanner lang={lang} faq_banner={true} />
-        {isPoland && <JoinUsBanner />}
-        {isPoland && <LinkBanner lang={lang} />}
-        {isPoland && <WhatsAppBanner />}
+        {isArgentina && <LinkBanner lang={togglableLang} />}
+        <WeddingDetails lang={togglableLang} />
+        <LinkBanner lang={togglableLang} faq_banner={true} />
+        {isPoland && <JoinUsBanner lang={togglableLang} />}
+        {isPoland && <LinkBanner lang={togglableLang} />}
+        {isPoland && <WhatsAppBanner lang={togglableLang} />}
       </div>
     </div>
   );

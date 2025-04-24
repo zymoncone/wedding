@@ -125,7 +125,7 @@ fieldset {
   padding: 0;
   font-size: 17px;
   font-weight: 400;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   font-family: "Libre Baskerville", "Times New Roman", Times, serif;
 }
 
@@ -228,8 +228,6 @@ input[type="radio"]:checked {
   padding: 0;
   font-size: 20px;
   font-weight: 300;
-  text-transform: capitalize;
-  color: black;
 }
 
 .name-verification-input-container {
@@ -247,8 +245,13 @@ input[type="radio"]:checked {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .thank-you-text {
@@ -323,7 +326,8 @@ input[type="radio"]:checked {
   text-align: center;
   text-decoration: none;
   touch-action: manipulation;
-  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+    transform 0.1s;
   user-select: none;
   -webkit-user-select: none;
   width: auto;
@@ -331,12 +335,11 @@ input[type="radio"]:checked {
 
 .button-23:hover {
   box-shadow: #bcbcbc 0 0 0 1px, rgba(191, 191, 191, 0.1) 0 0 0 1px;
-  transition: box-shadow .2s;
+  transition: box-shadow 0.2s;
 }
 
 @media screen and (max-width: 600px) {
   .button-23 {
     font-size: 15px;
   }
-
 }

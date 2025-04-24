@@ -1,7 +1,25 @@
 import "./JoinUsBanner.css";
 import { Link } from "react-router-dom";
 
-const JoinUsBanner = () => {
+const join_us_title = {
+  "EN": "Join Us",
+  "PL": "Dołącz do nas",
+  "SP": "Únete a nosotros"
+};
+
+const join_us_subtext = {
+  "EN": "We hope you can make it!",
+  "PL": "Mamy nadzieję, że się pojawisz!",
+  "SP": "¡Esperamos que puedas hacerlo!"
+};
+
+const join_us_button = {
+  "EN": "RSVP",
+  "PL": "Potwierdzenie przybycia",
+  "SP": "RSVP"
+};
+
+const JoinUsBanner = ({ lang }) => {
   return (
     <div className="join-us-banner-container">
       <div className="join-us-banner" style={{
@@ -10,13 +28,13 @@ const JoinUsBanner = () => {
       backgroundPosition: "center",
     }}>
         <div className="join-us-title">
-          Join Us
+          {join_us_title[lang]}
         </div>
         <div className="join-us-subtext">
-          We hope you can make it!
+          {join_us_subtext[lang]}
         </div>
         <Link to={`rsvp`} className="button-main" style={{padding: "30px 50px"}}>
-          <span>RSVP</span>
+          <span>{join_us_button[lang]}</span>
         </Link>
       </div>
     </div>

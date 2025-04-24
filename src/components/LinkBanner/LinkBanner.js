@@ -23,7 +23,7 @@ const faq_title = {
 
 const faq_button_text = {
   'EN': "FAQ",
-  'PL': "FAQ",
+  'PL': "Najczęściej Zadawane Pytania",
   'SP': "Preguntas Frecuentes"
 };
 

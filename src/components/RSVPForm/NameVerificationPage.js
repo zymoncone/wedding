@@ -1,11 +1,19 @@
 import './RSVPForm.css';
+import { rsvp_subtitle,
+         continue_button,
+         rsvp_name_not_found } from '../../assets/texts';
 
-const NameVerificationPage = ({handleContinue, name, setName, errorMessage, loading}) => {
+const NameVerificationPage = ({ handleContinue,
+                                name,
+                                setName,
+                                errorMessage,
+                                loading,
+                                lang }) => {
 
   return (
     <form className="rsvp-form" onSubmit={handleContinue}>
       <label className="name-verification-input-container">
-        <span className='name-verification-text-title'>Please enter your first and last name</span>
+        <span className='name-verification-text-title'>{rsvp_subtitle[lang]}</span>
         <input type="text"
                value={name}
                onChange={(e) => setName(e.target.value)}
@@ -13,12 +21,12 @@ const NameVerificationPage = ({handleContinue, name, setName, errorMessage, load
                required />
       </label>
       {errorMessage && <p className="error-message">
-        Name not found. Please make sure it matches the invitaiton exactly.
+        {rsvp_name_not_found[lang]}
       </p>}
       <div style={{margin: "1rem"}}></div>
       {loading ?
         <div className="loading-spinner"></div> :
-        <button className="button-23">Continue</button>
+        <button className="button-23">{continue_button[lang]}</button>
       }
     </form>
   );

@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { readDynamoDB, queryDynamoDB, sanitizeInput, normalizeName } from '../../assets/helper_functions';
 import NameVerificationPage from './NameVerificationPage';
 import RSVPForm from './RSVPForm';
+import { rsvp_thank_you_top, rsvp_thank_you_bottom, rsvp_title } from '../../assets/texts';
+import { useAppContext } from "../SubRoot/SubRoot";
 
 const RSVPFormContainer = () => {
   const [name, setName] = useState('');
@@ -12,6 +14,9 @@ const RSVPFormContainer = () => {
   const [errorMessage, setErrorMessage] = useState(false);
   const [loading, setLoading] = useState(false);
   const [submit, setSubmit] = useState(false);
+
+  const { togglableLang } = useAppContext();
+
 
   const handleName = () => {
     const sanitizedValue = sanitizeInput(name);
@@ -73,23 +78,26 @@ const RSVPFormContainer = () => {
 
   return (
     <div className="rsvp-form-container">
-      <h1 className="rsvp-title">RSVP</h1>
+      <h1 className="rsvp-title">{rsvp_title[togglableLang]}</h1>
       {guestMatch &&
         <RSVPForm partyData={partyData}
           setGuestMatch={setGuestMatch}
           submit={submit}
           setSubmit={setSubmit}
+          lang={togglableLang}
         />}
       {!guestMatch && !submit &&
         <NameVerificationPage handleContinue={handleContinue}
           name={name}
           setName={setName}
           errorMessage={errorMessage}
-          loading={loading} />
+          loading={loading}
+          lang={togglableLang} />
       }
       {!guestMatch && submit &&
-        <div>
-          <div className="thank-you-text">Thank you for your RSVP!<br />Your entry has been recorded.</div>
+        <div className="thank-you-text">
+          <div>{rsvp_thank_you_top[togglableLang]}</div>
+          <div>{rsvp_thank_you_bottom[togglableLang]}</div>
         </div>
       }
     </div>

@@ -2,8 +2,25 @@ import { useEffect, useState } from 'react';
 import { getItemId, updateDynamoDB } from '../../assets/helper_functions';
 import Modal from '../Modal/Modal';
 import { IoIosInformationCircleOutline } from "react-icons/io";
+import { poprawiny_title,
+         poprawiny_text,
+         rsvp_able_to_attend,
+         rsvp_able_to_attend_2,
+         rsvp_is_attending,
+         rsvp_is_not_attending,
+         rsvp_courtesy_text,
+         rsvp_will_attend,
+         rsvp_declines,
+         poprawiny_rspv_text,
+         dietary_restrictions_text,
+         dietary_restrictions_subtext,
+         song_request_text} from '../../assets/texts';
 
-const IndividualGuestData = ({ item, index, lastIndex, submit }) => {
+const IndividualGuestData = ({ item,
+                               index,
+                               lastIndex,
+                               submit,
+                               lang }) => {
 
   const [id, setId] = useState('');
 
@@ -54,32 +71,25 @@ const IndividualGuestData = ({ item, index, lastIndex, submit }) => {
   return (
     <div key={index} className="individual-guest-entry">
       <Modal show={showModal} onClose={handleCloseModal}>
-        <h2>What is Poprawiny?</h2>
+        <h2>{poprawiny_title[lang]}</h2>
         <p>
-          Poprawiny is a lovely Polish tradition held on the second day of
-          the wedding celebration. It’s an optional luncheon where the newlyweds
-          spend more time with their guests. The tradition goes back many centuries
-          and was originally meant to ensure that guests were safely sent off after
-          the festivities.
-          While attendance is completely optional, we would love to know
-          if you’ll be joining us—please kindly RSVP!
+          {poprawiny_text[lang]}
         </p>
       </Modal>
 
       <div className="spacing"></div>
 
       <fieldset>
-        {remoteRSVP === 'yes' && <legend><span className="bold">{id}</span> is marked as attending. <br />Feel free to update below.</legend>}
-        {remoteRSVP === 'no' && <legend><span className="bold">{id}</span> is marked as not attending. <br />Feel free to update below.</legend>}
-        {remoteRSVP === '' && <legend>Is <span className="bold">{id}</span> Able to Attend?</legend>}
-
+        {remoteRSVP === 'yes' && <legend><span className="bold">{id}</span>{rsvp_is_attending[lang]}<br />{rsvp_courtesy_text[lang]}</legend>}
+        {remoteRSVP === 'no' && <legend><span className="bold">{id}</span>{rsvp_is_not_attending[lang]}<br />{rsvp_courtesy_text[lang]}</legend>}
+        {remoteRSVP === '' && <legend>{rsvp_able_to_attend[lang]}<span className="bold">{id}</span>{rsvp_able_to_attend_2[lang]}</legend>}
         <label className="radio-input-row">
           <input className="radio-input"
                  type="radio" value="yes"
                  checked={rsvp === 'yes'}
                  onChange={(e) => setRSVP(e.target.value)}
                  name={`rsvp-yes-${index}`} />
-          <span className="radio-select-text">Yes, Will Attend</span>
+          <span className="radio-select-text">{rsvp_will_attend[lang]}</span>
         </label>
 
         <label className="radio-input-row">
@@ -89,15 +99,15 @@ const IndividualGuestData = ({ item, index, lastIndex, submit }) => {
                  checked={rsvp === 'no'}
                  onChange={(e) => setRSVP(e.target.value)}
                  name={`rsvp-no-${index}`} />
-          <span className="radio-select-text">No, Declines With Regret</span>
+          <span className="radio-select-text">{rsvp_declines[lang]}</span>
         </label>
       </fieldset>
 
       {rsvp === 'yes' && <fieldset>
         <legend>
           <span className="poprawiny-rsvp-text">
-            {remotePoprawinyRSVP === 'yes' && <>We'll see <span className="bold">{id}</span> at Poprawiny as well!<br />Feel free to update below.</>}
-            {remotePoprawinyRSVP === 'no' && <><span className="bold">{id}</span> is only attending the first day. <br />Feel free to update below.</>}
+            {remotePoprawinyRSVP === 'yes' && <>{poprawiny_rspv_text[lang]}<span className="bold">{id}</span> at Poprawiny as well!<br />{rsvp_courtesy_text[lang]}</>}
+            {remotePoprawinyRSVP === 'no' && <><span className="bold">{id}</span> is only attending the first day. <br />{rsvp_courtesy_text[lang]}</>}
             {remotePoprawinyRSVP === '' && <>Is <span className="bold">{id}</span> Also Able to Attend Poprawiny on Aug 24?</>}
           </span>
           <IoIosInformationCircleOutline onClick={handleOpenModal} className="question-mark" />
@@ -110,7 +120,7 @@ const IndividualGuestData = ({ item, index, lastIndex, submit }) => {
                  checked={poprawinyRSVP === 'yes'}
                  onChange={(e) => setPoprawinyRSVP(e.target.value)}
                  name={`poprawinu-rsvp-yes-${index}`} />
-          <span className="radio-select-text">Yes, Will Attend</span>
+          <span className="radio-select-text">{rsvp_will_attend[lang]}</span>
         </label>
 
         <label className="radio-input-row">
@@ -120,14 +130,14 @@ const IndividualGuestData = ({ item, index, lastIndex, submit }) => {
                  checked={poprawinyRSVP === 'no'}
                  onChange={(e) => setPoprawinyRSVP(e.target.value)}
                  name={`poprawinu-rsvp-no-${index}`}  />
-          <span className="radio-select-text">No, Declines With Regret</span>
+          <span className="radio-select-text">{rsvp_declines[lang]}</span>
         </label>
       </fieldset>}
 
       {rsvp === 'yes' && <label className="label-input-container">
         <span className="label-text">
-          Any Dietary Restrictions?<br />
-          <span className="label-diet-subtext">(None, Vegetarian, Other)</span>
+          {dietary_restrictions_text[lang]}<br />
+          <span className="label-diet-subtext">{dietary_restrictions_subtext[lang]}</span>
         </span>
         <input type="text"
                value={dietaryRestrictions}
@@ -136,7 +146,7 @@ const IndividualGuestData = ({ item, index, lastIndex, submit }) => {
       </label>}
 
       {rsvp === 'yes' && <label className="label-input-container">
-        <span className="label-text">Song Request</span>
+        <span className="label-text">{song_request_text[lang]}</span>
         <input type="text"
                value={songRequest}
                onChange={(e) => setSongRequest(e.target.value)}

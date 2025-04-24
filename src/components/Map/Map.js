@@ -1,15 +1,16 @@
 import "./Map.css";
 import { useState, useEffect } from "react";
-import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps"
+import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
+import { warsaw_airport_text, krakow_airport_text, loading_text } from "../../assets/texts";
 
 const geoUrl = "https://raw.githubusercontent.com/lotusms/world-map-data/main/world.json";
 
-const Map = () => {
+const Map = ({ lang }) => {
   const [geoData, setGeoData] = useState(null);
 
   const markers = [
     {
-      name: "Warsaw Chopin Airport",
+      name: warsaw_airport_text[lang],
       coordinates: [20.9671, 52.1657],
       link: "https://www.lotnisko-chopina.pl/en/index.html",
       color: "#FF5533",
@@ -17,7 +18,7 @@ const Map = () => {
       anchor: "middle",
     },
     {
-      name: "Kraków John Paul II Airport",
+      name: krakow_airport_text[lang],
       coordinates: [19.7848, 50.0777],
       link: "https://www.krakowairport.pl/en/",
       color: "#FF5533",
@@ -39,7 +40,7 @@ const Map = () => {
       .then((data) => setGeoData(data));
   }, []);
 
-  if (!geoData) return <p>Loading...</p>;
+  if (!geoData) return <p>{loading_text[lang]}</p>;
 
   return (
     <div className="map-container">

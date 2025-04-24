@@ -2,11 +2,13 @@ import './RSVPForm.css';
 import IndividualGuestData from './IndividualGuestData';
 import { useEffect } from 'react';
 import { sleep, getItemId } from '../../assets/helper_functions';
+import { invited_guests_header, rsvp_submit_button } from '../../assets/texts';
 
 const RSVPForm = ({partyData,
                    setGuestMatch,
                    submit,
-                   setSubmit
+                   setSubmit,
+                   lang
                   }) => {
 
   const handleSubmit = (e) => {
@@ -33,7 +35,7 @@ const RSVPForm = ({partyData,
       {partyData && partyData.length > 0 ? (
         <form className="rsvp-form" onSubmit={handleSubmit}>
           <div className="invited-guests-container">
-            <span className="label-text invited-guest-text">Invited Guests</span>
+            <span className="label-text invited-guest-text">{invited_guests_header[lang]}</span>
             {partyData.map((item, index) => (
               <div key={index} className="label-name">
                 {getItemId(item)}
@@ -46,10 +48,11 @@ const RSVPForm = ({partyData,
                                  index={index}
                                  lastIndex={(partyData.length - 1)}
                                  submit={submit}
+                                 lang={lang}
                                   />
           ))}
           <div style={{margin: "1rem"}}></div>
-          {!submit && <button className="button-23">Submit RSVP</button>}
+          {!submit && <button className="button-23">{rsvp_submit_button[lang]}</button>}
           {submit && <div className="loading-spinner"></div>}
         </form>
       ) :

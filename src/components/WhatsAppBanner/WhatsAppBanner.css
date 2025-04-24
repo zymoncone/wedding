@@ -35,6 +35,8 @@
 .whatsapp-text {
   font-size: 25px;
   z-index: 1;
+  max-width: 80%;
+  line-height: 1.35;
 }
 
 .whatsapp-logo-container {
@@ -71,6 +73,8 @@
 
 .join-whatsapp-button a {
   color: #3cf580;
+  padding: 0;
+  max-width: 200px;
 }
 
 .join-whatsapp-button:hover {
