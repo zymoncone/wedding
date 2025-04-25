@@ -12,6 +12,10 @@ import { poprawiny_title,
          rsvp_will_attend,
          rsvp_declines,
          poprawiny_rspv_text,
+         poprawiny_rspv_text_2,
+         poprawiny_rsvp_question,
+         poprawiny_rsvp_question_2,
+         poprawiny_not_attending_text,
          dietary_restrictions_text,
          dietary_restrictions_subtext,
          song_request_text} from '../../assets/texts';
@@ -106,9 +110,9 @@ const IndividualGuestData = ({ item,
       {rsvp === 'yes' && <fieldset>
         <legend>
           <span className="poprawiny-rsvp-text">
-            {remotePoprawinyRSVP === 'yes' && <>{poprawiny_rspv_text[lang]}<span className="bold">{id}</span> at Poprawiny as well!<br />{rsvp_courtesy_text[lang]}</>}
-            {remotePoprawinyRSVP === 'no' && <><span className="bold">{id}</span> is only attending the first day. <br />{rsvp_courtesy_text[lang]}</>}
-            {remotePoprawinyRSVP === '' && <>Is <span className="bold">{id}</span> Also Able to Attend Poprawiny on Aug 24?</>}
+            {remotePoprawinyRSVP === 'yes' && <>{poprawiny_rspv_text[lang]}<span className="bold">{id}</span>{poprawiny_rspv_text_2[lang]}<br />{rsvp_courtesy_text[lang]}</>}
+            {remotePoprawinyRSVP === 'no' && <><span className="bold">{id}</span>{poprawiny_not_attending_text[lang]}<br />{rsvp_courtesy_text[lang]}</>}
+            {remotePoprawinyRSVP === '' && <>{poprawiny_rsvp_question[lang]}<span className="bold">{id}</span>{poprawiny_rsvp_question_2[lang]}</>}
           </span>
           <IoIosInformationCircleOutline onClick={handleOpenModal} className="question-mark" />
         </legend>

@@ -299,6 +299,24 @@ export const poprawiny_rspv_text_2 = {
   "SP": ""
 };
 
+export const poprawiny_rsvp_question = {
+  "EN": "Is ",
+  "PL": "Czy ",
+  "SP": ""
+};
+
+export const poprawiny_rsvp_question_2 = {
+  "EN": " also able to attend Poprawiny on August 24?",
+  "PL": " również będzie na poprawinach 24 sierpnia?",
+  "SP": ""
+};
+
+export const poprawiny_not_attending_text = {
+  "EN": " is only attending the first day.",
+  "PL": " jest obecny tylko pierwszego dnia.",
+  "SP": ""
+};
+
 export const dietary_restrictions_text = {
   "EN": "Any Dietary Restrictions?",
   "PL": "Jakieś Ograniczenia Dietetyczne?",
