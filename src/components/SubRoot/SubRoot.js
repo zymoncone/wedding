@@ -18,7 +18,15 @@ const SubRoot = ({ lang }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setOpen] = useState(false);
   const [isDoneAnimating, setDoneAnimating] = useState(false);
-  const [togglableLang, setTogglableLang] = useState(lang);
+
+  // Check localStorage for saved language preference, fall back to prop
+  const savedLang = localStorage.getItem('preferredLanguage');
+  const [togglableLang, setTogglableLang] = useState(savedLang || lang);
+
+  // Save language preference to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('preferredLanguage', togglableLang);
+  }, [togglableLang]);
 
   const location = useLocation();
   const isHome = (location.pathname.toLowerCase() === "/poland") ||
@@ -69,7 +77,7 @@ const SubRoot = ({ lang }) => {
                        isOnBackground={isOnBackground}
                        isHome={isHome}
         />}
-      <AppContext.Provider value={{ isDoneAnimating, togglableLang }}>
+      <AppContext.Provider value={{ isDoneAnimating, togglableLang, setTogglableLang }}>
         <Outlet />
       </AppContext.Provider>
       <Footer lang={togglableLang} />

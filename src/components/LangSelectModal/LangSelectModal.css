@@ -1,0 +1,44 @@
+.language-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: left;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.language-option:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.flag-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flag-circle svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.language-option span {
+  font-size: 16px;
+  font-weight: 500;
+  align-items: center;
+}

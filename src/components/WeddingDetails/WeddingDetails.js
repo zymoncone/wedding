@@ -18,15 +18,15 @@ import {
   second_banner_attire,
   map_travel_link,
 } from "../../assets/texts";
+import ScrollAnimation from "../ScrollAnimation/ScrollAnimation";
 
 const WeddingDetails = ({ lang }) => {
-
-  const isPoland = (lang === "PL") || (lang === "EN");
+  const isPoland = lang === "PL" || lang === "EN";
 
   return (
     <div className="details-parent-container">
-      {isPoland &&
-        <>
+      {isPoland && (
+        <ScrollAnimation delay={100}>
           <DetailsBanner useDayOneSetup={true} lang={lang} />
           <div className="details-individual-container-poland">
             <h1 className="subtitle">{first_banner_title[lang]}</h1>
@@ -48,44 +48,53 @@ const WeddingDetails = ({ lang }) => {
                 </p>
               </div>
             </div>
-            <Button text={map_travel_link[lang]} address={first_banner_map[lang]} />
+            <Button
+              text={map_travel_link[lang]}
+              address={first_banner_map[lang]}
+            />
             <div className="attire-details-container">
               <p className="attire-details-subtext">
                 {first_banner_attire[lang]}
               </p>
             </div>
           </div>
-        </>}
-      <DetailsBanner useDayOneSetup={false} lang={lang} />
-      <div className="details-individual-container-poland">
-        <h1 className="subtitle">{second_banner_title[lang]}</h1>
-        <div className="details-subtext-container">
-          <div className="date-details-container">
-            <p className="date-details-subtext">
-              {second_banner_time[lang]}
-            </p>
+        </ScrollAnimation>
+      )}
+      <ScrollAnimation delay={200}>
+        <DetailsBanner useDayOneSetup={false} lang={lang} />
+        <div className="details-individual-container-poland">
+          <h1 className="subtitle">{second_banner_title[lang]}</h1>
+          <div className="details-subtext-container">
+            <div className="date-details-container">
+              <p className="date-details-subtext">{second_banner_time[lang]}</p>
+            </div>
+            <div className="address-details-container">
+              <p className="address-details-subtext">
+                {second_banner_address_top[lang]}
+              </p>
+              <p className="address-details-subtext">
+                {second_banner_address_mid[lang]}
+              </p>
+              <p className="address-details-subtext">
+                {second_banner_address_bot[lang]}
+              </p>
+            </div>
           </div>
-          <div className="address-details-container">
-            <p className="address-details-subtext">
-              {second_banner_address_top[lang]}
-            </p>
-            <p className="address-details-subtext">
-              {second_banner_address_mid[lang]}
-            </p>
-            <p className="address-details-subtext">
-              {second_banner_address_bot[lang]}
-            </p>
-          </div>
+          <Button
+            text={map_travel_link[lang]}
+            address={second_banner_map[lang]}
+          />
+          {isPoland && (
+            <div className="attire-details-container">
+              <p className="attire-details-subtext">
+                {second_banner_attire[lang]}
+              </p>
+            </div>
+          )}
         </div>
-        <Button text={map_travel_link[lang]} address={second_banner_map[lang]} />
-        {isPoland && <div className="attire-details-container">
-          <p className="attire-details-subtext">
-            {second_banner_attire[lang]}
-          </p>
-        </div>}
-      </div>
+      </ScrollAnimation>
     </div>
   );
-}
+};
 
 export default WeddingDetails;
