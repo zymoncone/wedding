@@ -51,7 +51,10 @@ const LangSelectModal = ({ setTogglableLang }) => {
     setTogglableLang(lang);
 
     // Also save to localStorage for persistence across visits
-    localStorage.setItem("preferredLanguage", lang);
+    // But don't save if it's 'SP'
+    if (lang !== "SP") {
+      localStorage.setItem("preferredLanguage", lang);
+    }
 
     // Close the modal
     handleCloseModal();

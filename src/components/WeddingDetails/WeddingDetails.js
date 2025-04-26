@@ -17,17 +17,47 @@ import {
   second_banner_map,
   second_banner_attire,
   map_travel_link,
+  poprawiny_title,
+  poprawiny_text,
 } from "../../assets/texts";
 import ScrollAnimation from "../ScrollAnimation/ScrollAnimation";
+import { useState } from "react";
+import Modal from "../Modal/Modal";
 
 const WeddingDetails = ({ lang }) => {
   const isPoland = lang === "PL" || lang === "EN";
+  const [showModal, setShowModal] = useState(false);
+  const [animateModal, setAnimateModal] = useState(false);
+
+  const handleCloseModal = () => {
+    setAnimateModal(false);
+    // Delay hiding to allow animation to complete
+    setTimeout(() => {
+      setShowModal(false);
+    }, 300);
+  };
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+    // Add small delay for animation
+    setTimeout(() => {
+      setAnimateModal(true);
+    }, 50);
+  };
 
   return (
     <div className="details-parent-container">
+      <Modal show={showModal} onClose={handleCloseModal} animate={animateModal}>
+        <h2>{poprawiny_title[lang]}</h2>
+        <p>{poprawiny_text[lang]}</p>
+      </Modal>
       {isPoland && (
         <ScrollAnimation delay={100}>
-          <DetailsBanner useDayOneSetup={true} lang={lang} />
+          <DetailsBanner
+            useDayOneSetup={true}
+            lang={lang}
+            handleOpenModal={handleOpenModal}
+          />
           <div className="details-individual-container-poland">
             <h1 className="subtitle">{first_banner_title[lang]}</h1>
             <div className="details-subtext-container">
@@ -61,7 +91,11 @@ const WeddingDetails = ({ lang }) => {
         </ScrollAnimation>
       )}
       <ScrollAnimation delay={200}>
-        <DetailsBanner useDayOneSetup={false} lang={lang} />
+        <DetailsBanner
+          useDayOneSetup={false}
+          lang={lang}
+          handleOpenModal={handleOpenModal}
+        />
         <div className="details-individual-container-poland">
           <h1 className="subtitle">{second_banner_title[lang]}</h1>
           <div className="details-subtext-container">

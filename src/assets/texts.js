@@ -240,7 +240,7 @@ export const poprawiny_title = {
 };
 
 export const poprawiny_text = {
-  "EN": "Poprawiny is a lovely Polish tradition held on the second day of the wedding celebration. It’s an optional luncheon where the newlyweds spend more time with their guests. The tradition goes back many centuries and was originally meant to ensure that guests were safely sent off after the festivities. While attendance is completely optional, we would love to knowif you’ll be joining us — please kindly RSVP!",
+  "EN": "Poprawiny is a lovely Polish tradition held on the second day of the wedding celebration. It’s an optional luncheon where the newlyweds spend more time with their guests. The tradition goes back many centuries and was originally meant to ensure that guests were safely sent off after the festivities. While attendance is completely optional, we would love to know if you’ll be joining us — please kindly RSVP!",
   "PL": "Poprawiny to piękna polska tradycja odbywająca się w drugim dniu uroczystości ślubnych. Jest to nieformalne przyjęcie, podczas którego nowożeńcy mogą spędzić więcej czasu ze swoimi gośćmi. Tradycja ta sięga wielu wieków wstecz i pierwotnie miała na celu zapewnienie, że goście bezpiecznie opuszczą miejsce uroczystości po zakończeniu świętowania. Choć udział w poprawinach jest całkowicie dobrowolny, będzie nam niezmiernie miło, jeśli do nas dołączycie — uprzejmie prosimy o potwierdzenie przybycia.",
   "SP": ""
 };

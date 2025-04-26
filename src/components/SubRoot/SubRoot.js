@@ -12,32 +12,42 @@ const AppContext = createContext();
 
 export function useAppContext() {
   return useContext(AppContext); // Custom hook for consuming the context
-};
+}
 
 const SubRoot = ({ lang }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setOpen] = useState(false);
   const [isDoneAnimating, setDoneAnimating] = useState(false);
 
-  // Check localStorage for saved language preference, fall back to prop
-  const savedLang = localStorage.getItem('preferredLanguage');
-  const [togglableLang, setTogglableLang] = useState(savedLang || lang);
+  const location = useLocation();
+  const isArgentinaPath = location.pathname.toLowerCase().includes("argentina");
+
+  // Only use saved language if we're not in Argentina path and the lang isn't 'SP'
+  // For Argentina or 'SP', always use the passed lang parameter
+  const savedLang = localStorage.getItem("preferredLanguage");
+  const initialLang =
+    isArgentinaPath || lang === "SP" ? "SP" : savedLang || lang;
+
+  const [togglableLang, setTogglableLang] = useState(initialLang);
 
   // Save language preference to localStorage when it changes
+  // But don't save 'SP' language preference
   useEffect(() => {
-    localStorage.setItem('preferredLanguage', togglableLang);
+    if (togglableLang !== "SP") {
+      localStorage.setItem("preferredLanguage", togglableLang);
+    }
   }, [togglableLang]);
 
-  const location = useLocation();
-  const isHome = (location.pathname.toLowerCase() === "/poland") ||
-    (location.pathname.toLowerCase() === "/argentina");
+  const isHome =
+    location.pathname.toLowerCase() === "/poland" ||
+    location.pathname.toLowerCase() === "/argentina";
   const isTravel = location.pathname.toLowerCase() === "/poland/travelandstay";
   const isOnBackground = isHome || isTravel;
-  const isPoland = (lang === "EN") || (lang === "PL");
+  const isPoland = lang === "EN" || lang === "PL";
 
   useEffect(() => {
     const handleResize = () => {
-      if (isMobileDevice() || (window.innerWidth < MAX_NAV_WIDTH_MOBILE)) {
+      if (isMobileDevice() || window.innerWidth < MAX_NAV_WIDTH_MOBILE) {
         setIsMobile(true);
       } else {
         setIsMobile(false);
@@ -45,10 +55,10 @@ const SubRoot = ({ lang }) => {
     };
 
     handleResize(); // Set initial value
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -56,37 +66,45 @@ const SubRoot = ({ lang }) => {
     if (location.hash) {
       const element = document.getElementById(location.hash.substring(1));
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
   }, [location]);
 
   return (
     <div className="poland-root-container" id="top">
-      {isMobile ?
-        <NavBarMobile isOpen={isOpen}
-                      setOpen={setOpen}
-                      setDoneAnimating={setDoneAnimating}
-                      lang={togglableLang}
-                      isPoland={isPoland}
-                      isOnBackground={isOnBackground}
-                      isHome={isHome}
-        /> :
-        <NavBarDefault lang={togglableLang}
-                       isPoland={isPoland}
-                       isOnBackground={isOnBackground}
-                       isHome={isHome}
-        />}
-      <AppContext.Provider value={{ isDoneAnimating, togglableLang, setTogglableLang }}>
+      {isMobile ? (
+        <NavBarMobile
+          isOpen={isOpen}
+          setOpen={setOpen}
+          setDoneAnimating={setDoneAnimating}
+          lang={togglableLang}
+          isPoland={isPoland}
+          isOnBackground={isOnBackground}
+          isHome={isHome}
+        />
+      ) : (
+        <NavBarDefault
+          lang={togglableLang}
+          isPoland={isPoland}
+          isOnBackground={isOnBackground}
+          isHome={isHome}
+        />
+      )}
+      <AppContext.Provider
+        value={{ isDoneAnimating, togglableLang, setTogglableLang }}
+      >
         <Outlet />
       </AppContext.Provider>
       <Footer lang={togglableLang} />
-      {isPoland &&
-        <LangButton toggableLang={togglableLang}
-                    setTogglableLang={setTogglableLang}
-        />}
+      {isPoland && (
+        <LangButton
+          toggableLang={togglableLang}
+          setTogglableLang={setTogglableLang}
+        />
+      )}
     </div>
   );
-}
+};
 
 export default SubRoot;

@@ -22,8 +22,10 @@ const LangButton = ({ toggableLang, setTogglableLang }) => {
       // Update app state
       setTogglableLang(newLang);
 
-      // Save preference to localStorage
-      localStorage.setItem("preferredLanguage", newLang);
+      // Save preference to localStorage only if not 'SP'
+      if (newLang !== "SP") {
+        localStorage.setItem("preferredLanguage", newLang);
+      }
     }, 150); // Half of the full animation duration
 
     // Reset animation state after the full animation
