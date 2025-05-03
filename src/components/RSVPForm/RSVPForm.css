@@ -106,7 +106,7 @@ fieldset {
   font-size: 1rem;
   font-weight: 200;
   line-height: 2;
-  text-transform: capitalize;
+  text-transform: none;
   color: rgb(88, 88, 88);
 }
 

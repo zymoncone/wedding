@@ -1,6 +1,7 @@
 import "./WeddingDetails.css";
 import Button from "../Button/Button";
 import DetailsBanner from "../DetailsBanner/DetailsBanner";
+import { renderItalicizedText } from "../../assets/helper_functions";
 import {
   first_banner_title,
   first_banner_time,
@@ -26,6 +27,7 @@ import Modal from "../Modal/Modal";
 
 const WeddingDetails = ({ lang }) => {
   const isPoland = lang === "PL" || lang === "EN";
+  const isEnglish = lang === "EN";
   const [showModal, setShowModal] = useState(false);
   const [animateModal, setAnimateModal] = useState(false);
 
@@ -49,7 +51,7 @@ const WeddingDetails = ({ lang }) => {
     <div className="details-parent-container">
       <Modal show={showModal} onClose={handleCloseModal} animate={animateModal}>
         <h2>{poprawiny_title[lang]}</h2>
-        <p>{poprawiny_text[lang]}</p>
+        <p>{renderItalicizedText(poprawiny_text[lang])}</p>
       </Modal>
       {isPoland && (
         <ScrollAnimation delay={100}>
@@ -82,11 +84,12 @@ const WeddingDetails = ({ lang }) => {
               text={map_travel_link[lang]}
               address={first_banner_map[lang]}
             />
+            {isEnglish && (
             <div className="attire-details-container">
               <p className="attire-details-subtext">
                 {first_banner_attire[lang]}
               </p>
-            </div>
+            </div>)}
           </div>
         </ScrollAnimation>
       )}
@@ -118,7 +121,7 @@ const WeddingDetails = ({ lang }) => {
             text={map_travel_link[lang]}
             address={second_banner_map[lang]}
           />
-          {isPoland && (
+          {isEnglish && (
             <div className="attire-details-container">
               <p className="attire-details-subtext">
                 {second_banner_attire[lang]}

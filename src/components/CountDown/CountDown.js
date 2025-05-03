@@ -2,9 +2,9 @@ import "./CountDown.css";
 import React, { useState, useEffect } from 'react';
 
 const dates = {
-  'PL': `2025/08/23 16:30:00`,
-  'EN': `2025/08/23 16:30:00`,
-  'SP': `2025/03/01 21:00:00`
+  'PL': '2025-08-23T16:30:00+02:00', // Poland is UTC+2 in summer (CEST)
+  'EN': '2025-08-23T16:30:00+02:00', // Same time in Poland timezone
+  'SP': '2025-08-23T11:30:00-03:00'  // Argentina is UTC-3 (ART)
 };
 
 const days_by_language = {

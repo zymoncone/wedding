@@ -74,7 +74,7 @@ const LangSelectModal = ({ setTogglableLang }) => {
               <div className="flag-circle">
                 <GB title="English" />
               </div>
-              <span>English</span>
+              <span>english</span>
             </div>
             <div
               className="language-option"
@@ -83,7 +83,7 @@ const LangSelectModal = ({ setTogglableLang }) => {
               <div className="flag-circle">
                 <PL title="Polski" />
               </div>
-              <span>Polski</span>
+              <span>polski</span>
             </div>
           </div>
         </div>

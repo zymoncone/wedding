@@ -5,13 +5,13 @@ import { isMobileDevice } from "../../assets/helper_functions";
 
 const banner_title = {
   'EN': "See how it all started",
-  'PL': "Zobacz jak to się zaczęło",
+  'PL': "Jak to się zaczęło",
   'SP': "Mira cómo todo comenzó"
 };
 
 const button_text = {
   'EN': "Our Story",
-  'PL': "Nasza Historia",
+  'PL': "Nasza historia",
   'SP': "Nuestra Historia"
 };
 
@@ -23,7 +23,7 @@ const faq_title = {
 
 const faq_button_text = {
   'EN': "FAQ",
-  'PL': "Najczęściej Zadawane Pytania",
+  'PL': "Pytania do nas",
   'SP': "Preguntas Frecuentes"
 };
 

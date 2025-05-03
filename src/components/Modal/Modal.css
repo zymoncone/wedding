@@ -94,3 +94,11 @@
     font-size: 18px;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .modal-content p {
+    padding: 0 25px 25px 25px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}

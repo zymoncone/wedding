@@ -3,7 +3,7 @@
   flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 90px;
+  height: 70px;
   width: 100%;
   border: 1px solid black;
   background-color: var(--primary-color);

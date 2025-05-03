@@ -10,7 +10,7 @@ const registry_text = {
 
 const registry_button_text = {
   "EN": "Our Registry",
-  "PL": "Nasza Lista Prezentów"
+  "PL": "Lista prezentów"
 };
 
 const Registry = () => {

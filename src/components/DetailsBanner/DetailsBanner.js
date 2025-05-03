@@ -14,6 +14,7 @@ const DetailsBanner = (props) => {
   const [isMobile, setIsMobile] = useState(false);
 
   const isPoland = props.lang === "EN" || props.lang === "PL";
+  const isEnglish = props.lang === "EN";
 
   const image = props.useDayOneSetup
     ? "https://i.imgur.com/Y8AK06t.png"
@@ -58,7 +59,7 @@ const DetailsBanner = (props) => {
             />
           )}
         </div>
-        {!props.useDayOneSetup && isPoland && (
+        {!props.useDayOneSetup && isEnglish && (
           <div className="day-two-subtext">{optional_text[props.lang]}</div>
         )}
         <div className="day-one-subtext">{date}</div>

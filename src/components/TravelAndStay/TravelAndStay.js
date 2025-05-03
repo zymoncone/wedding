@@ -88,10 +88,10 @@ const TravelAndStay = () => {
               {stay_text[togglableLang]}
             </p>
             <div className="address">
-              32-005 Niepołomice
+              ul. Grunwaldzka 15H
             </div>
             <div className="address">
-              ul. Grunwaldzka 15H
+              32-005 Niepołomice
             </div>
             <div style={{ margin: "20px 0 0 0" }}></div>
             <Button text={map_travel_link[togglableLang]}
