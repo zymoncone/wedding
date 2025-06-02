@@ -13,7 +13,8 @@ import { travel_title,
          travel_directions_text_body_part_2,
          travel_directions_text_body_3,
          map_travel_link, stay_title,
-         stay_subtitle, stay_text } from "../../assets/texts";
+         stay_subtitle, stay_text,
+         car_rental_title } from "../../assets/texts";
 
 const TravelAndStay = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -70,6 +71,29 @@ const TravelAndStay = () => {
               </div>
             </div>
 
+          </div>
+
+          <div className="directions-text-row" style={{marginTop: isMobile ? 0: "70px"}}>
+            <div className="directions-text-col">
+              <div className="directions-text-header">{car_rental_title[togglableLang]}</div>
+              <div className="directions-text-body">
+                <p>
+                  {togglableLang === 'EN' ? (
+                    <>
+                      If you prefer to rent a car during your stay in Poland, please note that an International Driving Permit (IDP) is required for non-EU driver's licenses. For US visitors, you can <a href="https://www.aaa.com/vacation/idpf.html" target="_blank" rel="noreferrer">obtain an IDP from AAA</a> before your trip.
+                    </>
+                  ) : togglableLang === 'PL' ? (
+                    <>
+                      Jeśli wolisz wynająć samochód podczas pobytu w Polsce, pamiętaj, że dla osób z prawem jazdy spoza UE wymagane jest Międzynarodowe Prawo Jazdy. Dla gości z USA, można <a href="https://www.aaa.com/vacation/idpf.html" target="_blank" rel="noreferrer">uzyskać je w AAA</a> przed podróżą.
+                    </>
+                  ) : (
+                    <>
+                      Si prefiere alquilar un coche durante su estancia en Polonia, tenga en cuenta que se requiere un Permiso Internacional de Conducir (IDP) para las licencias de conducir que no son de la UE. Para los visitantes de EE.UU., puede <a href="https://www.aaa.com/vacation/idpf.html" target="_blank" rel="noreferrer">obtener un IDP en AAA</a> antes de su viaje.
+                    </>
+                  )}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <Map lang={togglableLang} />

@@ -143,9 +143,16 @@ export const stay_subtitle = {
 };
 
 export const stay_text = {
-  EN: "We have reserved rooms for our guests at Hotel Novum, located just 500 meters (1/3 miles) from the castle for your convenience.",
+  EN: "We have reserved rooms for our guests at Hotel Novum, located just 500 meters (1/3 mile) from the castle for your convenience.",
   PL: "Zarezerwowaliśmy pokoje dla naszych gości w Hotelu Novum, który znajduje się zaledwie 500 metrów od zamku.",
   SP: "",
+};
+
+// CAR RENTAL TEXT
+export const car_rental_title = {
+  EN: "Car Rental",
+  PL: "Wynajem samochodu",
+  SP: "Alquiler de coche",
 };
 
 // MAP TEXT
@@ -582,12 +589,17 @@ const poland_faq_english = [
   {
     question: "What is Poprawiny?",
     answer:
-      "Poprawiny is a lovely Polish tradition held on the second day of the wedding celebration. It’s an optional luncheon where the newlyweds spend more time with their guests. The tradition goes back many centuries and was originally meant to ensure that guests were safely sent off after the festivities.",
+      "Poprawiny is a lovely Polish tradition held on the second day of the wedding celebration. It's an optional luncheon where the newlyweds spend more time with their guests. The tradition goes back many centuries and was originally meant to ensure that guests were safely sent off after the festivities.",
   },
   {
     question: "What should we gift?",
     answer:
       "Your presence is the greatest gift we could ask for, especially considering how many of you have traveled such great distances to be with us! If you would still like to give a gift, please note that we will be flying home and cannot take large items. Feel free to send gifts to our home, or you can choose something from our registry for your convenience.",
+  },
+  {
+    question: "Do I need a special permit to drive in Poland?",
+    answer:
+      "Yes, visitors with non-EU driver's licenses will need an International Driving Permit (IDP) to rent and drive a car in Poland. If you're coming from the US, you can obtain an IDP from AAA before your trip.",
   },
 ];
 
