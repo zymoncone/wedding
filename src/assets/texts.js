@@ -587,6 +587,11 @@ const poland_faq_english = [
       "We truly appreciate your excitement to celebrate with us! However, as we have made arrangements for a specific number of guests, we kindly ask that only those named on the invitation attend. We appreciate your understanding.",
   },
   {
+    question: "Do I need to reserve a room at Hotel Novum?",
+    answer:
+      "No, you do not need to reserve a room at Hotel Novum. We've booked a room for you for the night of the wedding, August 23rd, so you can simply check in upon arrival. The hotel is conveniently located just 500 meters (1/3 mile) from the castle.",
+  },
+  {
     question: "What is Poprawiny?",
     answer:
       "Poprawiny is a lovely Polish tradition held on the second day of the wedding celebration. It's an optional luncheon where the newlyweds spend more time with their guests. The tradition goes back many centuries and was originally meant to ensure that guests were safely sent off after the festivities.",
@@ -629,6 +634,11 @@ const poland_faq_polish = [
     question: "Jaki prezent będzie odpowiedni?",
     answer:
       "Wasza obecność to dla nas najpiękniejszy prezent, zwłaszcza że wielu z Was pokonało dużą odległość, aby być z nami! Jeśli mimo to chcielibyście podarować nam prezent, prosimy pamiętać, że będziemy podróżować samolotem i nie będziemy w stanie zabrać dużych przedmiotów. Jeśli chcecie, prezenty można wysłać na nasz adres lub skorzystać z naszej listy prezentów.",
+  },
+  {
+    question: "Czy muszę rezerwować pokój w Hotelu Novum?",
+    answer:
+      "Nie, nie muszą Państwo rezerwować pokoju w Hotelu Novum. Zarezerwowaliśmy dla Państwa pokój na noc wesela (23 sierpnia) dlatego wystarczy zameldować się po przyjeździe. Hotel znajduje się w dogodnej lokalizacji, zaledwie 500 metrów od zamku.",
   },
 ];
 
