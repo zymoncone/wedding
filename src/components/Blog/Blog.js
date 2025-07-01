@@ -112,6 +112,20 @@ const Blog = () => {
               Go get breakfast at a local bakery! Head to <span className="bold">Wawel Castle</span>. Check out all the art, the church (very important Polish heroes are in crypts there), and the Wawel dragon of course. The castle is huge so take you time and take it in. We probably spent the majority of the day here. Afterward, go to the main square! See <span className="bold">St. Mary's Basilica</span> and explore <span className="bold">MNK Sukiennice</span>, a renaissance style market. I bought my mom earrings here and they are still in perfect condition.
             </p>
           </div>
+
+          <div className="blog-day">
+            <h3>Day 2:</h3>
+            <p>
+              Explore the <span className="bold">Jewish Quarter (Kazimierz)</span>! This historic district is filled with beautiful synagogues, art galleries, and cozy cafes. Visit the <span className="bold">Old Synagogue</span> and take a walking tour to learn about the rich Jewish history of Krakow. For lunch, try some traditional Polish pierogi at one of the local restaurants. In the evening, stroll through the trendy bars and clubs that have made Kazimierz the nightlife hub of Krakow. Don't miss the <span className="bold">Plac Nowy market square</span> with its iconic round market building!
+            </p>
+          </div>
+
+          <div className="blog-day">
+            <h3>Day 3:</h3>
+            <p>
+              Take a day trip to the <span className="bold">Wieliczka Salt Mine</span>, a UNESCO World Heritage site just outside Krakow. This underground wonderland features incredible salt sculptures and chapels carved entirely from salt. The tour takes about 2-3 hours and it's absolutely mind-blowing! Back in the city, walk through <span className="bold">Planty Park</span>, the beautiful green belt that encircles the Old Town. End your day with dinner in one of the cellar restaurants in the Old Town for an authentic medieval atmosphere.
+            </p>
+          </div>
         </div>
       </ScrollAnimation>
     </>
@@ -211,6 +225,20 @@ const Blog = () => {
             <h3>Dzień 1:</h3>
             <p>
               Idź na śniadanie do lokalnej piekarni! Udaj się do <span className="bold">Zamku Królewskiego na Wawelu</span>. Sprawdź wszystkie dzieła sztuki, kościół (bardzo ważni polscy bohaterowie są tam w kryptach) i oczywiście smoka wawelskiego. Zamek jest ogromny, więc poświęć czas i podziwiaj go. Prawdopodobnie spędziliśmy tam większość dnia. Następnie idź na główny plac! Zobacz <span className="bold">Bazylikę Mariacką</span> i zwiedź <span className="bold">Sukiennice</span>, renesansowy targ. Kupiłam mojej mamie kolczyki tutaj i nadal są w idealnym stanie.
+            </p>
+          </div>
+
+          <div className="blog-day">
+            <h3>Dzień 2:</h3>
+            <p>
+              Zwiedzaj <span className="bold">Dzielnicę Żydowską (Kazimierz)</span>! Ta historyczna dzielnica pełna jest pięknych synagog, galerii sztuki i przytulnych kawiarni. Odwiedź <span className="bold">Starą Synagogę</span> i weź udział w spacerze z przewodnikiem, aby poznać bogatą żydowską historię Krakowa. Na lunch spróbuj tradycyjnych polskich pierogów w jednej z lokalnych restauracji. Wieczorem przejdź się po modnych barach i klubach, które uczyniły Kazimierz centrum nocnego życia Krakowa. Nie przegap <span className="bold">placu Nowego</span> z jego charakterystyczną okrągłą halą targową!
+            </p>
+          </div>
+
+          <div className="blog-day">
+            <h3>Dzień 3:</h3>
+            <p>
+              Wybierz się na wycieczkę do <span className="bold">Kopalni Soli Wieliczka</span>, obiektu światowego dziedzictwa UNESCO tuż pod Krakowem. Ten podziemny świat pełen jest niesamowitych rzeźb solnych i kaplic wyrzeźbionych w całości z soli. Zwiedzanie trwa około 2-3 godzin i jest absolutnie niesamowite! Po powrocie do miasta przejdź się przez <span className="bold">Planty</span>, piękny zielony pas otaczający Stare Miasto. Zakończ dzień kolacją w jednej z piwniczych restauracji na Starym Mieście, aby poczuć autentyczną średniowieczną atmosferę.
             </p>
           </div>
         </div>

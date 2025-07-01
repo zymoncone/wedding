@@ -148,14 +148,19 @@
   gap: 15px;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
 }
 
 .image-pair img {
   flex: 1;
   min-width: 200px;
+  max-width: calc(50% - 7.5px);
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
 .image-pair img:hover {
@@ -219,6 +224,11 @@
     font-size: 1.05rem;
   }
 
+  .blog-section {
+    margin-bottom: 1rem;
+    padding-bottom: 0rem;
+  }
+
   .blog-day {
     padding: 1.2rem;
   }
@@ -234,9 +244,12 @@
   .image-pair {
     flex-direction: column;
     gap: 10px;
+    width: 100%;
   }
 
   .image-pair img {
     width: 100%;
+    max-width: 100%;
+    min-width: unset;
   }
 }

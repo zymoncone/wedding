@@ -26,7 +26,7 @@ export const date_header_mobile = {
 
 export const home_header_mobile_only = {
   EN: "Wedding",
-  PL: "Wesela",
+  PL: "Wesele",
   SP: "El Casamiento",
 };
 
